@@ -71,7 +71,7 @@ public class VentanaPrincipal extends JFrame {
 	 * Receptor de evento Creamos esta clase para no tener que rellenar todos
 	 * los botones manualmente
 	 * 
-	 * @author Iván González Mahagamage
+	 * @author Ivï¿½n Gonzï¿½lez Mahagamage
 	 *
 	 */
 	class ActionBoton implements ActionListener {
@@ -229,7 +229,7 @@ public class VentanaPrincipal extends JFrame {
 						txtMovimientos.setText(String.valueOf(carrera
 								.getNumeroDado()));
 						JOptionPane.showMessageDialog(null,
-								"Movimiento no válido.\nPasa turno");
+								"Movimiento no vï¿½lido.\nPasa turno");
 					}
 				}
 			});
@@ -326,7 +326,7 @@ public class VentanaPrincipal extends JFrame {
 
 		if (carrera.getCorredorNoActivo().lesionado()) {
 			JOptionPane.showMessageDialog(null,
-					"Partida finalizada por caída\nSe ha lesionada la "
+					"Partida finalizada por caï¿½da\nSe ha lesionada la "
 							+ carrera.getCorredorNoActivo().getNombre());
 			btnDado.setEnabled(false);
 			inicializar();
@@ -454,6 +454,7 @@ public class VentanaPrincipal extends JFrame {
 		activarPanel(pnTortuga, false);
 	}
 
+	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmSalir() {
 		if (mntmSalir == null) {
 			mntmSalir = new JMenuItem("Salir");
@@ -495,7 +496,7 @@ public class VentanaPrincipal extends JFrame {
 					JOptionPane
 							.showMessageDialog(
 									null,
-									"El juego de la Liebre y la Tortuga\nComunicación Persona-Maquina 2015-2016\nEscuela de Informatica de Oviedo",
+									"El juego de la Liebre y la Tortuga\nComunicaciï¿½n Persona-Maquina 2015-2016\nEscuela de Informatica de Oviedo",
 									"Acerca de",
 									JOptionPane.INFORMATION_MESSAGE);
 				}

@@ -669,6 +669,7 @@ public class VentanaPrincipal extends JFrame {
 		return mntmExit;
 	}
 
+	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmNext() {
 		if (mntmNext == null) {
 			mntmNext = new JMenuItem("Next");
@@ -684,6 +685,7 @@ public class VentanaPrincipal extends JFrame {
 		return mntmNext;
 	}
 
+	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmRandom() {
 		if (mntmRandom == null) {
 			mntmRandom = new JMenuItem("Random");

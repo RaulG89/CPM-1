@@ -58,8 +58,8 @@ public class VentanaRegistro extends JFrame {
 	 */
 	public VentanaRegistro() {
 		setTitle("Formulario de registro");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Configura la x para
-														// cerrar la ventana
+		// Configura la x para cerrar la ventana
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		setBounds(100, 100, 709, 373);
 		pnPrincipal = new JPanel();
 		pnPrincipal.setBackground(Color.WHITE);

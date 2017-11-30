@@ -19,12 +19,12 @@ public class Pedido {
 	}
 
 	/**
-	 * A�ade articulos al pedido
+	 * Añade articulos al pedido
 	 * 
 	 * @param articulo
-	 *            articulo que a�adimos al pedido
+	 *            articulo que añadimos al pedido
 	 * @param unidades
-	 *            numero de unidades que a�adimos al pedido
+	 *            numero de unidades que añadimos al pedido
 	 */
 	public void add(Articulo articulo, int unidades) {
 		Articulo articuloEnPedido = null;

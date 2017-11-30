@@ -17,12 +17,12 @@ public class Pedido {
 	}
 
 	/**
-	 * A�ade articulos al pedido
+	 * Añade articulos al pedido
 	 * 
 	 * @param articulo
-	 *            articulo que añadimos al pedido
+	 *            Articulo que añadimos al pedido
 	 * @param unidades
-	 *            numero de unidades que añadimos al pedido
+	 *            Número de unidades que añadimos al pedido
 	 */
 	public void add(Articulo articulo, int unidades) {
 		Articulo articuloEnPedido = null;
@@ -34,12 +34,13 @@ public class Pedido {
 				articuloEnPedido = a;
 			}
 		}
+
 		if (articuloEnPedido == null) {
 			// Si no hay unidades en el pedido, las añade sin problemas
 			articulo.setUnidades(unidades);
 			articulosPedido.add(articulo);
-		} else { // Si hay unidades en el pedido ya, las a�ade a las ya
-					// existentes
+			// Si hay unidades en el pedido ya, las añade a las ya existentes
+		} else {
 			int totalUnidades = articuloEnPedido.getUnidades() + unidades;
 			articuloEnPedido.setUnidades(totalUnidades);
 		}

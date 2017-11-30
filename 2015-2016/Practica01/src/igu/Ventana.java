@@ -21,20 +21,20 @@ public class Ventana extends JFrame { // Ventana principal
 		pnPrincipal.setBackground(Color.white); // Establece color de fondo
 		this.setContentPane(pnPrincipal); // Establece el contenido de la
 											// ventana
-		this.setLayout(null); // Desactiva la colocacion automatica de objetos
+		getContentPane().setLayout(null); // Desactiva la colocacion automatica de objetos
 		this.setLocationRelativeTo(null);
 
 		btAceptar = new JButton();
 		btAceptar.setText("Aceptar");
 		btAceptar.setBounds(160, 220, 100, 30);
 		btAceptar.setBackground(Color.black);
-		btAceptar.setForeground(Color.white); // Establece color de texto
+		btAceptar.setForeground(Color.BLACK); // Establece color de texto
 
 		btCancelar = new JButton();
 		btCancelar.setText("Cancelar");
 		btCancelar.setBounds(270, 220, 100, 30);
 		btCancelar.setBackground(Color.black);
-		btCancelar.setForeground(Color.white); // Establece color de texto
+		btCancelar.setForeground(Color.BLACK); // Establece color de texto
 
 		lbNombre = new JLabel();
 		lbNombre.setText("Introduzca su nombre:");

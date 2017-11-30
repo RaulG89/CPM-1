@@ -73,7 +73,7 @@ public class VentanaPrincipal extends JFrame {
 	 * Receptor de evento Creamos esta clase para no tener que rellenar todos
 	 * los botones manualmente
 	 * 
-	 * @author Iván González Mahagamage
+	 * @author Ivï¿½n Gonzï¿½lez Mahagamage
 	 *
 	 */
 	class ActionBoton implements ActionListener {
@@ -226,7 +226,7 @@ public class VentanaPrincipal extends JFrame {
 						jugar(carrera.getNumeroDado() + carrera.getCorredorActivo().getPosicion());
 					} else {
 						txtMovimientos.setText(String.valueOf(carrera.getNumeroDado()));
-						JOptionPane.showMessageDialog(null,	"Movimiento no válido.\nPasa turno");
+						JOptionPane.showMessageDialog(null,	"Movimiento no vï¿½lido.\nPasa turno");
 					}
 				}
 			});
@@ -309,7 +309,7 @@ public class VentanaPrincipal extends JFrame {
 
 		// Si un corredor cae en el agujero, pierde y se empieza otra vez
 		if (carrera.getCorredorNoActivo().lesionado()) {
-			JOptionPane.showMessageDialog(null,	"Partida finalizada por caída\nSe ha lesionada la "	+ carrera.getCorredorNoActivo().getNombre());
+			JOptionPane.showMessageDialog(null,	"Partida finalizada por caï¿½da\nSe ha lesionada la "	+ carrera.getCorredorNoActivo().getNombre());
 			btnDado.setEnabled(false);
 			inicializar();
 		}
@@ -432,7 +432,7 @@ public class VentanaPrincipal extends JFrame {
 		panel.setLayout(new GridLayout(1, 0, 0, 0)); 
 		panel.removeAll(); // Borra lo que contenia
 		crearPanelBotones(panel, vo.getNumCasillas() + 1, imagen);
-		asociarEventosBotones(panel); // Añade las acciones
+		asociarEventosBotones(panel); // Aï¿½ade las acciones
 	}
 	
 	/**
@@ -463,6 +463,7 @@ public class VentanaPrincipal extends JFrame {
 		
 	}
 
+	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmSalir() {
 		if (mntmSalir == null) {
 			mntmSalir = new JMenuItem("Salir");
@@ -498,7 +499,7 @@ public class VentanaPrincipal extends JFrame {
 			mntmAcercaDe = new JMenuItem("Acerca de");
 			mntmAcercaDe.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane	.showMessageDialog(null, "El juego de la Liebre y la Tortuga\nComunicación Persona-Maquina 2015-2016\nEscuela de Informatica de Oviedo", "Acerca de", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane	.showMessageDialog(null, "El juego de la Liebre y la Tortuga\nComunicaciï¿½n Persona-Maquina 2015-2016\nEscuela de Informatica de Oviedo", "Acerca de", JOptionPane.INFORMATION_MESSAGE);
 				}
 			});
 			mntmAcercaDe.setMnemonic('c');

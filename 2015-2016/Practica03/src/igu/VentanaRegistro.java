@@ -33,15 +33,28 @@ public class VentanaRegistro extends JDialog {
 	private JComboBox<String> cbAño;
 	private JPasswordField pfPassword;
 	private JPasswordField pfRepassword;
-	private final ButtonGroup btGSexo = new ButtonGroup(); // Para hacer que solo se puedaelegir un boton entre varias opciones,
-															// seleccionar los radiobotones y clic derecho
+	private final ButtonGroup btGSexo = new ButtonGroup(); // Para hacer que
+															// solo se
+															// puedaelegir un
+															// boton entre
+															// varias opciones,
+															// seleccionar los
+															// radiobotones y
+															// clic derecho
 
 	/**
 	 * Create the frame.
 	 */
 	public VentanaRegistro(VentanaPrincipal vp) {
 		setTitle("PC accesorios : Formulario de registro");
-		setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE); // Elimina el objeto actual y lo deja como esta
+		setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE); // Elimina
+																		// el
+																		// objeto
+																		// actual
+																		// y lo
+																		// deja
+																		// como
+																		// esta
 		setBounds(100, 100, 709, 373);
 		pnPrincipal = new JPanel();
 		pnPrincipal.setBackground(Color.WHITE);
@@ -99,8 +112,8 @@ public class VentanaRegistro extends JDialog {
 			JOptionPane.showMessageDialog(null,
 					"EL campo 'Apellidos' esta vacio");
 		else if (tfUsuario.getText().equals(""))
-			JOptionPane
-					.showMessageDialog(null, "EL campo 'Usuario' esta vacio");
+			JOptionPane.showMessageDialog(null,
+					"EL campo 'Usuario' esta vacio");
 		else if (String.valueOf(pfPassword.getPassword()).equals(""))
 			JOptionPane.showMessageDialog(null,
 					"EL campo 'Password' esta vacio");
@@ -113,8 +126,8 @@ public class VentanaRegistro extends JDialog {
 	}
 
 	private boolean isIncorrecta() {
-		if (!(String.valueOf(pfPassword.getPassword()).equals(String
-				.valueOf(pfRepassword.getPassword())))) {
+		if (!(String.valueOf(pfPassword.getPassword())
+				.equals(String.valueOf(pfRepassword.getPassword())))) {
 			JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
 			return false;
 		}

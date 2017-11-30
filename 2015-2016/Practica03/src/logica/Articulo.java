@@ -1,7 +1,7 @@
 package logica;
 
 /**
- * Clase que simula artuclos informaticos
+ * Clase que simula articulos informaticos
  * 
  * @author uo239795
  *

@@ -317,7 +317,7 @@ public class VentanaPrincipal extends JFrame {
 							modeloListaPlay.addElement(f);
 					} else {
 						JOptionPane.showMessageDialog(null,
-								"No hay canciones en la lista de la librería",
+								"No hay canciones en la lista de la librerï¿½a",
 								"Error", JOptionPane.ERROR_MESSAGE);
 					}
 				}
@@ -405,7 +405,7 @@ public class VentanaPrincipal extends JFrame {
 						JOptionPane
 								.showMessageDialog(
 										null,
-										"No hay canciones añadidas a la lista de reproduccion",
+										"No hay canciones aï¿½adidas a la lista de reproduccion",
 										"Error", JOptionPane.ERROR_MESSAGE);
 				}
 			});
@@ -443,7 +443,7 @@ public class VentanaPrincipal extends JFrame {
 						JOptionPane
 								.showMessageDialog(
 										null,
-										"No hay canciones añadidas a la lista de reproduccion",
+										"No hay canciones aï¿½adidas a la lista de reproduccion",
 										"Error", JOptionPane.ERROR_MESSAGE);
 					modificarVolumen();
 				}
@@ -481,7 +481,7 @@ public class VentanaPrincipal extends JFrame {
 						JOptionPane
 								.showMessageDialog(
 										null,
-										"No hay canciones añadidas a la lista de reproduccion",
+										"No hay canciones aï¿½adidas a la lista de reproduccion",
 										"Error", JOptionPane.ERROR_MESSAGE);
 					modificarVolumen();
 				}
@@ -616,6 +616,7 @@ public class VentanaPrincipal extends JFrame {
 		return mntmExit;
 	}
 
+	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmNext() {
 		if (mntmNext == null) {
 			mntmNext = new JMenuItem("Next");
@@ -631,6 +632,7 @@ public class VentanaPrincipal extends JFrame {
 		return mntmNext;
 	}
 
+	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmRandom() {
 		if (mntmRandom == null) {
 			mntmRandom = new JMenuItem("Random");

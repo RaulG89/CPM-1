@@ -87,15 +87,15 @@ public class VentanaPrincipal extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit()
 				.getImage(VentanaPrincipal.class.getResource("/img/logo.jpg")));
 
-		// Primero crea los objetos de la parte de logica en memoria
+		// Primero crea los objetos de la parte de lógica en memoria
 		catalogo = new Catalogo();
 		pedido = new Pedido();
 
-		// Despues crea la interfaz
+		// Después crea la interfaz
 		setTitle("PC Accesorios");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 632, 481);
-		setResizable(false); // Bloquea la redimension de la ventana
+		setResizable(false); // Bloquea la redimensión de la ventana
 
 		pnPrincipal = new JPanel();
 		setLocationRelativeTo(null);
@@ -217,6 +217,7 @@ public class VentanaPrincipal extends JFrame {
 						float precioPedido = pedido.calcularTotalSinIva();
 						txtPrecio.setText(
 								String.valueOf(precioPedido) + " \u20AC");
+						// Código ASCII del símbolo de euro
 
 						if (!btnSiguiente.isEnabled())
 							btnSiguiente.setEnabled(true);
@@ -322,7 +323,7 @@ public class VentanaPrincipal extends JFrame {
 		catalogo.inicializar();
 		// elimina todos los articulos del pedido
 		pedido.inicializar();
-		// volver a selecciona el 1ñ articulo del combo
+		// volver a selecciona el 1º articulo del combo
 		cbArticulos.setSelectedIndex(0);
 		txtCantidad.setText(""); // pone unidades a 0
 		txtPrecio.setText(""); // pone precio a 0
