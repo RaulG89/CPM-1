@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wb.internal.core.editor.actions.errors.ErrorsDialog">
+		<item value="379" key="x"/>
+		<item value="681" key="width"/>
+		<item value="122" key="y"/>
+		<item value="606" key="height"/>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.ImportArchiveDialog">
+		<item value="457" key="x"/>
+		<item value="525" key="width"/>
+		<item value="241" key="y"/>
+		<item value="418" key="height"/>
+		<list key="HISTORY_JAR_LIST">
+			<item value="/Users/carlospelaezremis/Downloads/jcalendar-1.4.jar"/>
+		</list>
+	</section>
+	<section name="org.eclipse.wb.internal.core.editor.palette.dialogs.CategoryAddDialog">
+	</section>
+</section>
