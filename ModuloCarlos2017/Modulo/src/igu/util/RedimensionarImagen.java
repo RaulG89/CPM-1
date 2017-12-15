@@ -28,7 +28,8 @@ public class RedimensionarImagen extends Container {
 		Rectangle r = g.getClipBounds();
 		g.setColor(this.getBackground());
 		g.fillRect(r.x, r.y, r.width, r.height);
-		g.drawImage(imagen.getImage(), 0, 0, this.getWidth(), this.getHeight(), this.getBackground(), this);
+		g.drawImage(imagen.getImage(), 0, 0, this.getWidth(), this.getHeight(),
+				this.getBackground(), this);
 		super.paint(g);
 
 	}

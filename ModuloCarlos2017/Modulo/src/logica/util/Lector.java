@@ -26,7 +26,8 @@ public class Lector {
 			while (b.ready()) {
 				String entrada = b.readLine();
 				String[] datosEntrada = entrada.split("@");
-				Entradas e = new Entradas(datosEntrada[0], datosEntrada[1], Long.parseLong(datosEntrada[2]),
+				Entradas e = new Entradas(datosEntrada[0], datosEntrada[1],
+						Long.parseLong(datosEntrada[2]),
 						Long.parseLong(datosEntrada[3]));
 				entradas.add(e);
 			}
@@ -46,7 +47,8 @@ public class Lector {
 			while (b.ready()) {
 				String parque = b.readLine();
 				String[] datosParque = parque.split("@");
-				Parques p = new Parques(datosParque[0], datosParque[1], datosParque[2], datosParque[3], datosParque[4]);
+				Parques p = new Parques(datosParque[0], datosParque[1],
+						datosParque[2], datosParque[3], datosParque[4]);
 				parques.add(p);
 			}
 		} catch (FileNotFoundException e) {
@@ -65,9 +67,12 @@ public class Lector {
 			while (b.ready()) {
 				String alojamiento = b.readLine();
 				String[] datosAlojamiento = alojamiento.split("@");
-				Alojamiento a = new Alojamiento(datosAlojamiento[0], datosAlojamiento[1],
-						Integer.parseInt(datosAlojamiento[2]), datosAlojamiento[3], datosAlojamiento[4],
-						Integer.parseInt(datosAlojamiento[5]), Long.parseLong(datosAlojamiento[6]));
+				Alojamiento a = new Alojamiento(datosAlojamiento[0],
+						datosAlojamiento[1],
+						Integer.parseInt(datosAlojamiento[2]),
+						datosAlojamiento[3], datosAlojamiento[4],
+						Integer.parseInt(datosAlojamiento[5]),
+						Long.parseLong(datosAlojamiento[6]));
 				alojamientos.add(a);
 			}
 		} catch (FileNotFoundException e) {
@@ -86,8 +91,10 @@ public class Lector {
 			while (b.ready()) {
 				String paquete = b.readLine();
 				String[] datosPaquetes = paquete.split("@");
-				Paquetes e = new Paquetes(datosPaquetes[0], datosPaquetes[1], datosPaquetes[2], datosPaquetes[3],
-						Integer.parseInt(datosPaquetes[4]), Long.parseLong(datosPaquetes[5]),
+				Paquetes e = new Paquetes(datosPaquetes[0], datosPaquetes[1],
+						datosPaquetes[2], datosPaquetes[3],
+						Integer.parseInt(datosPaquetes[4]),
+						Long.parseLong(datosPaquetes[5]),
 						Long.parseLong(datosPaquetes[6]));
 				paquetes.add(e);
 			}

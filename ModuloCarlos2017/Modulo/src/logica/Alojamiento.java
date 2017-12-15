@@ -11,8 +11,9 @@ public class Alojamiento {
 	private String imagen;
 	private boolean descuento;
 
-	public Alojamiento(String codigoAlojamiento, String tipo, int estrellasCategoria, String denominacion,
-			String codigoParque, int nPlazas, Long precioAlojamiento) {
+	public Alojamiento(String codigoAlojamiento, String tipo,
+			int estrellasCategoria, String denominacion, String codigoParque,
+			int nPlazas, Long precioAlojamiento) {
 		super();
 		this.codigoAlojamiento = codigoAlojamiento;
 		this.tipo = tipo;
@@ -101,14 +102,18 @@ public class Alojamiento {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((codigoAlojamiento == null) ? 0 : codigoAlojamiento.hashCode());
-		result = prime * result + ((codigoParque == null) ? 0 : codigoParque.hashCode());
-		result = prime * result + ((denominacion == null) ? 0 : denominacion.hashCode());
+		result = prime * result + ((codigoAlojamiento == null) ? 0
+				: codigoAlojamiento.hashCode());
+		result = prime * result
+				+ ((codigoParque == null) ? 0 : codigoParque.hashCode());
+		result = prime * result
+				+ ((denominacion == null) ? 0 : denominacion.hashCode());
 		result = prime * result + (descuento ? 1231 : 1237);
 		result = prime * result + estrellasCategoria;
 		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
 		result = prime * result + nPlazas;
-		result = prime * result + ((precioAlojamiento == null) ? 0 : precioAlojamiento.hashCode());
+		result = prime * result + ((precioAlojamiento == null) ? 0
+				: precioAlojamiento.hashCode());
 		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
 		return result;
 	}
@@ -163,10 +168,12 @@ public class Alojamiento {
 
 	@Override
 	public String toString() {
-		return "Alojamiento [codigoAlojamiento=" + codigoAlojamiento + ", tipo=" + tipo + ", estrellasCategoria="
-				+ estrellasCategoria + ", denominacion=" + denominacion + ", codigoParque=" + codigoParque
-				+ ", nPlazas=" + nPlazas + ", precioAlojamiento=" + precioAlojamiento + ", imagen=" + imagen
-				+ ", descuento=" + descuento + "]";
+		return "Alojamiento [codigoAlojamiento=" + codigoAlojamiento + ", tipo="
+				+ tipo + ", estrellasCategoria=" + estrellasCategoria
+				+ ", denominacion=" + denominacion + ", codigoParque="
+				+ codigoParque + ", nPlazas=" + nPlazas + ", precioAlojamiento="
+				+ precioAlojamiento + ", imagen=" + imagen + ", descuento="
+				+ descuento + "]";
 	}
 
 }

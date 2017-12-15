@@ -59,7 +59,6 @@ public class Vprincipal extends JFrame {
 	private JPanel pnBuscar;
 	private JButton btnBuscar;
 
-
 	/**
 	 * Launch the application.
 	 */
@@ -146,7 +145,8 @@ public class Vprincipal extends JFrame {
 			lblImagen = new JLabel("");
 			lblImagen.setHorizontalAlignment(SwingConstants.CENTER);
 			lblImagen.setHorizontalTextPosition(SwingConstants.CENTER);
-			lblImagen.setIcon(new ImageIcon(Vprincipal.class.getResource("/img/earth-globe-16807770.jpg")));
+			lblImagen.setIcon(new ImageIcon(Vprincipal.class
+					.getResource("/img/earth-globe-16807770.jpg")));
 		}
 		return lblImagen;
 	}
@@ -155,7 +155,8 @@ public class Vprincipal extends JFrame {
 		if (btnCesta == null) {
 			btnCesta = new JButton("");
 			btnCesta.setBounds(0, 0, 20, 20);
-			btnCesta.setIcon(new ImageIcon(Vprincipal.class.getResource("/img/carrito.png")));
+			btnCesta.setIcon(new ImageIcon(
+					Vprincipal.class.getResource("/img/carrito.png")));
 		}
 		return btnCesta;
 	}
@@ -217,14 +218,11 @@ public class Vprincipal extends JFrame {
 		return pnFechas;
 	}
 
-/*	private JPanel getPanel_2_1() {
-		if (pnPersonas == null) {
-			pnPersonas = new JPanel();
-			pnPersonas.setLayout(new BorderLayout(0, 0));
-			pnPersonas.add(getPanel_5(), BorderLayout.CENTER);
-		}
-		return pnPersonas;
-	}*/
+	/*
+	 * private JPanel getPanel_2_1() { if (pnPersonas == null) { pnPersonas =
+	 * new JPanel(); pnPersonas.setLayout(new BorderLayout(0, 0));
+	 * pnPersonas.add(getPanel_5(), BorderLayout.CENTER); } return pnPersonas; }
+	 */
 
 	private JPanel getPnTipo() {
 		if (pnTipo == null) {
@@ -277,7 +275,8 @@ public class Vprincipal extends JFrame {
 	private JComboBox<String> getCbLlegadaDia() {
 		if (cbLlegadaDia == null) {
 			cbLlegadaDia = new JComboBox<String>();
-			cbLlegadaDia.setModel(new DefaultComboBoxModel<String>(calculaDias(31)));
+			cbLlegadaDia.setModel(
+					new DefaultComboBoxModel<String>(calculaDias(31)));
 		}
 		return cbLlegadaDia;
 	}
@@ -285,7 +284,8 @@ public class Vprincipal extends JFrame {
 	private JComboBox<String> getCbLlegadaMes() {
 		if (cbLlegadaMes == null) {
 			cbLlegadaMes = new JComboBox<String>();
-			cbLlegadaMes.setModel(new DefaultComboBoxModel<String>(calculaFechas("mes")));
+			cbLlegadaMes.setModel(
+					new DefaultComboBoxModel<String>(calculaFechas("mes")));
 		}
 		return cbLlegadaMes;
 	}
@@ -293,7 +293,8 @@ public class Vprincipal extends JFrame {
 	private JComboBox<String> getCbLlegadaAño() {
 		if (cbLlegadaAño == null) {
 			cbLlegadaAño = new JComboBox<String>();
-			cbLlegadaAño.setModel(new DefaultComboBoxModel<String>(calculaFechas("año")));
+			cbLlegadaAño.setModel(
+					new DefaultComboBoxModel<String>(calculaFechas("año")));
 		}
 		return cbLlegadaAño;
 	}
@@ -301,7 +302,8 @@ public class Vprincipal extends JFrame {
 	private JComboBox<String> getCbSalidaDia() {
 		if (cbSalidaDia == null) {
 			cbSalidaDia = new JComboBox<String>();
-			cbSalidaDia.setModel(new DefaultComboBoxModel<String>(calculaDias(31)));
+			cbSalidaDia.setModel(
+					new DefaultComboBoxModel<String>(calculaDias(31)));
 		}
 		return cbSalidaDia;
 	}
@@ -309,7 +311,8 @@ public class Vprincipal extends JFrame {
 	private JComboBox<String> getCbSalidaMes() {
 		if (cbSalidaMes == null) {
 			cbSalidaMes = new JComboBox<String>();
-			cbSalidaMes.setModel(new DefaultComboBoxModel<String>(calculaFechas("mes")));
+			cbSalidaMes.setModel(
+					new DefaultComboBoxModel<String>(calculaFechas("mes")));
 		}
 		return cbSalidaMes;
 	}
@@ -317,7 +320,8 @@ public class Vprincipal extends JFrame {
 	private JComboBox<String> getCbSalidaAño() {
 		if (cbSalidaAño == null) {
 			cbSalidaAño = new JComboBox<String>();
-			cbSalidaAño.setModel(new DefaultComboBoxModel<String>(calculaFechas("año")));
+			cbSalidaAño.setModel(
+					new DefaultComboBoxModel<String>(calculaFechas("año")));
 		}
 		return cbSalidaAño;
 	}
@@ -393,15 +397,15 @@ public class Vprincipal extends JFrame {
 		return salida;
 	}
 
-//	private int comprobarFechas(int numero){
-//	int tope = 0;
-//	}
+	// private int comprobarFechas(int numero){
+	// int tope = 0;
+	// }
 	private JPanel panel_6;
 	private JRadioButton rdbtnAlojamiento;
 	private JRadioButton rdbtnParque;
 	private JRadioButton rdbtnAmbos;
-//	private Container pnPais;
-//	private JPanel panel_1;
+	// private Container pnPais;
+	// private JPanel panel_1;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JPanel panel_2;
 	private JLabel lblPaises;
@@ -441,6 +445,7 @@ public class Vprincipal extends JFrame {
 		}
 		return rdbtnAmbos;
 	}
+
 	private JPanel getPanel_2() {
 		if (panel_2 == null) {
 			panel_2 = new JPanel();
@@ -449,18 +454,21 @@ public class Vprincipal extends JFrame {
 		}
 		return panel_2;
 	}
+
 	private JLabel getLblPaises() {
 		if (lblPaises == null) {
 			lblPaises = new JLabel("Pais: ");
 		}
 		return lblPaises;
 	}
+
 	private JComboBox<String> getCbPaises() {
 		if (cbPaises == null) {
 			cbPaises = new JComboBox<String>();
 		}
 		return cbPaises;
 	}
+
 	private JPanel getPanel_3() {
 		if (panel_3 == null) {
 			panel_3 = new JPanel();

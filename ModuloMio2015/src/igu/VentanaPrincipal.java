@@ -1,5 +1,11 @@
 package igu;
 
+import igu.PanelCardLayout.PanelCamarotes;
+import igu.PanelCardLayout.PanelDetallesCrucero;
+import igu.PanelCardLayout.PanelInicio;
+import igu.PanelCardLayout.PanelListaCruceros;
+import igu.PanelCardLayout.PanelPasajeros;
+import igu.PanelCardLayout.PanelResumen;
 import igu.PanelesAuxiliares.PanelImagenRedimensionable;
 import igu.VentanasAuxiliares.VentanaAsignarNombreReserva;
 import igu.VentanasAuxiliares.VentanaAñadirCamarote;
@@ -79,8 +85,8 @@ public class VentanaPrincipal extends JFrame {
 	private Catalogo catalogo;
 	private Crucero crucero;
 	private ArrayList<Pasajero> listaPasajeros;
-	private ArrayList<Pasajero> listaClientes;
-	private ArrayList<Camarote> listaCamarotes;
+	public ArrayList<Pasajero> listaClientes;
+	public ArrayList<Camarote> listaCamarotes;
 	private Pasajero cliente;
 	private String numeroContacto;
 
@@ -474,6 +480,28 @@ public class VentanaPrincipal extends JFrame {
 		if (pnReservas == null) {
 			pnReservas = new JPanel();
 			pnReservas.setLayout(new CardLayout(0, 0));
+
+			// pnInicio = new PanelInicio(this);
+			// pnReservas.add(pnInicio, "Inicio");
+			//
+			// pnListaCruceros = new PanelListaCruceros(this);
+			// pnReservas.add(pnListaCruceros, "ListaCruceros");
+			//
+			// pnDetallesBarco = new PanelDetallesCrucero(this);
+			// pnReservas.add(pnDetallesBarco, "DetallesCrucero");
+			//
+			// pnPasajeros = new PanelPasajeros(this);
+			// pnReservas.add(pnPasajeros, "RegistroPasajeros");
+			//
+			// pnCamarotes = new PanelCamarotes(this);
+			// pnReservas.add(pnCamarotes, "ReservaCamarotes");
+			//
+			// pnResumen = new PanelResumen(this);
+			// pnReservas.add(pnResumen, "Resumen");
+			//
+			// pnFin = new PanelResumen(this);
+			// pnReservas.add(pnFin, "Fin");
+
 			pnReservas.add(getPnInicio(), "Inicio");
 			pnReservas.add(getPnListaCruceros(), "ListaCruceros");
 			pnReservas.add(getPnDetallesCrucero(), "DetallesCrucero");
@@ -2308,7 +2336,7 @@ public class VentanaPrincipal extends JFrame {
 			btnAtrasReservaCamarotes.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					listaClientes = null;
-					borrarModelo(modeloTablaCamarotes);
+					borrarModelo(getModeloTablaCamarotes());
 					Iterator<Camarote> it = listaCamarotes.iterator();
 					while (it.hasNext())
 						desreservarCamarote(it.next());
@@ -2396,10 +2424,10 @@ public class VentanaPrincipal extends JFrame {
 
 	public JTable getTablaCamarotes() {
 		if (tablaCamarotes == null) {
-			modeloTablaCamarotes = new DefaultTableModel(
+			setModeloTablaCamarotes(new DefaultTableModel(
 					new Object[] { "Tipo", "Situaci�n", "Pasajeros", "Extras" },
-					0);
-			tablaCamarotes = new JTable(modeloTablaCamarotes) {
+					0));
+			tablaCamarotes = new JTable(getModeloTablaCamarotes()) {
 				private static final long serialVersionUID = 4283967148348124808L;
 
 				@Override
@@ -2456,7 +2484,7 @@ public class VentanaPrincipal extends JFrame {
 								"Por favor seleccione un camarote", "Error",
 								JOptionPane.ERROR_MESSAGE);
 					else {
-						modeloTablaCamarotes.removeRow(camarote);
+						getModeloTablaCamarotes().removeRow(camarote);
 						for (Pasajero pasajero : listaCamarotes.get(camarote)
 								.getPasajeros())
 							if (pasajero != null)
@@ -2466,7 +2494,7 @@ public class VentanaPrincipal extends JFrame {
 						desreservarCamarote(aux);
 						listaCamarotes.remove(camarote);
 					}
-					if (modeloTablaCamarotes.getRowCount() == 0) {
+					if (getModeloTablaCamarotes().getRowCount() == 0) {
 						btnSiguienteReservaCamarotes.setEnabled(false);
 						btnBorrarReservaCamarotes.setEnabled(false);
 					}
@@ -2481,7 +2509,7 @@ public class VentanaPrincipal extends JFrame {
 		return btnBorrarReservaCamarotes;
 	}
 
-	private Camarote buscarCamarote(Camarote camarote) {
+	public Camarote buscarCamarote(Camarote camarote) {
 		Camarote resultado = null;
 		for (Camarote a : crucero.getPasajerosFechas()
 				.get(cbFechas.getSelectedIndex())) {
@@ -2493,7 +2521,7 @@ public class VentanaPrincipal extends JFrame {
 		return resultado;
 	}
 
-	private void desreservarCamarote(Camarote camarote) {
+	public void desreservarCamarote(Camarote camarote) {
 		camarote.setReservada(false);
 		for (Extra extra : camarote.getExtras())
 			extra.setAñadido(false);
@@ -2827,7 +2855,7 @@ public class VentanaPrincipal extends JFrame {
 		pnPrincipal.removeAll();
 		pnPrincipal.add(getPnOpciones(), BorderLayout.NORTH);
 		pnPrincipal.add(getPnReservas(), BorderLayout.CENTER);
-		borrarModelo(modeloTablaCamarotes);
+		borrarModelo(getModeloTablaCamarotes());
 		borrarModelo(modeloTablaCruceros);
 		borrarModelo(modeloTablaPasajeros);
 		((CardLayout) pnReservas.getLayout()).first(pnReservas);
@@ -2837,7 +2865,7 @@ public class VentanaPrincipal extends JFrame {
 		getBtnComenzar().grabFocus();
 	}
 
-	private void borrarModelo(DefaultTableModel modelo) {
+	public void borrarModelo(DefaultTableModel modelo) {
 		while (modelo.getRowCount() > 0)
 			modelo.removeRow(0);
 	}
@@ -2986,6 +3014,11 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setListaCamarotes(ArrayList<Camarote> listaCamarotes) {
 		this.listaCamarotes = listaCamarotes;
+	}
+
+	public void setModeloTablaCamarotes(
+			DefaultTableModel modeloTablaCamarotes) {
+		this.modeloTablaCamarotes = modeloTablaCamarotes;
 	}
 
 }

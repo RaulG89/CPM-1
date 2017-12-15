@@ -294,11 +294,6 @@ public class PanelDetallesCrucero extends JPanel {
 		return lblCamarotesDoblesExteriores;
 	}
 
-	protected void inicializar() {
-		// TODO Auto-generated method stub
-
-	}
-
 	public void activarBtnSiguientePasajeros() {
 		btnSiguientePasajeros.setEnabled(true);
 	}

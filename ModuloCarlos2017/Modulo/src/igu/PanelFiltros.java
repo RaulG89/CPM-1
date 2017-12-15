@@ -366,7 +366,8 @@ public class PanelFiltros extends JPanel {
 			btnBuscar = new JButton("Buscar");
 			btnBuscar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					((CardLayout) v.getPnCardLayout().getLayout()).next(v.getPnCardLayout());
+					((CardLayout) v.getPnCardLayout().getLayout())
+							.next(v.getPnCardLayout());
 				}
 			});
 		}

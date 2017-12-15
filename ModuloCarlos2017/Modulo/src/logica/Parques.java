@@ -9,7 +9,8 @@ public class Parques {
 	private String imagen;
 	private boolean descuento;
 
-	public Parques(String codigo, String denominacion, String pais, String localidad, String descripcion) {
+	public Parques(String codigo, String denominacion, String pais,
+			String localidad, String descripcion) {
 		this.codigo = codigo;
 		this.denominacion = denominacion;
 		this.pais = pais;
@@ -80,11 +81,14 @@ public class Parques {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
-		result = prime * result + ((denominacion == null) ? 0 : denominacion.hashCode());
-		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
+		result = prime * result
+				+ ((denominacion == null) ? 0 : denominacion.hashCode());
+		result = prime * result
+				+ ((descripcion == null) ? 0 : descripcion.hashCode());
 		result = prime * result + (descuento ? 1231 : 1237);
 		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
-		result = prime * result + ((localidad == null) ? 0 : localidad.hashCode());
+		result = prime * result
+				+ ((localidad == null) ? 0 : localidad.hashCode());
 		result = prime * result + ((pais == null) ? 0 : pais.hashCode());
 		return result;
 	}
@@ -135,8 +139,10 @@ public class Parques {
 
 	@Override
 	public String toString() {
-		return "Parques [codigo=" + codigo + ", denominacion=" + denominacion + ", pais=" + pais + ", localidad="
-				+ localidad + ", descripcion=" + descripcion + ", imagen=" + imagen + ", descuento=" + descuento + "]";
+		return "Parques [codigo=" + codigo + ", denominacion=" + denominacion
+				+ ", pais=" + pais + ", localidad=" + localidad
+				+ ", descripcion=" + descripcion + ", imagen=" + imagen
+				+ ", descuento=" + descuento + "]";
 	}
 
 }

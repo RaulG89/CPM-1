@@ -12,8 +12,9 @@ public class Paquetes {
 	private String imagen;
 	private boolean descuento;
 
-	public Paquetes(String codigoPaquetes, String denominacionPaquetes, String codigoParques, String codigoAlojamiento,
-			int diasDuracion, Long precioAdulto, Long precioNiño) {
+	public Paquetes(String codigoPaquetes, String denominacionPaquetes,
+			String codigoParques, String codigoAlojamiento, int diasDuracion,
+			Long precioAdulto, Long precioNiño) {
 		super();
 		this.codigoPaquete = codigoPaquetes;
 		this.denominacionPaquetes = denominacionPaquetes;
@@ -23,6 +24,7 @@ public class Paquetes {
 		this.precioAdulto = precioAdulto;
 		this.precioNiño = precioNiño;
 		this.imagen = codigoPaquete + ".jpg";
+
 	}
 
 	public String getImagen() {
@@ -110,15 +112,21 @@ public class Paquetes {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((codigoAlojamiento == null) ? 0 : codigoAlojamiento.hashCode());
-		result = prime * result + ((codigoPaquete == null) ? 0 : codigoPaquete.hashCode());
-		result = prime * result + ((codigoParques == null) ? 0 : codigoParques.hashCode());
-		result = prime * result + ((denominacionPaquetes == null) ? 0 : denominacionPaquetes.hashCode());
+		result = prime * result + ((codigoAlojamiento == null) ? 0
+				: codigoAlojamiento.hashCode());
+		result = prime * result
+				+ ((codigoPaquete == null) ? 0 : codigoPaquete.hashCode());
+		result = prime * result
+				+ ((codigoParques == null) ? 0 : codigoParques.hashCode());
+		result = prime * result + ((denominacionPaquetes == null) ? 0
+				: denominacionPaquetes.hashCode());
 		result = prime * result + (descuento ? 1231 : 1237);
 		result = prime * result + diasDuracion;
 		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
-		result = prime * result + ((precioAdulto == null) ? 0 : precioAdulto.hashCode());
-		result = prime * result + ((precioNiño == null) ? 0 : precioNiño.hashCode());
+		result = prime * result
+				+ ((precioAdulto == null) ? 0 : precioAdulto.hashCode());
+		result = prime * result
+				+ ((precioNiño == null) ? 0 : precioNiño.hashCode());
 		return result;
 	}
 
@@ -175,10 +183,13 @@ public class Paquetes {
 
 	@Override
 	public String toString() {
-		return "Paquetes [codigoPaquete=" + codigoPaquete + ", denominacionPaquetes=" + denominacionPaquetes
-				+ ", codigoParques=" + codigoParques + ", codigoAlojamiento=" + codigoAlojamiento + ", diasDuracion="
-				+ diasDuracion + ", precioAdulto=" + precioAdulto + ", precioNiño=" + precioNiño + ", imagen=" + imagen
-				+ ", descuento=" + descuento + "]";
+		return "Paquetes [codigoPaquete=" + codigoPaquete
+				+ ", denominacionPaquetes=" + denominacionPaquetes
+				+ ", codigoParques=" + codigoParques + ", codigoAlojamiento="
+				+ codigoAlojamiento + ", diasDuracion=" + diasDuracion
+				+ ", precioAdulto=" + precioAdulto + ", precioNiño="
+				+ precioNiño + ", imagen=" + imagen + ", descuento=" + descuento
+				+ "]";
 	}
 
 }

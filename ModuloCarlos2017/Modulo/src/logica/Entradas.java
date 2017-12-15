@@ -7,7 +7,8 @@ public class Entradas {
 	private Long precioNiño;
 	private boolean descuento;
 
-	public Entradas(String codigoEntrada, String codigoParques, Long precioAdulto, Long precioNiño) {
+	public Entradas(String codigoEntrada, String codigoParques,
+			Long precioAdulto, Long precioNiño) {
 		super();
 		this.codigoEntrada = codigoEntrada;
 		this.codigoParques = codigoParques;
@@ -59,11 +60,15 @@ public class Entradas {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((codigoEntrada == null) ? 0 : codigoEntrada.hashCode());
-		result = prime * result + ((codigoParques == null) ? 0 : codigoParques.hashCode());
+		result = prime * result
+				+ ((codigoEntrada == null) ? 0 : codigoEntrada.hashCode());
+		result = prime * result
+				+ ((codigoParques == null) ? 0 : codigoParques.hashCode());
 		result = prime * result + (descuento ? 1231 : 1237);
-		result = prime * result + ((precioAdulto == null) ? 0 : precioAdulto.hashCode());
-		result = prime * result + ((precioNiño == null) ? 0 : precioNiño.hashCode());
+		result = prime * result
+				+ ((precioAdulto == null) ? 0 : precioAdulto.hashCode());
+		result = prime * result
+				+ ((precioNiño == null) ? 0 : precioNiño.hashCode());
 		return result;
 	}
 
@@ -103,8 +108,10 @@ public class Entradas {
 
 	@Override
 	public String toString() {
-		return "Entradas [codigoEntrada=" + codigoEntrada + ", codigoParques=" + codigoParques + ", precioAdulto="
-				+ precioAdulto + ", precioNiño=" + precioNiño + ", descuento=" + descuento + "]";
+		return "Entradas [codigoEntrada=" + codigoEntrada + ", codigoParques="
+				+ codigoParques + ", precioAdulto=" + precioAdulto
+				+ ", precioNiño=" + precioNiño + ", descuento=" + descuento
+				+ "]";
 	}
 
 }

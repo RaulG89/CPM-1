@@ -109,7 +109,7 @@ public class Vprincipal2 extends JFrame {
 	public Vprincipal2() {
 		setResizable(false);
 		/* Catalogo catalogo = new Catalogo(); */
-		//LIBRERIA JCALENDAAAAAAAAAAAAR
+		// LIBRERIA JCALENDAAAAAAAAAAAAR
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 833, 648);
 		contentPane = new JPanel();
@@ -119,7 +119,7 @@ public class Vprincipal2 extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		contentPane.add(getPnCabecera(), BorderLayout.NORTH);
 		contentPane.add(getPnCardLayout(), BorderLayout.CENTER);
-		((CardLayout)pnCardLayout.getLayout()).first(pnCardLayout);
+		((CardLayout) pnCardLayout.getLayout()).first(pnCardLayout);
 
 	}
 
@@ -166,7 +166,8 @@ public class Vprincipal2 extends JFrame {
 			lblImagen = new JLabel("");
 			lblImagen.setHorizontalAlignment(SwingConstants.CENTER);
 			lblImagen.setHorizontalTextPosition(SwingConstants.CENTER);
-			lblImagen.setIcon(new ImageIcon(Vprincipal2.class.getResource("/img/logo2.png")));
+			lblImagen.setIcon(new ImageIcon(
+					Vprincipal2.class.getResource("/img/logo2.png")));
 		}
 		return lblImagen;
 	}
@@ -175,7 +176,8 @@ public class Vprincipal2 extends JFrame {
 		if (btnCarrito == null) {
 			btnCarrito = new JButton("");
 			btnCarrito.setBounds(0, 0, 20, 20);
-			btnCarrito.setIcon(new ImageIcon(Vprincipal2.class.getResource("/img/carrito.png")));
+			btnCarrito.setIcon(new ImageIcon(
+					Vprincipal2.class.getResource("/img/carrito.png")));
 		}
 		return btnCarrito;
 	}
@@ -363,7 +365,8 @@ public class Vprincipal2 extends JFrame {
 	private JComboBox<String> getCbPersonas() {
 		if (cbPersonas == null) {
 			cbPersonas = new JComboBox<String>();
-			cbPersonas.setModel(new DefaultComboBoxModel<String>(calculaListas("personas")));
+			cbPersonas.setModel(new DefaultComboBoxModel<String>(
+					calculaListas("personas")));
 		}
 		return cbPersonas;
 	}
@@ -378,43 +381,70 @@ public class Vprincipal2 extends JFrame {
 	private JComboBox<String> getCbPais() {
 		if (cbPais == null) {
 			cbPais = new JComboBox<String>();
-			cbPais.setModel(new DefaultComboBoxModel<String>(new String[] { "Seleccione un pais", "Afganistán",
-					"Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila", "Antártida", "Antigua y Barbuda",
-					"Antillas Neerlandesas", "Arabia Saudí", "Arctic Ocean", "Argelia", "Argentina", "Armenia", "Aruba",
-					"Atlantic Ocean", "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bahráin", "Bangladesh",
-					"Barbados", "Bélgica", "Belice", "Benín", "Bermudas", "Bielorrusia", "Birmania; Myanmar", "Bolivia",
-					"Bosnia y Hercegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso", "Burundi",
-					"Bután", "Cabo Verde", "Camboya", "Camerún", "Canadá", "Chad", "Chile", "China", "Chipre",
-					"Clipperton Island", "Colombia", "Comoras", "Congo", "Coral Sea Islands", "Corea del Norte",
-					"Corea del Sur", "Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "Dhekelia", "Dinamarca",
-					"Dominica", "Ecuador", "Egipto", "El Salvador", "El Vaticano", "Emiratos Árabes Unidos", "Eritrea",
-					"Eslovaquia", "Eslovenia", "España", "Estados Unidos", "Estonia", "Etiopía", "Filipinas",
-					"Finlandia", "Fiyi", "Francia", "Gabón", "Gambia", "Gaza Strip", "Georgia", "Ghana", "Gibraltar",
-					"Granada", "Grecia", "Groenlandia", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Ecuatorial",
-					"Guinea-Bissau", "Guyana", "Haití", "Honduras", "Hong Kong", "Hungría", "India", "Indian Ocean",
-					"Indonesia", "Irán", "Iraq", "Irlanda", "Isla Bouvet", "Isla Christmas", "Isla Norfolk", "Islandia",
-					"Islas Caimán", "Islas Cocos", "Islas Cook", "Islas Feroe", "Islas Heard y McDonald",
-					"Islas Malvinas", "Islas Marianas del Norte", "Islas Marshall", "Islas Pitcairn", "Islas Salomón",
-					"Islas Turcas y Caicos", "Islas Vírgenes Americanas", "Islas Vírgenes Británicas", "Israel",
-					"Italia", "Jamaica", "Jan Mayen", "Japón", "Jersey", "Jordania", "Kazajistán", "Kenia",
-					"Kirguizistán", "Kiribati", "Kuwait", "Laos", "Lesoto", "Letonia", "Líbano", "Liberia", "Libia",
-					"Liechtenstein", "Lituania", "Luxemburgo", "Macao", "Macedonia", "Madagascar", "Malasia", "Malaui",
-					"Maldivas", "Malí", "Malta", "Man, Isle of", "Marruecos", "Mauricio", "Mauritania", "Mayotte",
-					"México", "Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montenegro", "Montserrat", "Mozambique",
-					"Mundo", "Namibia", "Nauru", "Navassa Island", "Nepal", "Nicaragua", "Níger", "Nigeria", "Niue",
-					"Noruega", "Nueva Caledonia", "Nueva Zelanda", "Omán", "Pacific Ocean", "Países Bajos", "Pakistán",
-					"Palaos", "Panamá", "Papúa-Nueva Guinea", "Paracel Islands", "Paraguay", "Perú",
-					"Polinesia Francesa", "Polonia", "Portugal", "Puerto Rico", "Qatar", "Reino Unido",
-					"República Centroafricana", "República Checa", "República del Congo", "República Dominicana",
-					"Ruanda", "Rumania", "Rusia", "Sáhara Occidental", "Samoa", "Samoa Americana",
-					"San Cristóbal y Nieves", "San Marino", "San Pedro y Miquelón", "San Vicente y las Granadinas",
-					"Santa Helena", "Santa Lucía", "Santo Tomé y Príncipe", "Senegal", "Serbia", "Seychelles",
-					"Sierra Leona", "Singapur", "Siria", "Somalia", "Southern Ocean", "Spratly Islands", "Sri Lanka",
-					"Suazilandia", "Sudáfrica", "Sudán", "Suecia", "Suiza", "Surinam", "Svalbard y Jan Mayen",
-					"Tailandia", "Taiwán", "Tanzania", "Tayikistán", "Timor Oriental", "Togo", "Tokelau", "Tonga",
-					"Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda",
-					"Unión Europea", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam", "Wake Island",
-					"Wallis y Futuna", "West Bank", "Yemen", "Yibuti", "Zambia", "Zimbabue" }));
+			cbPais.setModel(new DefaultComboBoxModel<String>(new String[] {
+					"Seleccione un pais", "Afganistán", "Akrotiri", "Albania",
+					"Alemania", "Andorra", "Angola", "Anguila", "Antártida",
+					"Antigua y Barbuda", "Antillas Neerlandesas",
+					"Arabia Saudí", "Arctic Ocean", "Argelia", "Argentina",
+					"Armenia", "Aruba", "Atlantic Ocean", "Australia",
+					"Austria", "Azerbaiyán", "Bahamas", "Bahráin", "Bangladesh",
+					"Barbados", "Bélgica", "Belice", "Benín", "Bermudas",
+					"Bielorrusia", "Birmania; Myanmar", "Bolivia",
+					"Bosnia y Hercegovina", "Botsuana", "Brasil", "Brunéi",
+					"Bulgaria", "Burkina Faso", "Burundi", "Bután",
+					"Cabo Verde", "Camboya", "Camerún", "Canadá", "Chad",
+					"Chile", "China", "Chipre", "Clipperton Island", "Colombia",
+					"Comoras", "Congo", "Coral Sea Islands", "Corea del Norte",
+					"Corea del Sur", "Costa de Marfil", "Costa Rica", "Croacia",
+					"Cuba", "Dhekelia", "Dinamarca", "Dominica", "Ecuador",
+					"Egipto", "El Salvador", "El Vaticano",
+					"Emiratos Árabes Unidos", "Eritrea", "Eslovaquia",
+					"Eslovenia", "España", "Estados Unidos", "Estonia",
+					"Etiopía", "Filipinas", "Finlandia", "Fiyi", "Francia",
+					"Gabón", "Gambia", "Gaza Strip", "Georgia", "Ghana",
+					"Gibraltar", "Granada", "Grecia", "Groenlandia", "Guam",
+					"Guatemala", "Guernsey", "Guinea", "Guinea Ecuatorial",
+					"Guinea-Bissau", "Guyana", "Haití", "Honduras", "Hong Kong",
+					"Hungría", "India", "Indian Ocean", "Indonesia", "Irán",
+					"Iraq", "Irlanda", "Isla Bouvet", "Isla Christmas",
+					"Isla Norfolk", "Islandia", "Islas Caimán", "Islas Cocos",
+					"Islas Cook", "Islas Feroe", "Islas Heard y McDonald",
+					"Islas Malvinas", "Islas Marianas del Norte",
+					"Islas Marshall", "Islas Pitcairn", "Islas Salomón",
+					"Islas Turcas y Caicos", "Islas Vírgenes Americanas",
+					"Islas Vírgenes Británicas", "Israel", "Italia", "Jamaica",
+					"Jan Mayen", "Japón", "Jersey", "Jordania", "Kazajistán",
+					"Kenia", "Kirguizistán", "Kiribati", "Kuwait", "Laos",
+					"Lesoto", "Letonia", "Líbano", "Liberia", "Libia",
+					"Liechtenstein", "Lituania", "Luxemburgo", "Macao",
+					"Macedonia", "Madagascar", "Malasia", "Malaui", "Maldivas",
+					"Malí", "Malta", "Man, Isle of", "Marruecos", "Mauricio",
+					"Mauritania", "Mayotte", "México", "Micronesia", "Moldavia",
+					"Mónaco", "Mongolia", "Montenegro", "Montserrat",
+					"Mozambique", "Mundo", "Namibia", "Nauru", "Navassa Island",
+					"Nepal", "Nicaragua", "Níger", "Nigeria", "Niue", "Noruega",
+					"Nueva Caledonia", "Nueva Zelanda", "Omán", "Pacific Ocean",
+					"Países Bajos", "Pakistán", "Palaos", "Panamá",
+					"Papúa-Nueva Guinea", "Paracel Islands", "Paraguay", "Perú",
+					"Polinesia Francesa", "Polonia", "Portugal", "Puerto Rico",
+					"Qatar", "Reino Unido", "República Centroafricana",
+					"República Checa", "República del Congo",
+					"República Dominicana", "Ruanda", "Rumania", "Rusia",
+					"Sáhara Occidental", "Samoa", "Samoa Americana",
+					"San Cristóbal y Nieves", "San Marino",
+					"San Pedro y Miquelón", "San Vicente y las Granadinas",
+					"Santa Helena", "Santa Lucía", "Santo Tomé y Príncipe",
+					"Senegal", "Serbia", "Seychelles", "Sierra Leona",
+					"Singapur", "Siria", "Somalia", "Southern Ocean",
+					"Spratly Islands", "Sri Lanka", "Suazilandia", "Sudáfrica",
+					"Sudán", "Suecia", "Suiza", "Surinam",
+					"Svalbard y Jan Mayen", "Tailandia", "Taiwán", "Tanzania",
+					"Tayikistán", "Timor Oriental", "Togo", "Tokelau", "Tonga",
+					"Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía",
+					"Tuvalu", "Ucrania", "Uganda", "Unión Europea", "Uruguay",
+					"Uzbekistán", "Vanuatu", "Venezuela", "Vietnam",
+					"Wake Island", "Wallis y Futuna", "West Bank", "Yemen",
+					"Yibuti", "Zambia", "Zimbabue" }));
 		}
 		return cbPais;
 	}
@@ -429,7 +459,8 @@ public class Vprincipal2 extends JFrame {
 
 	private JLabel getLbTextoFiltros() {
 		if (lbTextoFiltros == null) {
-			lbTextoFiltros = new JLabel("Seleccione el tipo de paquete vacacional que está buscando");
+			lbTextoFiltros = new JLabel(
+					"Seleccione el tipo de paquete vacacional que está buscando");
 		}
 		return lbTextoFiltros;
 	}
@@ -493,12 +524,14 @@ public class Vprincipal2 extends JFrame {
 		}
 		return btnBuscar;
 	}
+
 	private JButton getBtnAyuda() {
 		if (btnAyuda == null) {
 			btnAyuda = new JButton("Ayuda");
 		}
 		return btnAyuda;
 	}
+
 	private JPanel getPnAyuda() {
 		if (pnAyuda == null) {
 			pnAyuda = new JPanel();
@@ -508,6 +541,7 @@ public class Vprincipal2 extends JFrame {
 		}
 		return pnAyuda;
 	}
+
 	JPanel getPnCardLayout() {
 		if (pnCardLayout == null) {
 			pnCardLayout = new JPanel();
@@ -518,6 +552,7 @@ public class Vprincipal2 extends JFrame {
 		}
 		return pnCardLayout;
 	}
+
 	private JPanel getPnResultados() {
 		if (pnResultados == null) {
 			pnResultados = new JPanel();
@@ -530,8 +565,9 @@ public class Vprincipal2 extends JFrame {
 	private JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
-			panel.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 3, true), "Resultados",
-								TitledBorder.LEADING, TitledBorder.TOP, null, null));
+			panel.setBorder(new TitledBorder(
+					new LineBorder(new Color(0, 0, 0), 3, true), "Resultados",
+					TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			panel.setLayout(new GridLayout(1, 0, 0, 0));
 			panel.add(getPanel_1());
 			panel.add(getPanel_2());
@@ -539,6 +575,7 @@ public class Vprincipal2 extends JFrame {
 		}
 		return panel;
 	}
+
 	private JPanel getPanel_1() {
 		if (panel_1 == null) {
 			panel_1 = new JPanel();
@@ -546,12 +583,14 @@ public class Vprincipal2 extends JFrame {
 		}
 		return panel_1;
 	}
+
 	private JLabel getLabel() {
 		if (label == null) {
 			label = new JLabel("imagen del hotel");
 		}
 		return label;
 	}
+
 	private JPanel getPanel_2() {
 		if (panel_2 == null) {
 			panel_2 = new JPanel();
@@ -561,23 +600,27 @@ public class Vprincipal2 extends JFrame {
 		}
 		return panel_2;
 	}
+
 	private JLabel getLabel_1() {
 		if (label_1 == null) {
 			label_1 = new JLabel("Hotel El Retiro ****");
-			label_1.setFont(new Font("Lucida Grande", Font.BOLD | Font.ITALIC, 13));
+			label_1.setFont(
+					new Font("Lucida Grande", Font.BOLD | Font.ITALIC, 13));
 		}
 		return label_1;
 	}
+
 	private JTextArea getTextArea() {
 		if (textArea == null) {
 			textArea = new JTextArea();
 			textArea.setWrapStyleWord(true);
 			textArea.setLineWrap(true);
 			textArea.setEditable(false);
-//			textArea.setDropMode(DropMode.ON);
+			// textArea.setDropMode(DropMode.ON);
 		}
 		return textArea;
 	}
+
 	private JPanel getPanel_3() {
 		if (panel_3 == null) {
 			panel_3 = new JPanel();
@@ -587,12 +630,14 @@ public class Vprincipal2 extends JFrame {
 		}
 		return panel_3;
 	}
+
 	private JLabel getLabel_2() {
 		if (label_2 == null) {
 			label_2 = new JLabel("Precio");
 		}
 		return label_2;
 	}
+
 	private JButton getButton() {
 		if (button == null) {
 			button = new JButton("Comprar");
