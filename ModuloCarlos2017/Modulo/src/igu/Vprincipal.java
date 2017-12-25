@@ -1,5 +1,6 @@
 package igu;
 
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
@@ -40,14 +41,16 @@ import logica.Paquete;
 import logica.Parque;
 import logica.util.Comprobador;
 
+
+
 /**
  * Esta es la clase principal de la interfaz grafica de usuario del proyecto
  * 
  * Creada el 5/12/2017
+ * @author Carlos Peláez Remis 
  * 
- * @author Carlos Peláez Remis
- * 
- */
+*/
+
 
 public class Vprincipal extends JFrame {
 
@@ -92,64 +95,47 @@ public class Vprincipal extends JFrame {
 	private JPanel pnAyuda;
 	private JPanel pnCardLayout;
 	private JPanel pnResultados;
-	private JPanel pnResultado1;
+	private JPanel pnResultado1;	
 	private static Vprincipal frame2;
 	private Catalogo catalogo;
-	private String[] paises = new String[] { "Seleccione un pais", "Afganistán",
-			"Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila",
-			"Antártida", "Antigua y Barbuda", "Antillas Neerlandesas",
-			"Arabia Saudí", "Arctic Ocean", "Argelia", "Argentina", "Armenia",
-			"Aruba", "Atlantic Ocean", "Australia", "Austria", "Azerbaiyán",
-			"Bahamas", "Bahráin", "Bangladesh", "Barbados", "Bélgica", "Belice",
-			"Benín", "Bermudas", "Bielorrusia", "Birmania; Myanmar", "Bolivia",
-			"Bosnia y Hercegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria",
-			"Burkina Faso", "Burundi", "Bután", "Cabo Verde", "Camboya",
-			"Camerún", "Canadá", "Chad", "Chile", "China", "Chipre",
-			"Clipperton Island", "Colombia", "Comoras", "Congo",
-			"Coral Sea Islands", "Corea del Norte", "Corea del Sur",
-			"Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "Dhekelia",
-			"Dinamarca", "Dominica", "Ecuador", "Egipto", "El Salvador",
-			"El Vaticano", "Emiratos Árabes Unidos", "Eritrea", "Eslovaquia",
-			"Eslovenia", "España", "Estados Unidos", "Estonia", "Etiopía",
-			"Filipinas", "Finlandia", "Fiyi", "Francia", "Gabón", "Gambia",
-			"Gaza Strip", "Georgia", "Ghana", "Gibraltar", "Granada", "Grecia",
-			"Groenlandia", "Guam", "Guatemala", "Guernsey", "Guinea",
-			"Guinea Ecuatorial", "Guinea-Bissau", "Guyana", "Haití", "Honduras",
-			"Hong Kong", "Hungría", "India", "Indian Ocean", "Indonesia",
-			"Irán", "Iraq", "Irlanda", "Isla Bouvet", "Isla Christmas",
-			"Isla Norfolk", "Islandia", "Islas Caimán", "Islas Cocos",
-			"Islas Cook", "Islas Feroe", "Islas Heard y McDonald",
-			"Islas Malvinas", "Islas Marianas del Norte", "Islas Marshall",
-			"Islas Pitcairn", "Islas Salomón", "Islas Turcas y Caicos",
-			"Islas Vírgenes Americanas", "Islas Vírgenes Británicas", "Israel",
-			"Italia", "Jamaica", "Jan Mayen", "Japón", "Jersey", "Jordania",
-			"Kazajistán", "Kenia", "Kirguizistán", "Kiribati", "Kuwait", "Laos",
-			"Lesoto", "Letonia", "Líbano", "Liberia", "Libia", "Liechtenstein",
-			"Lituania", "Luxemburgo", "Macao", "Macedonia", "Madagascar",
-			"Malasia", "Malaui", "Maldivas", "Malí", "Malta", "Man, Isle of",
-			"Marruecos", "Mauricio", "Mauritania", "Mayotte", "México",
-			"Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montenegro",
-			"Montserrat", "Mozambique", "Mundo", "Namibia", "Nauru",
-			"Navassa Island", "Nepal", "Nicaragua", "Níger", "Nigeria", "Niue",
-			"Noruega", "Nueva Caledonia", "Nueva Zelanda", "Omán",
-			"Pacific Ocean", "Países Bajos", "Pakistán", "Palaos", "Panamá",
-			"Papúa-Nueva Guinea", "Paracel Islands", "Paraguay", "Perú",
-			"Polinesia Francesa", "Polonia", "Portugal", "Puerto Rico", "Qatar",
-			"Reino Unido", "República Centroafricana", "República Checa",
-			"República del Congo", "República Dominicana", "Ruanda", "Rumania",
-			"Rusia", "Sáhara Occidental", "Samoa", "Samoa Americana",
-			"San Cristóbal y Nieves", "San Marino", "San Pedro y Miquelón",
-			"San Vicente y las Granadinas", "Santa Helena", "Santa Lucía",
-			"Santo Tomé y Príncipe", "Senegal", "Serbia", "Seychelles",
-			"Sierra Leona", "Singapur", "Siria", "Somalia", "Southern Ocean",
-			"Spratly Islands", "Sri Lanka", "Suazilandia", "Sudáfrica", "Sudán",
-			"Suecia", "Suiza", "Surinam", "Svalbard y Jan Mayen", "Tailandia",
-			"Taiwán", "Tanzania", "Tayikistán", "Timor Oriental", "Togo",
-			"Tokelau", "Tonga", "Trinidad y Tobago", "Túnez", "Turkmenistán",
-			"Turquía", "Tuvalu", "Ucrania", "Uganda", "Unión Europea",
-			"Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam",
-			"Wake Island", "Wallis y Futuna", "West Bank", "Yemen", "Yibuti",
-			"Zambia", "Zimbabue" };
+	private String[] paises=new String[] { "Seleccione un pais", "Afganistán",
+			"Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila", "Antártida", "Antigua y Barbuda",
+			"Antillas Neerlandesas", "Arabia Saudí", "Arctic Ocean", "Argelia", "Argentina", "Armenia", "Aruba",
+			"Atlantic Ocean", "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bahráin", "Bangladesh",
+			"Barbados", "Bélgica", "Belice", "Benín", "Bermudas", "Bielorrusia", "Birmania; Myanmar", "Bolivia",
+			"Bosnia y Hercegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso", "Burundi",
+			"Bután", "Cabo Verde", "Camboya", "Camerún", "Canadá", "Chad", "Chile", "China", "Chipre",
+			"Clipperton Island", "Colombia", "Comoras", "Congo", "Coral Sea Islands", "Corea del Norte",
+			"Corea del Sur", "Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "Dhekelia", "Dinamarca",
+			"Dominica", "Ecuador", "Egipto", "El Salvador", "El Vaticano", "Emiratos Árabes Unidos", "Eritrea",
+			"Eslovaquia", "Eslovenia", "España", "Estados Unidos", "Estonia", "Etiopía", "Filipinas",
+			"Finlandia", "Fiyi", "Francia", "Gabón", "Gambia", "Gaza Strip", "Georgia", "Ghana", "Gibraltar",
+			"Granada", "Grecia", "Groenlandia", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Ecuatorial",
+			"Guinea-Bissau", "Guyana", "Haití", "Honduras", "Hong Kong", "Hungría", "India", "Indian Ocean",
+			"Indonesia", "Irán", "Iraq", "Irlanda", "Isla Bouvet", "Isla Christmas", "Isla Norfolk", "Islandia",
+			"Islas Caimán", "Islas Cocos", "Islas Cook", "Islas Feroe", "Islas Heard y McDonald",
+			"Islas Malvinas", "Islas Marianas del Norte", "Islas Marshall", "Islas Pitcairn", "Islas Salomón",
+			"Islas Turcas y Caicos", "Islas Vírgenes Americanas", "Islas Vírgenes Británicas", "Israel",
+			"Italia", "Jamaica", "Jan Mayen", "Japón", "Jersey", "Jordania", "Kazajistán", "Kenia",
+			"Kirguizistán", "Kiribati", "Kuwait", "Laos", "Lesoto", "Letonia", "Líbano", "Liberia", "Libia",
+			"Liechtenstein", "Lituania", "Luxemburgo", "Macao", "Macedonia", "Madagascar", "Malasia", "Malaui",
+			"Maldivas", "Malí", "Malta", "Man, Isle of", "Marruecos", "Mauricio", "Mauritania", "Mayotte",
+			"México", "Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montenegro", "Montserrat", "Mozambique",
+			"Mundo", "Namibia", "Nauru", "Navassa Island", "Nepal", "Nicaragua", "Níger", "Nigeria", "Niue",
+			"Noruega", "Nueva Caledonia", "Nueva Zelanda", "Omán", "Pacific Ocean", "Países Bajos", "Pakistán",
+			"Palaos", "Panamá", "Papúa-Nueva Guinea", "Paracel Islands", "Paraguay", "Perú",
+			"Polinesia Francesa", "Polonia", "Portugal", "Puerto Rico", "Qatar", "Reino Unido",
+			"República Centroafricana", "República Checa", "República del Congo", "República Dominicana",
+			"Ruanda", "Rumania", "Rusia", "Sáhara Occidental", "Samoa", "Samoa Americana",
+			"San Cristóbal y Nieves", "San Marino", "San Pedro y Miquelón", "San Vicente y las Granadinas",
+			"Santa Helena", "Santa Lucía", "Santo Tomé y Príncipe", "Senegal", "Serbia", "Seychelles",
+			"Sierra Leona", "Singapur", "Siria", "Somalia", "Southern Ocean", "Spratly Islands", "Sri Lanka",
+			"Suazilandia", "Sudáfrica", "Sudán", "Suecia", "Suiza", "Surinam", "Svalbard y Jan Mayen",
+			"Tailandia", "Taiwán", "Tanzania", "Tayikistán", "Timor Oriental", "Togo", "Tokelau", "Tonga",
+			"Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda",
+			"Unión Europea", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam", "Wake Island",
+			"Wallis y Futuna", "West Bank", "Yemen", "Yibuti", "Zambia", "Zimbabue" };
+
 
 	/**
 	 * Launch the application.
@@ -159,7 +145,7 @@ public class Vprincipal extends JFrame {
 			public void run() {
 				try {
 					Vprincipal frame = new Vprincipal();
-					frame2 = frame;
+					frame2=frame;
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -172,8 +158,7 @@ public class Vprincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public Vprincipal() {
-		setResizable(false);
-		catalogo = new Catalogo();
+	    catalogo = new Catalogo(); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 833, 648);
 		contentPane = new JPanel();
@@ -183,6 +168,7 @@ public class Vprincipal extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		contentPane.add(getPnCabecera(), BorderLayout.NORTH);
 		contentPane.add(getPnPrincipal(), BorderLayout.CENTER);
+
 
 	}
 
@@ -229,8 +215,7 @@ public class Vprincipal extends JFrame {
 			lblImagen = new JLabel("");
 			lblImagen.setHorizontalAlignment(SwingConstants.CENTER);
 			lblImagen.setHorizontalTextPosition(SwingConstants.CENTER);
-			lblImagen.setIcon(new ImageIcon(
-					Vprincipal.class.getResource("/img/logo2.png")));
+			lblImagen.setIcon(new ImageIcon(Vprincipal.class.getResource("/img/logo2.png")));
 		}
 		return lblImagen;
 	}
@@ -239,8 +224,7 @@ public class Vprincipal extends JFrame {
 		if (btnCarrito == null) {
 			btnCarrito = new JButton("");
 			btnCarrito.setBounds(0, 0, 20, 20);
-			btnCarrito.setIcon(new ImageIcon(
-					Vprincipal.class.getResource("/img/carrito.png")));
+			btnCarrito.setIcon(new ImageIcon(Vprincipal.class.getResource("/img/carrito.png")));
 		}
 		return btnCarrito;
 	}
@@ -428,8 +412,7 @@ public class Vprincipal extends JFrame {
 	public JComboBox<String> getCbPersonas() {
 		if (cbPersonas == null) {
 			cbPersonas = new JComboBox<String>();
-			cbPersonas.setModel(new DefaultComboBoxModel<String>(
-					calculaListas("personas")));
+			cbPersonas.setModel(new DefaultComboBoxModel<String>(calculaListas("personas")));
 		}
 		return cbPersonas;
 	}
@@ -444,7 +427,7 @@ public class Vprincipal extends JFrame {
 	public JComboBox<String> getCbPais() {
 		if (cbPais == null) {
 			cbPais = new JComboBox<String>();
-			cbPais.setModel(new DefaultComboBoxModel<String>(paises));
+			cbPais.setModel(new DefaultComboBoxModel<String>(catalogo.cargarPaisesNoRepetidos()));
 		}
 		return cbPais;
 	}
@@ -459,8 +442,7 @@ public class Vprincipal extends JFrame {
 
 	private JLabel getLbTextoFiltros() {
 		if (lbTextoFiltros == null) {
-			lbTextoFiltros = new JLabel(
-					"Seleccione el tipo de paquete vacacional que está buscando");
+			lbTextoFiltros = new JLabel("Seleccione el tipo de paquete vacacional que está buscando");
 		}
 		return lbTextoFiltros;
 	}
@@ -518,47 +500,44 @@ public class Vprincipal extends JFrame {
 			btnBuscar = new JButton("Buscar");
 			btnBuscar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					if (Comprobador.comprobarFiltro(frame2)) {
-						if (rbAlojamiento.isSelected()) {
-							ArrayList<Alojamiento> lista = catalogo
-									.getAlojamientos();
-							for (int i = 0; i < lista.size(); i++) {
-
+					if(Comprobador.comprobarFiltro(frame2)){
+						if(rbAlojamiento.isSelected()){
+							ArrayList<Alojamiento>lista=catalogo.getAlojamientos();
+							for(int i=0;i<lista.size();i++){
+								
 							}
-						} else if (rbAmbos.isSelected()) {
-							ArrayList<Paquete> lista = catalogo.getPaquetes();
-						} else if (rbParque.isSelected()) {
-							ArrayList<Parque> lista = catalogo.getParques();
-							ArrayList<Parque> seleccionados = new ArrayList<>();
-							String t = paises[cbPais.getSelectedIndex()];
-							for (Parque a : lista) {
-								String x = a.getPais();
-								if (x.equals(t)) {
+						}
+						else if( rbAmbos.isSelected()){
+							ArrayList<Paquete>lista=catalogo.getPaquetes();
+						}
+						else if( rbParque.isSelected()){
+							ArrayList<Parque>lista=catalogo.getParques();
+							ArrayList<Parque>seleccionados=new ArrayList<>();
+							String t=paises[cbPais.getSelectedIndex()];
+							for(Parque a:lista) {
+								String x=a.getPais();
+								if(x.equals(t)) {
 									seleccionados.add(a);
 								}
 							}
-							for (Parque a : seleccionados) {
-								pnResultado1.add(
-										new PanelResultadoParques(frame2, a));
+							for(Parque a:seleccionados) {
+								pnResultado1.add(new PanelResultadoParques(frame2,a));
 							}
 						}
-						((CardLayout) pnCardLayout.getLayout())
-								.next(pnCardLayout);
-					}
+						((CardLayout) pnCardLayout.getLayout()).next(pnCardLayout);
+						}
 
 				}
 			});
 		}
 		return btnBuscar;
 	}
-
 	private JButton getBtnAyuda() {
 		if (btnAyuda == null) {
 			btnAyuda = new JButton("Ayuda");
 		}
 		return btnAyuda;
 	}
-
 	private JPanel getPnAyuda() {
 		if (pnAyuda == null) {
 			pnAyuda = new JPanel();
@@ -568,7 +547,6 @@ public class Vprincipal extends JFrame {
 		}
 		return pnAyuda;
 	}
-
 	private JPanel getPnCardLayout() {
 		if (pnCardLayout == null) {
 			pnCardLayout = new JPanel();
@@ -578,24 +556,21 @@ public class Vprincipal extends JFrame {
 		}
 		return pnCardLayout;
 	}
-
+	
 	private JPanel getPnResultados() {
 		if (pnResultados == null) {
 			pnResultados = new JPanel();
-			pnResultados.setBorder(new TitledBorder(
-					new LineBorder(new Color(0, 0, 0), 3, true), "Resultados",
+			pnResultados.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0), 3, true), "Resultados",
 					TitledBorder.LEADING, TitledBorder.TOP, null, null));
 			pnResultados.setLayout(new GridLayout(0, 1, 0, 0));
 			pnResultados.add(getPnResultados1());
 		}
 		return pnResultados;
 	}
-
 	private JPanel getPnResultados1() {
 		if (pnResultado1 == null) {
 			pnResultado1 = new JPanel();
-			pnResultado1.setBorder(
-					new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
+			pnResultado1.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 			pnResultado1.setLayout(new GridLayout(0, 3, 0, 0));
 		}
 		return pnResultado1;

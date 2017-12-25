@@ -14,17 +14,14 @@ public class Comprobador {
 	@SuppressWarnings("deprecation")
 	public static boolean comprobarFiltro(Vprincipal v1) {
 		Date llegada=v1.getDcLlegada().getDate();
-		llegada.setHours(0);
-		llegada.setMinutes(0);
-		llegada.setSeconds(0);
 		Date salida=v1.getDcSalida().getDate();
-		salida.setHours(0);
-		salida.setMinutes(0);
-		salida.setSeconds(0);
+		
 		if (v1.getDcLlegada().getDate() == null || v1.getDcSalida().getDate() == null
 				|| v1.getCbPersonas().getSelectedItem() == null || v1.getCbPais().getSelectedItem() == null
 				|| (!(v1.getRbAlojamiento().isSelected()) && !(v1.getRbParque().isSelected())
 						&& !(v1.getRbAmbos().isSelected()))|| llegada.after(salida)) {
+			
+			
 
 			if (v1.getDcLlegada().getDate() == null) {
 				JOptionPane.showMessageDialog(null, "El campo de la fecha de llegada se encuentra vacio");
@@ -55,7 +52,14 @@ public class Comprobador {
 			return false;
 
 		} else {
-			return true;
+			llegada.setHours(0);
+			llegada.setMinutes(0);
+			llegada.setSeconds(0);
+			
+			salida.setHours(0);
+			salida.setMinutes(0);
+			salida.setSeconds(0);
+				return true;
 		}
 	}
 

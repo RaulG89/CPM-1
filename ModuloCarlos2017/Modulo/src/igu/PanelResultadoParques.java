@@ -13,7 +13,7 @@ import java.awt.BorderLayout;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 
-public class PanelResultadoParques extends JPanel {
+public class PanelResultadoParques extends JPanel{
 	/**
 	 * 
 	 */
@@ -21,6 +21,7 @@ public class PanelResultadoParques extends JPanel {
 	private JPanel pnPrecio;
 	private JLabel lblPrecioAdulto;
 	private JButton btnComprar1;
+	private Vprincipal v1;
 	private Parque parque;
 	private JLabel lblPrecioNiño;
 	private JPanel pnPrecioAdulto;
@@ -33,10 +34,16 @@ public class PanelResultadoParques extends JPanel {
 	private JLabel lblNombre;
 	private JScrollPane scrollTexto;
 	private JTextArea textArea;
-
+	
+	
+	
+	
+	
+	
 	public PanelResultadoParques(Vprincipal v1, Parque parque) {
 		super();
-		this.parque = parque;
+		this.v1=v1;
+		this.parque=parque;
 		this.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 		setLayout(new BorderLayout(0, 0));
 		this.add(getPnPrecio(), BorderLayout.EAST);
@@ -56,8 +63,7 @@ public class PanelResultadoParques extends JPanel {
 
 	private JLabel getLblPrecioAdulto() {
 		if (lblPrecioAdulto == null) {
-			lblPrecioAdulto = new JLabel(
-					String.valueOf(parque.getEntrada().getPrecioAdulto()));
+			lblPrecioAdulto = new JLabel(String.valueOf(parque.getEntrada().getPrecioAdulto()));
 		}
 		return lblPrecioAdulto;
 	}
@@ -69,14 +75,13 @@ public class PanelResultadoParques extends JPanel {
 		return btnComprar1;
 	}
 
+
 	private JLabel getLblPrecioNiño() {
 		if (lblPrecioNiño == null) {
-			lblPrecioNiño = new JLabel(
-					String.valueOf(parque.getEntrada().getPrecioNiño()));
+			lblPrecioNiño = new JLabel(String.valueOf(parque.getEntrada().getPrecioNiño()));
 		}
 		return lblPrecioNiño;
 	}
-
 	private JPanel getPnPrecioAdulto() {
 		if (pnPrecioAdulto == null) {
 			pnPrecioAdulto = new JPanel();
@@ -85,7 +90,6 @@ public class PanelResultadoParques extends JPanel {
 		}
 		return pnPrecioAdulto;
 	}
-
 	private JPanel getPnPrecioNiño() {
 		if (pnPrecioNiño == null) {
 			pnPrecioNiño = new JPanel();
@@ -94,7 +98,6 @@ public class PanelResultadoParques extends JPanel {
 		}
 		return pnPrecioNiño;
 	}
-
 	private JPanel getPnComprar() {
 		if (pnComprar == null) {
 			pnComprar = new JPanel();
@@ -103,7 +106,6 @@ public class PanelResultadoParques extends JPanel {
 		}
 		return pnComprar;
 	}
-
 	private JPanel getPnPrincipal() {
 		if (pnPrincipal == null) {
 			pnPrincipal = new JPanel();
@@ -113,7 +115,6 @@ public class PanelResultadoParques extends JPanel {
 		}
 		return pnPrincipal;
 	}
-
 	private JPanel getPnTexto() {
 		if (pnTexto == null) {
 			pnTexto = new JPanel();
@@ -122,7 +123,6 @@ public class PanelResultadoParques extends JPanel {
 		}
 		return pnTexto;
 	}
-
 	private JPanel getPnCabecera() {
 		if (pnCabecera == null) {
 			pnCabecera = new JPanel();
@@ -132,21 +132,18 @@ public class PanelResultadoParques extends JPanel {
 		}
 		return pnCabecera;
 	}
-
 	private JLabel getLblImagen() {
 		if (lblImagen == null) {
 			lblImagen = new JLabel("New label");
 		}
 		return lblImagen;
 	}
-
 	private JLabel getLblNombre() {
 		if (lblNombre == null) {
 			lblNombre = new JLabel(parque.getDenominacion());
 		}
 		return lblNombre;
 	}
-
 	private JScrollPane getScrollTexto() {
 		if (scrollTexto == null) {
 			scrollTexto = new JScrollPane();
@@ -154,12 +151,11 @@ public class PanelResultadoParques extends JPanel {
 		}
 		return scrollTexto;
 	}
-
 	private JTextArea getTextArea() {
 		if (textArea == null) {
 			textArea = new JTextArea(parque.getDescripcion());
 		}
 		return textArea;
 	}
-
+	
 }
