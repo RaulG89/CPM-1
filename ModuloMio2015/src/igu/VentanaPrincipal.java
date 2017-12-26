@@ -1386,7 +1386,7 @@ public class VentanaPrincipal extends JFrame {
 		if (tablaCruceros == null) {
 			modeloTablaCruceros = new DefaultTableModel(
 					new Object[] { "Zona", "Puerto de salida", "Itinerario",
-							"Admisi�n de menores", "Dias de duraci�n", "Fechas",
+							"Admisión de menores", "Dias de duración", "Fechas",
 							"Barco", "Descuento", "Seleccionado" },
 					0);
 			tablaCruceros = new JTable(modeloTablaCruceros) {
