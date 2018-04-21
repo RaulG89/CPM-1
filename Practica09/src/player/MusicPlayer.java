@@ -2,7 +2,8 @@ package player;
 
 import java.io.File;
 
-import javazoom.jlgui.basicplayer.*;
+import javazoom.jlgui.basicplayer.BasicPlayer;
+import javazoom.jlgui.basicplayer.BasicPlayerException;
 
 public class MusicPlayer {
 	private BasicPlayer basicPlayer = null;

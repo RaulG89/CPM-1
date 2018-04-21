@@ -55,7 +55,8 @@ public class Calle {
 		int semilla = DIM;
 		do {
 			columna = ((int) (Math.random() * semilla));
-		} while (casillas[columna].tieneArbol() || columna == 0 || casillas[columna].tieneAgujero()  );
+		} while (casillas[columna].tieneArbol() || columna == 0
+				|| casillas[columna].tieneAgujero());
 		casillas[columna].cavarAgujero();
 	}
 }

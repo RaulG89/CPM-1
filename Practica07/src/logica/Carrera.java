@@ -26,18 +26,25 @@ public class Carrera {
 		else
 			premio = false;
 
-		// Si la calle de la liebre esta completa de arboles, el premio y el agujero van a la calle de la tortuga
+		// Si la calle de la liebre esta completa de arboles, el premio y el
+		// agujero van a la calle de la tortuga
 		if (numArboles >= casillas - 2) {
-			liebre = new Corredor(new Calle(casillas, numArboles, false, false), "liebre", "liebre.jpg", 4);
-			tortuga = new Corredor(new Calle(casillas, 0, true, true),"tortuga", "tortuga.jpg", 2);
-			
+			liebre = new Corredor(new Calle(casillas, numArboles, false, false),
+					"liebre", "liebre.jpg", 4);
+			tortuga = new Corredor(new Calle(casillas, 0, true, true),
+					"tortuga", "tortuga.jpg", 2);
+
 		} else {
-			liebre = new Corredor(new Calle(casillas, numArboles, agujero, premio), "liebre", "liebre.jpg", 4);
-			tortuga = new Corredor(new Calle(casillas, 0, !agujero, !premio),"tortuga", "tortuga.jpg", 2);
+			liebre = new Corredor(
+					new Calle(casillas, numArboles, agujero, premio), "liebre",
+					"liebre.jpg", 4);
+			tortuga = new Corredor(new Calle(casillas, 0, !agujero, !premio),
+					"tortuga", "tortuga.jpg", 2);
 		}
 		numeroDado = 0;
-		
-		// Establecemos el corredor activo apuntando a la tortuga ya que sale la primera
+
+		// Establecemos el corredor activo apuntando a la tortuga ya que sale la
+		// primera
 		this.setCorredorActivo(tortuga);
 	}
 
@@ -74,22 +81,29 @@ public class Carrera {
 	 */
 	public boolean resolverJugada(int i) {
 		if (isJugadaCorrecta(i)) {
-			corredorActivo.setPosicion(corredorActivo.getPosicion()	+ numeroDado);
+			corredorActivo
+					.setPosicion(corredorActivo.getPosicion() + numeroDado);
 			// Si tenemos un arbol en la casilla, ponemos a dormir al corredor
-			if (corredorActivo.getCalleAsignada().getCasilla(corredorActivo.getPosicion()).tieneArbol())
+			if (corredorActivo.getCalleAsignada()
+					.getCasilla(corredorActivo.getPosicion()).tieneArbol())
 				corredorActivo.dormir();
-			
-			// Si hay una agujero en la casilla, el corredor se lesiona y no puede continuar
-			if (corredorActivo.getCalleAsignada().getCasilla(corredorActivo.getPosicion()).tieneAgujero())
+
+			// Si hay una agujero en la casilla, el corredor se lesiona y no
+			// puede continuar
+			if (corredorActivo.getCalleAsignada()
+					.getCasilla(corredorActivo.getPosicion()).tieneAgujero())
 				corredorActivo.caerse();
-			
+
 			// Incrementamos la puntución del corredor
-			corredorActivo.incrementaPuntuacion(corredorActivo.getCalleAsignada().puntosCasilla(corredorActivo.getPosicion()));
-			
+			corredorActivo
+					.incrementaPuntuacion(corredorActivo.getCalleAsignada()
+							.puntosCasilla(corredorActivo.getPosicion()));
+
 			// Si hay un premio en la casilla, se duplica la puntuacion actual
-			if (corredorActivo.getCalleAsignada().getCasilla(corredorActivo.getPosicion()).tienePremio())
+			if (corredorActivo.getCalleAsignada()
+					.getCasilla(corredorActivo.getPosicion()).tienePremio())
 				corredorActivo.duplicarPuntuacion();
-			
+
 			// Intercambiamos los turnos
 			cambiarTurnos();
 			return true;
@@ -111,7 +125,8 @@ public class Carrera {
 	 * Cambia el turno entre los corredores
 	 */
 	private void cambiarTurnos() {
-		// Si el corredor no activo está durmiendo, lo despertamos para el siguiente turno pero NO CAMBIAMOS EL TURNO
+		// Si el corredor no activo está durmiendo, lo despertamos para el
+		// siguiente turno pero NO CAMBIAMOS EL TURNO
 		if (getCorredorNoActivo().isDurmiendo()) {
 			getCorredorNoActivo().despertar();
 		} else {

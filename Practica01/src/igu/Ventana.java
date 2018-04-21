@@ -21,7 +21,8 @@ public class Ventana extends JFrame { // Ventana principal
 		pnPrincipal.setBackground(Color.white); // Establece color de fondo
 		this.setContentPane(pnPrincipal); // Establece el contenido de la
 											// ventana
-		getContentPane().setLayout(null); // Desactiva la colocacion automatica de objetos
+		getContentPane().setLayout(null); // Desactiva la colocacion automatica
+											// de objetos
 		this.setLocationRelativeTo(null);
 
 		btAceptar = new JButton();

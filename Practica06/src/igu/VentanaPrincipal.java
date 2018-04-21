@@ -101,15 +101,16 @@ public class VentanaPrincipal extends JFrame {
 		JButton boton = new JButton();
 		boton.setBackground(Color.BLACK);
 		boton.setEnabled(true);
-		boton.setDisabledIcon(new ImageIcon(VentanaPrincipal.class
-				.getResource(imagen)));
+		boton.setDisabledIcon(
+				new ImageIcon(VentanaPrincipal.class.getResource(imagen)));
 		boton.setBorder(new LineBorder(Color.BLUE));
 		boton.setBackground(Color.BLACK);
 		boton.setForeground(Color.BLACK);
 		return boton;
 	}
 
-	private void crearPanelBotones(JPanel panel, int numBotones, String imagen) {
+	private void crearPanelBotones(JPanel panel, int numBotones,
+			String imagen) {
 		for (int i = 0; i < numBotones; i++)
 			panel.add(nuevoBoton(i, imagen));
 	}
@@ -166,8 +167,8 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLbLiebre() {
 		if (lbLiebre == null) {
 			lbLiebre = new JLabel("");
-			lbLiebre.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/liebre_peq.JPG")));
+			lbLiebre.setIcon(new ImageIcon(
+					VentanaPrincipal.class.getResource("/img/liebre_peq.JPG")));
 			lbLiebre.setBounds(548, 36, 35, 32);
 		}
 		return lbLiebre;
@@ -216,18 +217,18 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnDado() {
 		if (btnDado == null) {
 			btnDado = new JButton("");
-			btnDado.setDisabledIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/dado.JPG")));
+			btnDado.setDisabledIcon(new ImageIcon(
+					VentanaPrincipal.class.getResource("/img/dado.JPG")));
 			btnDado.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					if (carrera.lanzarDado()) {
-						txtMovimientos.setText(String.valueOf(carrera
-								.getNumeroDado()));
+						txtMovimientos.setText(
+								String.valueOf(carrera.getNumeroDado()));
 						activarCalle(carrera.getCorredorActivo());
 						btnDado.setEnabled(false);
 					} else {
-						txtMovimientos.setText(String.valueOf(carrera
-								.getNumeroDado()));
+						txtMovimientos.setText(
+								String.valueOf(carrera.getNumeroDado()));
 						JOptionPane.showMessageDialog(null,
 								"Movimiento no v�lido.\nPasa turno");
 					}
@@ -235,8 +236,8 @@ public class VentanaPrincipal extends JFrame {
 			});
 			btnDado.setToolTipText("Click para lanzar el dado");
 			btnDado.setBorderPainted(false);
-			btnDado.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/dado.JPG")));
+			btnDado.setIcon(new ImageIcon(
+					VentanaPrincipal.class.getResource("/img/dado.JPG")));
 			btnDado.setBounds(38, 24, 67, 92);
 		}
 		return btnDado;
@@ -292,8 +293,8 @@ public class VentanaPrincipal extends JFrame {
 			txtMovimientos.setHorizontalAlignment(SwingConstants.CENTER);
 			txtMovimientos.setEditable(false);
 			txtMovimientos.setForeground(Color.GREEN);
-			txtMovimientos.setFont(new Font("Rockwell Extra Bold", Font.PLAIN,
-					60));
+			txtMovimientos
+					.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 60));
 			txtMovimientos.setBorder(null);
 			txtMovimientos.setText("0");
 			txtMovimientos.setBackground(Color.BLACK);
@@ -333,13 +334,13 @@ public class VentanaPrincipal extends JFrame {
 		}
 
 		if (carrera.isPartidaFinalizadaLiebre()) {
-			JOptionPane.showMessageDialog(null, "Partida finalizada\n"
-					+ "El ganador es: la Liebre");
+			JOptionPane.showMessageDialog(null,
+					"Partida finalizada\n" + "El ganador es: la Liebre");
 			btnDado.setEnabled(false);
 			inicializar();
 		} else if (carrera.isPartidaFinalizadaTortuga()) {
-			JOptionPane.showMessageDialog(null, "Partida finalizada\n"
-					+ "El ganador es: la Tortuga");
+			JOptionPane.showMessageDialog(null,
+					"Partida finalizada\n" + "El ganador es: la Tortuga");
 			btnDado.setEnabled(false);
 			inicializar();
 		}
@@ -347,10 +348,10 @@ public class VentanaPrincipal extends JFrame {
 
 	private void representaEstado() {
 		txtMovimientos.setText("");
-		txtPuntuacionLiebre.setText(String.valueOf(carrera.getLiebre()
-				.getPuntuacion()));
-		txtPuntuacionTortuga.setText(String.valueOf(carrera.getTortuga()
-				.getPuntuacion()));
+		txtPuntuacionLiebre
+				.setText(String.valueOf(carrera.getLiebre().getPuntuacion()));
+		txtPuntuacionTortuga
+				.setText(String.valueOf(carrera.getTortuga().getPuntuacion()));
 		pintarLiebre();
 		pintarTortuga();
 	}
@@ -364,24 +365,27 @@ public class VentanaPrincipal extends JFrame {
 			JButton boton = (JButton) botones[i];
 			if (i == corredor.getPosicion()) {
 				if (corredor.getCalleAsignada().getCasilla(i).tieneArbol()) {
-					boton.setIcon(new ImageIcon(getClass().getResource(
-							durmiendo)));
-					boton.setDisabledIcon(new ImageIcon(getClass().getResource(
-							durmiendo)));
+					boton.setIcon(
+							new ImageIcon(getClass().getResource(durmiendo)));
+					boton.setDisabledIcon(
+							new ImageIcon(getClass().getResource(durmiendo)));
 				} else {
-					boton.setIcon(new ImageIcon(getClass().getResource(imagen)));
-					boton.setDisabledIcon(new ImageIcon(getClass().getResource(
-							imagen)));
+					boton.setIcon(
+							new ImageIcon(getClass().getResource(imagen)));
+					boton.setDisabledIcon(
+							new ImageIcon(getClass().getResource(imagen)));
 				}
 			} else if (corredor.getCalleAsignada().getCasilla(i).tieneArbol()) {
-				boton.setIcon(new ImageIcon(getClass().getResource(imagenArbol)));
-				boton.setDisabledIcon(new ImageIcon(getClass().getResource(
-						imagenArbol)));
-			} else if (corredor.getCalleAsignada().getCasilla(i).tieneAgujero()) {
-				boton.setIcon(new ImageIcon(getClass().getResource(
-						imagenAgujero)));
-				boton.setDisabledIcon(new ImageIcon(getClass().getResource(
-						imagenAgujero)));
+				boton.setIcon(
+						new ImageIcon(getClass().getResource(imagenArbol)));
+				boton.setDisabledIcon(
+						new ImageIcon(getClass().getResource(imagenArbol)));
+			} else if (corredor.getCalleAsignada().getCasilla(i)
+					.tieneAgujero()) {
+				boton.setIcon(
+						new ImageIcon(getClass().getResource(imagenAgujero)));
+				boton.setDisabledIcon(
+						new ImageIcon(getClass().getResource(imagenAgujero)));
 			} else
 				boton.setIcon(null);
 		}
@@ -454,7 +458,6 @@ public class VentanaPrincipal extends JFrame {
 		activarPanel(pnTortuga, false);
 	}
 
-	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmSalir() {
 		if (mntmSalir == null) {
 			mntmSalir = new JMenuItem("Salir");
@@ -480,8 +483,8 @@ public class VentanaPrincipal extends JFrame {
 				}
 			});
 			// Para menus, funciona como el mnemonico pero sin pulsar Alt
-			mntmContenido.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1,
-					0));
+			mntmContenido
+					.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
 			mntmContenido.setMnemonic('c');
 			mntmContenido.setMnemonic(KeyEvent.VK_F1);
 		}
@@ -493,12 +496,9 @@ public class VentanaPrincipal extends JFrame {
 			mntmAcercaDe = new JMenuItem("Acerca de");
 			mntmAcercaDe.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane
-							.showMessageDialog(
-									null,
-									"El juego de la Liebre y la Tortuga\nComunicaci�n Persona-Maquina 2015-2016\nEscuela de Informatica de Oviedo",
-									"Acerca de",
-									JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,
+							"El juego de la Liebre y la Tortuga\nComunicaci�n Persona-Maquina 2015-2016\nEscuela de Informatica de Oviedo",
+							"Acerca de", JOptionPane.INFORMATION_MESSAGE);
 				}
 			});
 			mntmAcercaDe.setMnemonic('c');
@@ -537,8 +537,8 @@ public class VentanaPrincipal extends JFrame {
 					mostrarVentanaOpciones();
 				}
 			});
-			mntmNmeroDerboles.setAccelerator(KeyStroke.getKeyStroke(
-					KeyEvent.VK_F8, 0));
+			mntmNmeroDerboles
+					.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F8, 0));
 		}
 		return mntmNmeroDerboles;
 	}

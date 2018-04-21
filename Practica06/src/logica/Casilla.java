@@ -25,15 +25,15 @@ public class Casilla {
 	public void plantarArbol() {
 		arbol = true;
 	}
-	
+
 	public void sacarArbol() {
 		arbol = false;
 	}
-	
-	public boolean tieneAgujero(){
+
+	public boolean tieneAgujero() {
 		return agujero;
 	}
-	
+
 	public void cavarAgujero() {
 		agujero = true;
 	}

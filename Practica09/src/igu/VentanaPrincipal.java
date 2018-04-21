@@ -1,22 +1,16 @@
 package igu;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
-import java.awt.Toolkit;
-import java.awt.GridLayout;
-
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.JSlider;
-import javax.swing.UIManager;
-
 import java.awt.Color;
-import java.awt.Font;
+import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,35 +18,34 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
-import javax.swing.JTextField;
-import javax.swing.JScrollPane;
-import javax.swing.JList;
-import javax.swing.border.LineBorder;
-import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSeparator;
+import javax.swing.JSlider;
+import javax.swing.JTextField;
+import javax.swing.KeyStroke;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.jtattoo.plaf.hifi.HiFiLookAndFeel;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JFileChooser;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JSeparator;
-
-import player.*;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
-import javax.swing.SwingConstants;
-import javax.swing.KeyStroke;
-
-import java.awt.event.KeyEvent;
-import java.awt.event.InputEvent;
+import player.MusicPlayer;
+import player.MyFile;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -124,8 +117,8 @@ public class VentanaPrincipal extends JFrame {
 					Properties props = new Properties();
 					props.put("logoString", "");
 					HiFiLookAndFeel.setCurrentTheme(props);
-					UIManager
-							.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
+					UIManager.setLookAndFeel(
+							"com.jtattoo.plaf.hifi.HiFiLookAndFeel");
 					VentanaPrincipal frame = new VentanaPrincipal();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -159,8 +152,8 @@ public class VentanaPrincipal extends JFrame {
 
 	private void cargarFuente() {
 		try {
-			InputStream myStream = new BufferedInputStream(new FileInputStream(
-					"src/ttf/DS-DIGIB.TTF"));
+			InputStream myStream = new BufferedInputStream(
+					new FileInputStream("src/ttf/DS-DIGIB.TTF"));
 			fuentePersonal = Font.createFont(Font.TRUETYPE_FONT, myStream);
 		} catch (Exception e) {
 			System.out.println("Error al cargar la fuente");
@@ -185,8 +178,8 @@ public class VentanaPrincipal extends JFrame {
 			lblLogo = new JLabel("");
 			lblLogo.setBackground(Color.BLACK);
 			lblLogo.setBorder(null);
-			lblLogo.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/logo.png")));
+			lblLogo.setIcon(new ImageIcon(
+					VentanaPrincipal.class.getResource("/img/logo.png")));
 		}
 		return lblLogo;
 	}
@@ -335,8 +328,8 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnAddPlayList() {
 		if (btnAddPlayList == null) {
 			btnAddPlayList = new JButton("Add to PlayList");
-			btnAddPlayList
-					.setToolTipText("A\u00F1ade los elementos a la lista de reproducci\u00F3n");
+			btnAddPlayList.setToolTipText(
+					"A\u00F1ade los elementos a la lista de reproducci\u00F3n");
 			btnAddPlayList.setMnemonic('d');
 			btnAddPlayList.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
@@ -347,7 +340,7 @@ public class VentanaPrincipal extends JFrame {
 							modeloListaPlay.addElement(f);
 					} else {
 						JOptionPane.showMessageDialog(null,
-								"No hay canciones en la lista de la librerÃ±a",
+								"No hay canciones en la lista de la librerña",
 								"Error", JOptionPane.ERROR_MESSAGE);
 					}
 				}
@@ -372,11 +365,9 @@ public class VentanaPrincipal extends JFrame {
 						for (MyFile a : cancionesABorrar)
 							modeloListaLib.removeElement(a);
 					} else
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"Seleccione una cancion para borrarla de la lista de la biblioteca",
-										"Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"Seleccione una cancion para borrarla de la lista de la biblioteca",
+								"Error", JOptionPane.ERROR_MESSAGE);
 				}
 			});
 			btnDelete.setBackground(Color.BLACK);
@@ -438,11 +429,9 @@ public class VentanaPrincipal extends JFrame {
 					if (!listSongsPlaylist.isSelectionEmpty())
 						reproducirAnteriorCancion();
 					else
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"No hay canciones aÃ±adidas a la lista de reproduccion",
-										"Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"No hay canciones añadidas a la lista de reproduccion",
+								"Error", JOptionPane.ERROR_MESSAGE);
 				}
 			});
 			btnBefore.setFont(new Font("Dialog", Font.PLAIN, 14));
@@ -457,8 +446,8 @@ public class VentanaPrincipal extends JFrame {
 		if (index > 0)
 			listSongsPlaylist.setSelectedIndex(index - 1);
 		else
-			listSongsPlaylist.setSelectedIndex(listSongsLibrary
-					.getSelectedIndices().length - 1);
+			listSongsPlaylist.setSelectedIndex(
+					listSongsLibrary.getSelectedIndices().length - 1);
 		mP.play(listSongsPlaylist.getSelectedValue().getFile());
 		lblCancion.setText("Reproduciendo: "
 				+ listSongsPlaylist.getSelectedValue().getFile().getName());
@@ -479,12 +468,10 @@ public class VentanaPrincipal extends JFrame {
 						modificarVolumen();
 						mP.play(aux);
 						lblCancion.setText("Reproduciendo: " + aux.getName());
-					} else 
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"No hay canciones aÃ±adidas a la lista de reproduccion",
-										"Error", JOptionPane.ERROR_MESSAGE);
+					} else
+						JOptionPane.showMessageDialog(null,
+								"No hay canciones añadidas a la lista de reproduccion",
+								"Error", JOptionPane.ERROR_MESSAGE);
 					modificarVolumen();
 				}
 			});
@@ -521,11 +508,9 @@ public class VentanaPrincipal extends JFrame {
 					if (!listSongsPlaylist.isSelectionEmpty())
 						reproducirSiguienteCancion();
 					else
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"No hay canciones aÃ±adidas a la lista de reproduccion",
-										"Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"No hay canciones añadidas a la lista de reproduccion",
+								"Error", JOptionPane.ERROR_MESSAGE);
 
 				}
 			});
@@ -538,8 +523,8 @@ public class VentanaPrincipal extends JFrame {
 
 	private void reproducirSiguienteCancion() {
 		int index = listSongsPlaylist.getSelectedIndex();
-		int tamaÃ±o = listSongsLibrary.getSelectedIndices().length - 1;
-		if (index < tamaÃ±o)
+		int tamaño = listSongsLibrary.getSelectedIndices().length - 1;
+		if (index < tamaño)
 			listSongsPlaylist.setSelectedIndex(index + 1);
 		else
 			listSongsPlaylist.setSelectedIndex(0);
@@ -563,11 +548,9 @@ public class VentanaPrincipal extends JFrame {
 							modeloListaPlay.removeElement(a);
 						mP.stop();
 					} else
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"Seleccione una cancion para borrarla de la lista de reproduccion",
-										"Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"Seleccione una cancion para borrarla de la lista de reproduccion",
+								"Error", JOptionPane.ERROR_MESSAGE);
 
 				}
 			});
@@ -641,15 +624,16 @@ public class VentanaPrincipal extends JFrame {
 					// Para abrir ficheros
 					JFileChooser selector = new JFileChooser();
 					selector.setMultiSelectionEnabled(true);
-					selector.setFileFilter(new FileNameExtensionFilter(
-							"Archivos mp3", "mp3"));
+					selector.setFileFilter(
+							new FileNameExtensionFilter("Archivos mp3", "mp3"));
 					String aux = System.getProperty("user.home");
 					selector.setCurrentDirectory(new File(aux + "/Music"));
 					int result = selector.showOpenDialog(null);
 					if (result == JFileChooser.APPROVE_OPTION)
-						for (int i = 0; i < selector.getSelectedFiles().length; i++)
-							modeloListaLib.addElement(new MyFile(selector
-									.getSelectedFiles()[i]));
+						for (int i = 0; i < selector
+								.getSelectedFiles().length; i++)
+							modeloListaLib.addElement(
+									new MyFile(selector.getSelectedFiles()[i]));
 				}
 			});
 		}
@@ -669,7 +653,6 @@ public class VentanaPrincipal extends JFrame {
 		return mntmExit;
 	}
 
-	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmNext() {
 		if (mntmNext == null) {
 			mntmNext = new JMenuItem("Next");
@@ -685,7 +668,6 @@ public class VentanaPrincipal extends JFrame {
 		return mntmNext;
 	}
 
-	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmRandom() {
 		if (mntmRandom == null) {
 			mntmRandom = new JMenuItem("Random");
@@ -696,7 +678,8 @@ public class VentanaPrincipal extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					if (listSongsPlaylist.getSelectedIndices().length > 0) {
 						int index = (int) (Math.random()
-								* listSongsPlaylist.getSelectedIndices().length - 1);
+								* listSongsPlaylist.getSelectedIndices().length
+								- 1);
 						listSongsPlaylist.setSelectedIndex(index);
 						mP.play(listSongsPlaylist.getSelectedValue().getFile());
 					} else {

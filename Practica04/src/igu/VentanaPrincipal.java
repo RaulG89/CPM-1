@@ -43,7 +43,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel lblAccesorios;
 	private JTextField txtCantidad;
 	private JLabel lblUnidades;
-	private JButton btnAÃ±adir;
+	private JButton btnAñadir;
 	private JTextField txtPrecio;
 	private JLabel lblPrecioPedido;
 	private JButton btnCancelar;
@@ -109,7 +109,7 @@ public class VentanaPrincipal extends JFrame {
 		pnPrincipal.add(getLblAccesorios());
 		pnPrincipal.add(getTxtCantidad());
 		pnPrincipal.add(getLblUnidades());
-		pnPrincipal.add(getBtnAÃ±adir());
+		pnPrincipal.add(getBtnAñadir());
 		pnPrincipal.add(getBtnRestar());
 		pnPrincipal.add(getTxtPrecio());
 		pnPrincipal.add(getLblPrecioPedido());
@@ -199,21 +199,17 @@ public class VentanaPrincipal extends JFrame {
 		return lblUnidades;
 	}
 
-	private JButton getBtnAÃ±adir() {
-		if (btnAÃ±adir == null) {
-			btnAÃ±adir = new JButton("+");
-			btnAÃ±adir.setMnemonic('+');
-			btnAÃ±adir.setMnemonic(KeyEvent.VK_ADD);
-			btnAÃ±adir.addActionListener(new ActionListener() {
+	private JButton getBtnAñadir() {
+		if (btnAñadir == null) {
+			btnAñadir = new JButton("+");
+			btnAñadir.setMnemonic('+');
+			btnAñadir.setMnemonic(KeyEvent.VK_ADD);
+			btnAñadir.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					if (!txtCantidad.getText().equals("")) {
-						// Crea un objeto articulo
-						Articulo articulo = (Articulo) cbArticulos
-								.getSelectedItem();
-						// Coge las unidades que deseamos
-						int unidades = Integer.parseInt(txtCantidad.getText());
-						// AÃ±ade el articulo al pedido
-						pedido.add(articulo, unidades);
+						cbArticulos.getSelectedItem();
+						Integer.parseInt(txtCantidad.getText());
+						// Añade el articulo al pedido
 						float precioPedido = pedido.calcularTotalSinIva();
 						txtPrecio.setText(
 								String.valueOf(precioPedido) + " \u20AC");
@@ -226,11 +222,11 @@ public class VentanaPrincipal extends JFrame {
 					}
 				}
 			});
-			btnAÃ±adir.setToolTipText(
+			btnAñadir.setToolTipText(
 					"A\u00F1ade elementos a la cesta de compra");
-			btnAÃ±adir.setBounds(504, 278, 46, 23);
+			btnAñadir.setBounds(504, 278, 46, 23);
 		}
-		return btnAÃ±adir;
+		return btnAñadir;
 	}
 
 	private JButton getBtnRestar() {

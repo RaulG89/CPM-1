@@ -36,7 +36,8 @@ public class Catalogo {
 				articulosCatalogo
 						.add(new Articulo(datosArticulo[0], datosArticulo[1],
 								Float.parseFloat(datosArticulo[2]), 0));
-				// Añade al ArrayList un nuevo Articulo con los campos del array
+				// Añade al ArrayList un nuevo Articulo con los campos del
+				// array
 				// || Float.parseFloat -> convierte String a float
 			}
 			fichero.close();

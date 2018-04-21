@@ -37,7 +37,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel lblAccesorios;
 	private JTextField txtCantidad;
 	private JLabel lblUnidades;
-	private JButton btnAÃ±adir;
+	private JButton btnAñadir;
 	private JTextField txtPrecio;
 	private JLabel lblPrecioPedido;
 	private JButton btnCancelar;
@@ -87,7 +87,7 @@ public class VentanaPrincipal extends JFrame {
 		pnPrincipal.add(getLblAccesorios());
 		pnPrincipal.add(getTxtCantidad());
 		pnPrincipal.add(getLblUnidades());
-		pnPrincipal.add(getBtnAÃ±adir());
+		pnPrincipal.add(getBtnAñadir());
 		pnPrincipal.add(getTxtPrecio());
 		pnPrincipal.add(getLblPrecioPedido());
 		pnPrincipal.add(getBtnCancelar());
@@ -175,10 +175,10 @@ public class VentanaPrincipal extends JFrame {
 		return lblUnidades;
 	}
 
-	private JButton getBtnAÃ±adir() {
-		if (btnAÃ±adir == null) {
-			btnAÃ±adir = new JButton("+");
-			btnAÃ±adir.addActionListener(new ActionListener() {
+	private JButton getBtnAñadir() {
+		if (btnAñadir == null) {
+			btnAñadir = new JButton("+");
+			btnAñadir.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					if (!txtCantidad.getText().equals("")) {
 						// Crea un objeto articulo
@@ -186,7 +186,7 @@ public class VentanaPrincipal extends JFrame {
 								.getSelectedItem();
 						// Coge las unidades que deseamos
 						int unidades = Integer.parseInt(txtCantidad.getText());
-						// AÃ±ade el articulo al pedido
+						// Añade el articulo al pedido
 						pedido.add(articulo, unidades);
 						float precioPedido = pedido.calcularTotalSinIva();
 						txtPrecio.setText(
@@ -197,13 +197,13 @@ public class VentanaPrincipal extends JFrame {
 					}
 				}
 			});
-			btnAÃ±adir.setToolTipText(
+			btnAñadir.setToolTipText(
 					"A\u00F1ade elementos a la cesta de compra");
-			btnAÃ±adir.setMnemonic('+');
-			btnAÃ±adir.setMnemonic(KeyEvent.VK_PLUS);
-			btnAÃ±adir.setBounds(514, 279, 46, 23);
+			btnAñadir.setMnemonic('+');
+			btnAñadir.setMnemonic(KeyEvent.VK_PLUS);
+			btnAñadir.setBounds(514, 279, 46, 23);
 		}
-		return btnAÃ±adir;
+		return btnAñadir;
 	}
 
 	private JTextField getTxtPrecio() {

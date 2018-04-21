@@ -35,7 +35,8 @@ public class VentanaOpciones extends JDialog {
 	 * @param vp
 	 */
 	public VentanaOpciones(VentanaPrincipal vp) {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaOpciones.class.getResource("/img/liebre_peq.jpg")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				VentanaOpciones.class.getResource("/img/liebre_peq.jpg")));
 		this.vp = vp;
 		setTitle("Opciones");
 		getContentPane().setBackground(Color.BLACK);
@@ -97,7 +98,8 @@ public class VentanaOpciones extends JDialog {
 	private JSpinner getSpNumeroArboles() {
 		if (spNumeroArboles == null) {
 			spNumeroArboles = new JSpinner();
-			spNumeroArboles.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+			spNumeroArboles.setCursor(
+					Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 			spNumeroArboles.setModel(new SpinnerNumberModel(2, 0, 9, 1));
 			spNumeroArboles.setForeground(Color.GREEN);
 			spNumeroArboles.setFont(new Font("Jokerman", Font.PLAIN, 30));
@@ -109,7 +111,7 @@ public class VentanaOpciones extends JDialog {
 	public int getNumArboles() {
 		return (int) spNumeroArboles.getValue();
 	}
-	
+
 	public int getNumCasillas() {
 		return (int) spNumeroCasillas.getValue();
 	}
@@ -117,6 +119,7 @@ public class VentanaOpciones extends JDialog {
 	private VentanaPrincipal getVp() {
 		return vp;
 	}
+
 	private JLabel getLblNumeroCasillas() {
 		if (lblNumeroCasillas == null) {
 			lblNumeroCasillas = new JLabel("N\u00FAmero de casillas");
@@ -126,6 +129,7 @@ public class VentanaOpciones extends JDialog {
 		}
 		return lblNumeroCasillas;
 	}
+
 	private JSpinner getSpNumeroCasillas() {
 		if (spNumeroCasillas == null) {
 			spNumeroCasillas = new JSpinner();

@@ -30,7 +30,7 @@ public class VentanaRegistro extends JFrame {
 	private JTextField tfUsuario;
 	private JComboBox<String> cbDia;
 	private JComboBox<String> cbMes;
-	private JComboBox<String> cbAÃ±o;
+	private JComboBox<String> cbAño;
 	private JPasswordField pfPassword;
 	private JPasswordField pfRepassword;
 	private final ButtonGroup buttonGroupSexo = new ButtonGroup();
@@ -59,7 +59,7 @@ public class VentanaRegistro extends JFrame {
 	public VentanaRegistro() {
 		setTitle("Formulario de registro");
 		// Configura la x para cerrar la ventana
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 709, 373);
 		pnPrincipal = new JPanel();
 		pnPrincipal.setBackground(Color.WHITE);
@@ -108,11 +108,11 @@ public class VentanaRegistro extends JFrame {
 					else if (String.valueOf(pfPassword.getPassword())
 							.equals(""))
 						JOptionPane.showMessageDialog(null,
-								"EL campo 'ContraseÃ±a' esta vacio");
+								"EL campo 'Contraseña' esta vacio");
 					else if (String.valueOf(pfPassword.getPassword())
 							.length() < 5)
 						JOptionPane.showMessageDialog(null,
-								"EL campo 'Password' contener mÃ±s de 5 caracteres");
+								"EL campo 'Password' contener mñs de 5 caracteres");
 					else if (String.valueOf(pfRepassword.getPassword())
 							.equals(""))
 						JOptionPane.showMessageDialog(null,
@@ -120,11 +120,11 @@ public class VentanaRegistro extends JFrame {
 					else if (String.valueOf(pfRepassword.getPassword())
 							.length() < 5)
 						JOptionPane.showMessageDialog(null,
-								"EL campo 'Reintroduzca Password' contener mÃ±s de 5 caracteres");
+								"EL campo 'Reintroduzca Password' contener mñs de 5 caracteres");
 					else if (!(String.valueOf(pfPassword.getPassword()).equals(
 							String.valueOf(pfRepassword.getPassword()))))
 						JOptionPane.showMessageDialog(null,
-								"Las contraseÃ±as no coinciden");
+								"Las contraseñas no coinciden");
 					else
 						System.exit(0);
 				}
@@ -180,7 +180,7 @@ public class VentanaRegistro extends JFrame {
 			pnEdad.setLayout(null);
 			pnEdad.add(getCbDia());
 			pnEdad.add(getCbMes());
-			pnEdad.add(getCbAÃ±o());
+			pnEdad.add(getCbAño());
 		}
 		return pnEdad;
 	}
@@ -294,16 +294,16 @@ public class VentanaRegistro extends JFrame {
 		return cbMes;
 	}
 
-	private JComboBox<String> getCbAÃ±o() {
-		if (cbAÃ±o == null) {
-			String[] aÃ±os = new String[100];
+	private JComboBox<String> getCbAño() {
+		if (cbAño == null) {
+			String[] años = new String[100];
 			for (int i = 0; i < 100; i++)
-				aÃ±os[i] = "" + (i + 1915);
-			cbAÃ±o = new JComboBox<String>();
-			cbAÃ±o.setBounds(237, 29, 60, 20);
-			cbAÃ±o.setModel(new DefaultComboBoxModel<String>(aÃ±os));
+				años[i] = "" + (i + 1915);
+			cbAño = new JComboBox<String>();
+			cbAño.setBounds(237, 29, 60, 20);
+			cbAño.setModel(new DefaultComboBoxModel<String>(años));
 		}
-		return cbAÃ±o;
+		return cbAño;
 	}
 
 	private JPasswordField getPfPassword() {

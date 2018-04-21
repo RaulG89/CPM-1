@@ -88,7 +88,8 @@ public class VentanaOpciones extends JDialog {
 	private JSpinner getSpNumeroArboles() {
 		if (spNumeroArboles == null) {
 			spNumeroArboles = new JSpinner();
-			spNumeroArboles.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+			spNumeroArboles.setCursor(
+					Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 			spNumeroArboles.setModel(new SpinnerNumberModel(2, 0, 10, 1));
 			spNumeroArboles.setForeground(Color.GREEN);
 			spNumeroArboles.setFont(new Font("Jokerman", Font.PLAIN, 30));

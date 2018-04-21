@@ -111,8 +111,8 @@ public class VentanaPrincipal extends JFrame {
 					Properties props = new Properties();
 					props.put("logoString", "");
 					HiFiLookAndFeel.setCurrentTheme(props);
-					UIManager
-							.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
+					UIManager.setLookAndFeel(
+							"com.jtattoo.plaf.hifi.HiFiLookAndFeel");
 					VentanaPrincipal frame = new VentanaPrincipal();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -159,8 +159,8 @@ public class VentanaPrincipal extends JFrame {
 			lblLogo = new JLabel("");
 			lblLogo.setBackground(Color.BLACK);
 			lblLogo.setBorder(null);
-			lblLogo.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/logo.png")));
+			lblLogo.setIcon(new ImageIcon(
+					VentanaPrincipal.class.getResource("/img/logo.png")));
 		}
 		return lblLogo;
 	}
@@ -336,14 +336,12 @@ public class VentanaPrincipal extends JFrame {
 			btnDelete.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					if (!listSongsLibrary.isSelectionEmpty())
-						modeloListaLib.remove(listSongsLibrary
-								.getSelectedIndex());
+						modeloListaLib
+								.remove(listSongsLibrary.getSelectedIndex());
 					else
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"Seleccione una cancion para borrarla de la lista de la biblioteca",
-										"Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"Seleccione una cancion para borrarla de la lista de la biblioteca",
+								"Error", JOptionPane.ERROR_MESSAGE);
 				}
 			});
 			btnDelete.setBackground(Color.BLACK);
@@ -402,11 +400,9 @@ public class VentanaPrincipal extends JFrame {
 					if (!listSongsPlaylist.isSelectionEmpty())
 						reproducirAnteriorCancion();
 					else
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"No hay canciones a�adidas a la lista de reproduccion",
-										"Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"No hay canciones a�adidas a la lista de reproduccion",
+								"Error", JOptionPane.ERROR_MESSAGE);
 				}
 			});
 			btnBefore.setFont(new Font("Dialog", Font.PLAIN, 14));
@@ -421,8 +417,8 @@ public class VentanaPrincipal extends JFrame {
 		if (index > 0)
 			listSongsPlaylist.setSelectedIndex(index - 1);
 		else
-			listSongsPlaylist.setSelectedIndex(listSongsLibrary
-					.getSelectedIndices().length - 1);
+			listSongsPlaylist.setSelectedIndex(
+					listSongsLibrary.getSelectedIndices().length - 1);
 		mP.play(listSongsPlaylist.getSelectedValue());
 		modificarVolumen();
 	}
@@ -440,11 +436,9 @@ public class VentanaPrincipal extends JFrame {
 						modificarVolumen();
 						mP.play(aux);
 					} else
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"No hay canciones a�adidas a la lista de reproduccion",
-										"Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"No hay canciones a�adidas a la lista de reproduccion",
+								"Error", JOptionPane.ERROR_MESSAGE);
 					modificarVolumen();
 				}
 			});
@@ -478,11 +472,9 @@ public class VentanaPrincipal extends JFrame {
 					if (!listSongsPlaylist.isSelectionEmpty())
 						reproducirSiguienteCancion();
 					else
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"No hay canciones a�adidas a la lista de reproduccion",
-										"Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"No hay canciones a�adidas a la lista de reproduccion",
+								"Error", JOptionPane.ERROR_MESSAGE);
 					modificarVolumen();
 				}
 			});
@@ -509,15 +501,13 @@ public class VentanaPrincipal extends JFrame {
 			btnDel.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					if (!listSongsPlaylist.isSelectionEmpty()) {
-						modeloListaPlay.remove(listSongsPlaylist
-								.getSelectedIndex());
+						modeloListaPlay
+								.remove(listSongsPlaylist.getSelectedIndex());
 						mP.stop();
 					} else
-						JOptionPane
-								.showMessageDialog(
-										null,
-										"Seleccione una cancion para borrarla de la lista de reproduccion",
-										"Error", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null,
+								"Seleccione una cancion para borrarla de la lista de reproduccion",
+								"Error", JOptionPane.ERROR_MESSAGE);
 
 				}
 			});
@@ -588,14 +578,15 @@ public class VentanaPrincipal extends JFrame {
 					// Para abrir ficheros
 					JFileChooser selector = new JFileChooser();
 					selector.setMultiSelectionEnabled(true);
-					selector.setFileFilter(new FileNameExtensionFilter(
-							"Archivos mp3", "mp3"));
+					selector.setFileFilter(
+							new FileNameExtensionFilter("Archivos mp3", "mp3"));
 					selector.setCurrentDirectory(new File("D:/Music/"));
 					int result = selector.showOpenDialog(null);
 					if (result == JFileChooser.APPROVE_OPTION)
-						for (int i = 0; i < selector.getSelectedFiles().length; i++)
-							modeloListaLib.addElement(selector
-									.getSelectedFiles()[i]);
+						for (int i = 0; i < selector
+								.getSelectedFiles().length; i++)
+							modeloListaLib
+									.addElement(selector.getSelectedFiles()[i]);
 
 				}
 			});
@@ -616,7 +607,6 @@ public class VentanaPrincipal extends JFrame {
 		return mntmExit;
 	}
 
-	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmNext() {
 		if (mntmNext == null) {
 			mntmNext = new JMenuItem("Next");
@@ -632,7 +622,6 @@ public class VentanaPrincipal extends JFrame {
 		return mntmNext;
 	}
 
-	@SuppressWarnings("deprecation")
 	private JMenuItem getMntmRandom() {
 		if (mntmRandom == null) {
 			mntmRandom = new JMenuItem("Random");
@@ -643,7 +632,8 @@ public class VentanaPrincipal extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					if (listSongsPlaylist.getSelectedIndices().length > 0) {
 						int index = (int) (Math.random()
-								* listSongsPlaylist.getSelectedIndices().length - 1);
+								* listSongsPlaylist.getSelectedIndices().length
+								- 1);
 						listSongsPlaylist.setSelectedIndex(index);
 						mP.play(listSongsPlaylist.getSelectedValue());
 					} else {

@@ -24,7 +24,7 @@ public class Casilla {
 	public void plantarArbol() {
 		arbol = true;
 	}
-	
+
 	public void sacarArbol() {
 		arbol = false;
 	}

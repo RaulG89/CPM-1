@@ -30,7 +30,7 @@ public class VentanaRegistro extends JDialog {
 	private JTextField tfUsuario;
 	private JComboBox<String> cbDia;
 	private JComboBox<String> cbMes;
-	private JComboBox<String> cbAÃ±o;
+	private JComboBox<String> cbAño;
 	private JPasswordField pfPassword;
 	private JPasswordField pfRepassword;
 	private final ButtonGroup btGSexo = new ButtonGroup();
@@ -124,7 +124,7 @@ public class VentanaRegistro extends JDialog {
 	private boolean isIncorrecta() {
 		if (!(String.valueOf(pfPassword.getPassword())
 				.equals(String.valueOf(pfRepassword.getPassword())))) {
-			JOptionPane.showMessageDialog(null, "Las contraseÃ±as no coinciden");
+			JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
 			return false;
 		}
 		return true;
@@ -175,7 +175,7 @@ public class VentanaRegistro extends JDialog {
 			pnEdad.setLayout(null);
 			pnEdad.add(getCbDia());
 			pnEdad.add(getCbMes());
-			pnEdad.add(getCbAÃ±o());
+			pnEdad.add(getCbAño());
 		}
 		return pnEdad;
 	}
@@ -312,16 +312,16 @@ public class VentanaRegistro extends JDialog {
 		return cbMes;
 	}
 
-	private JComboBox<String> getCbAÃ±o() {
-		if (cbAÃ±o == null) {
-			String[] aÃ±os = new String[90];
+	private JComboBox<String> getCbAño() {
+		if (cbAño == null) {
+			String[] años = new String[90];
 			for (int i = 0; i < 90; i++)
-				aÃ±os[i] = "" + (i + 1915);
-			cbAÃ±o = new JComboBox<String>();
-			cbAÃ±o.setBounds(237, 29, 60, 20);
-			cbAÃ±o.setModel(new DefaultComboBoxModel<String>(aÃ±os));
+				años[i] = "" + (i + 1915);
+			cbAño = new JComboBox<String>();
+			cbAño.setBounds(237, 29, 60, 20);
+			cbAño.setModel(new DefaultComboBoxModel<String>(años));
 		}
-		return cbAÃ±o;
+		return cbAño;
 	}
 
 	private JPasswordField getPfPassword() {
@@ -351,7 +351,7 @@ public class VentanaRegistro extends JDialog {
 		String datos = "\n" + tfNombre.getText() + " | " + tfApellidos.getText()
 				+ " | " + sexoSeleccionado() + " | " + cbDia.getSelectedItem()
 				+ "-" + cbMes.getSelectedItem() + "-"
-				+ (cbAÃ±o.getSelectedIndex() + 1915);
+				+ (cbAño.getSelectedIndex() + 1915);
 		return datos;
 	}
 

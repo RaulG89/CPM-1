@@ -26,24 +26,24 @@ public class Casilla {
 	public void plantarArbol() {
 		arbol = true;
 	}
-	
+
 	public void sacarArbol() {
 		arbol = false;
 	}
-	
-	public boolean tieneAgujero(){
+
+	public boolean tieneAgujero() {
 		return agujero;
 	}
-	
+
 	public void cavarAgujero() {
 		agujero = true;
 	}
-	
-	public boolean tienePremio(){
+
+	public boolean tienePremio() {
 		return premio;
 	}
-	
-	public void ponerPremio(){
+
+	public void ponerPremio() {
 		premio = true;
 	}
 }
