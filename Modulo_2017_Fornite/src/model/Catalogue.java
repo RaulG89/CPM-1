@@ -3,7 +3,7 @@ package model;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import repositories.Reader;
+import persistence.Reader;
 
 public class Catalogue {
 
