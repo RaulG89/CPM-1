@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import igu.VentanaPrincipal;
-import igu.VentanasAuxiliares.VentanaAÒadirPasajero;
+import igu.VentanasAuxiliares.Ventanaa√±adirPasajero;
 import logica.Pasajero;
 
 public class PanelPasajeros extends JPanel {
@@ -42,7 +42,7 @@ public class PanelPasajeros extends JPanel {
 	private JLabel lblPorFavorIntroduzca;
 	private JScrollPane scPasajeros;
 	private JPanel pnBotonesModificarPasajeros;
-	private JButton btnAÒadirPasajero;
+	private JButton btnA√±adirPasajero;
 	private JPanel pnEspacio1RegistroPasajeros;
 	private JPanel pnEspacio2RegistroPasajeros;
 	private JLabel lblEspacio1RegistroPasajeros;
@@ -129,7 +129,7 @@ public class PanelPasajeros extends JPanel {
 			pnBotonesModificarPasajeros = new JPanel();
 			pnBotonesModificarPasajeros
 					.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-			pnBotonesModificarPasajeros.add(getBtnAÒadirPasajero());
+			pnBotonesModificarPasajeros.add(getBtnA√±adirPasajero());
 			pnBotonesModificarPasajeros.add(getBtnBorrarPasajero());
 		}
 		return pnBotonesModificarPasajeros;
@@ -163,24 +163,24 @@ public class PanelPasajeros extends JPanel {
 		return btnBorrarPasajero;
 	}
 
-	private JButton getBtnAÒadirPasajero() {
-		if (btnAÒadirPasajero == null) {
-			btnAÒadirPasajero = new JButton("A\u00F1adir");
-			btnAÒadirPasajero.setToolTipText(
+	private JButton getBtnA√±adirPasajero() {
+		if (btnA√±adirPasajero == null) {
+			btnA√±adirPasajero = new JButton("A\u00F1adir");
+			btnA√±adirPasajero.setToolTipText(
 					"A\u00F1ade un pasajero a la lista de pasajero de la reserva");
-			btnAÒadirPasajero.setMnemonic('Ò');
-			btnAÒadirPasajero.setFont(new Font("Tahoma", Font.PLAIN, 12));
-			btnAÒadirPasajero.addActionListener(new ActionListener() {
+			btnA√±adirPasajero.setMnemonic('√±');
+			btnA√±adirPasajero.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			btnA√±adirPasajero.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					mostrarVentanaAÒadirPasajero();
+					mostrarVentanaA√±adirPasajero();
 				}
 			});
 		}
-		return btnAÒadirPasajero;
+		return btnA√±adirPasajero;
 	}
 
-	private void mostrarVentanaAÒadirPasajero() {
-		VentanaAÒadirPasajero vap = new VentanaAÒadirPasajero(vp);
+	private void mostrarVentanaA√±adirPasajero() {
+		Ventanaa√±adirPasajero vap = new Ventanaa√±adirPasajero(vp);
 		vap.setLocationRelativeTo(null);
 		vap.setModal(true);
 		vap.setVisible(true);
@@ -241,7 +241,7 @@ public class PanelPasajeros extends JPanel {
 			btnSiguientePasajeros.setMnemonic('S');
 			btnSiguientePasajeros.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			btnSiguientePasajeros.setEnabled(false);
-			btnAÒadirPasajero.setEnabled(true);
+			btnA√±adirPasajero.setEnabled(true);
 			btnBorrarPasajero.setEnabled(false);
 			btnSiguientePasajeros.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
@@ -258,9 +258,9 @@ public class PanelPasajeros extends JPanel {
 							vp.getListaClientes().add(p);
 						((CardLayout) vp.getPnReservas().getLayout())
 								.next(vp.getPnReservas());
-						// getBtnAÒadirReservaCamarotes().grabFocus();
+						// getBtnA√±adirReservaCamarotes().grabFocus();
 						// btnBorrarReservaCamarotes.setEnabled(false);
-						// btnAÒadirReservaCamarotes.setEnabled(true);
+						// btnA√±adirReservaCamarotes.setEnabled(true);
 						// btnSiguienteReservaCamarotes.setEnabled(false);
 					} else
 						JOptionPane.showMessageDialog(null,

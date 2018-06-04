@@ -76,7 +76,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel pnPrecioFamiliarExterior;
 	private JButton btnSiguientePasajeros;
 	private DefaultTableModel modeloTablaPasajeros;
-	private JButton btnA�adirPasajero;
+	private JButton btnAñadirPasajero;
 	private JButton btnBorrarPasajero;
 	private JTable tablaPasajeros;
 	private JLabel lblPreciosDeCamarotes;
@@ -148,8 +148,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnPrecioFamiliarExterior() {
 		if (pnPrecioFamiliarExterior == null) {
 			pnPrecioFamiliarExterior = new JPanel();
-			FlowLayout fl_pnPrecioFamiliarExterior = (FlowLayout) pnPrecioFamiliarExterior
-					.getLayout();
+			FlowLayout fl_pnPrecioFamiliarExterior = (FlowLayout) pnPrecioFamiliarExterior.getLayout();
 			fl_pnPrecioFamiliarExterior.setAlignment(FlowLayout.RIGHT);
 			pnPrecioFamiliarExterior.add(getLblFamiliarExterior());
 			pnPrecioFamiliarExterior.add(getTxtPrecioFamiliarExterior());
@@ -160,8 +159,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnPrecioDobleInterior() {
 		if (pnPrecioDobleInterior == null) {
 			pnPrecioDobleInterior = new JPanel();
-			pnPrecioDobleInterior
-					.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 5));
+			pnPrecioDobleInterior.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 5));
 			pnPrecioDobleInterior.add(getLblDobleInterior());
 			pnPrecioDobleInterior.add(getTxtPrecioDobleInterior());
 		}
@@ -171,8 +169,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnPrecioDobleExterior() {
 		if (pnPrecioDobleExterior == null) {
 			pnPrecioDobleExterior = new JPanel();
-			FlowLayout fl_pnPrecioDobleExterior = (FlowLayout) pnPrecioDobleExterior
-					.getLayout();
+			FlowLayout fl_pnPrecioDobleExterior = (FlowLayout) pnPrecioDobleExterior.getLayout();
 			fl_pnPrecioDobleExterior.setAlignment(FlowLayout.RIGHT);
 			pnPrecioDobleExterior.add(getLblDobleExterior());
 			pnPrecioDobleExterior.add(getTxtPrecioDobleExterior());
@@ -183,8 +180,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnPrecioFamiliarInterior() {
 		if (pnPrecioFamiliarInterior == null) {
 			pnPrecioFamiliarInterior = new JPanel();
-			FlowLayout fl_pnPrecioFamiliarInterior = (FlowLayout) pnPrecioFamiliarInterior
-					.getLayout();
+			FlowLayout fl_pnPrecioFamiliarInterior = (FlowLayout) pnPrecioFamiliarInterior.getLayout();
 			fl_pnPrecioFamiliarInterior.setAlignment(FlowLayout.RIGHT);
 			pnPrecioFamiliarInterior.add(getLblFamiliarInterior());
 			pnPrecioFamiliarInterior.add(getTxtPrecioFamiliarInterior());
@@ -203,8 +199,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JTextField getTxtPrecioDobleInterior() {
 		if (txtPrecioDobleInterior == null) {
 			txtPrecioDobleInterior = new JTextField();
-			txtPrecioDobleInterior.setToolTipText(
-					"Muestra el precio de un camarote doble interior");
+			txtPrecioDobleInterior.setToolTipText("Muestra el precio de un camarote doble interior");
 			txtPrecioDobleInterior.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			txtPrecioDobleInterior.setEditable(false);
 			txtPrecioDobleInterior.setColumns(10);
@@ -223,8 +218,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JTextField getTxtPrecioDobleExterior() {
 		if (txtPrecioDobleExterior == null) {
 			txtPrecioDobleExterior = new JTextField();
-			txtPrecioDobleExterior.setToolTipText(
-					"Muestra el precio de un camarote doble exterior");
+			txtPrecioDobleExterior.setToolTipText("Muestra el precio de un camarote doble exterior");
 			txtPrecioDobleExterior.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			txtPrecioDobleExterior.setEditable(false);
 			txtPrecioDobleExterior.setColumns(10);
@@ -243,10 +237,8 @@ public class PanelDetallesCrucero extends JPanel {
 	private JTextField getTxtPrecioFamiliarInterior() {
 		if (txtPrecioFamiliarInterior == null) {
 			txtPrecioFamiliarInterior = new JTextField();
-			txtPrecioFamiliarInterior.setToolTipText(
-					"Muestra el precio de un camarote familiar interior");
-			txtPrecioFamiliarInterior
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			txtPrecioFamiliarInterior.setToolTipText("Muestra el precio de un camarote familiar interior");
+			txtPrecioFamiliarInterior.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			txtPrecioFamiliarInterior.setEditable(false);
 			txtPrecioFamiliarInterior.setColumns(10);
 		}
@@ -264,10 +256,8 @@ public class PanelDetallesCrucero extends JPanel {
 	private JTextField getTxtPrecioFamiliarExterior() {
 		if (txtPrecioFamiliarExterior == null) {
 			txtPrecioFamiliarExterior = new JTextField();
-			txtPrecioFamiliarExterior.setToolTipText(
-					"Muestra el precio de un camarote familiar exterior");
-			txtPrecioFamiliarExterior
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			txtPrecioFamiliarExterior.setToolTipText("Muestra el precio de un camarote familiar exterior");
+			txtPrecioFamiliarExterior.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			txtPrecioFamiliarExterior.setEditable(false);
 			txtPrecioFamiliarExterior.setColumns(10);
 		}
@@ -276,20 +266,16 @@ public class PanelDetallesCrucero extends JPanel {
 
 	private JLabel getLblCamarotesDoblesInteriores() {
 		if (lblCamarotesDoblesInteriores == null) {
-			lblCamarotesDoblesInteriores = new JLabel(
-					"Camarotes dobles interiores disponibles:");
-			lblCamarotesDoblesInteriores
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblCamarotesDoblesInteriores = new JLabel("Camarotes dobles interiores disponibles:");
+			lblCamarotesDoblesInteriores.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		}
 		return lblCamarotesDoblesInteriores;
 	}
 
 	private JLabel getLblCamarotesDoblesExteriores() {
 		if (lblCamarotesDoblesExteriores == null) {
-			lblCamarotesDoblesExteriores = new JLabel(
-					"Camarotes dobles exteriores disponibles:");
-			lblCamarotesDoblesExteriores
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblCamarotesDoblesExteriores = new JLabel("Camarotes dobles exteriores disponibles:");
+			lblCamarotesDoblesExteriores.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		}
 		return lblCamarotesDoblesExteriores;
 	}
@@ -301,12 +287,11 @@ public class PanelDetallesCrucero extends JPanel {
 	public JButton getBtnSiguientePasajeros() {
 		if (btnSiguientePasajeros == null) {
 			btnSiguientePasajeros = new JButton("Siguiente");
-			btnSiguientePasajeros.setToolTipText(
-					"Muestra la ventana de reserva de camarotes");
+			btnSiguientePasajeros.setToolTipText("Muestra la ventana de reserva de camarotes");
 			btnSiguientePasajeros.setMnemonic('S');
 			btnSiguientePasajeros.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			btnSiguientePasajeros.setEnabled(false);
-			btnA�adirPasajero.setEnabled(true);
+			btnAñadirPasajero.setEnabled(true);
 			btnBorrarPasajero.setEnabled(false);
 			btnSiguientePasajeros.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
@@ -321,12 +306,10 @@ public class PanelDetallesCrucero extends JPanel {
 						vp.setListaClientes(new ArrayList<Pasajero>());
 						for (Pasajero p : vp.getListaPasajeros())
 							vp.getListaClientes().add(p);
-						((CardLayout) vp.getPnReservas().getLayout())
-								.next(vp.getPnReservas());
+						((CardLayout) vp.getPnReservas().getLayout()).next(vp.getPnReservas());
 
 					} else
-						JOptionPane.showMessageDialog(null,
-								"Entre los pasajeros debe haber uno que sea mayor de edad",
+						JOptionPane.showMessageDialog(null, "Entre los pasajeros debe haber uno que sea mayor de edad",
 								"Error", JOptionPane.ERROR_MESSAGE);
 				}
 			});
@@ -337,16 +320,14 @@ public class PanelDetallesCrucero extends JPanel {
 	public JButton getBtnBorrarPasajero() {
 		if (btnBorrarPasajero == null) {
 			btnBorrarPasajero = new JButton("Borrar");
-			btnBorrarPasajero.setToolTipText(
-					"Borra al pasajero seleccionado de la lista de pasajeros de la reserva");
+			btnBorrarPasajero.setToolTipText("Borra al pasajero seleccionado de la lista de pasajeros de la reserva");
 			btnBorrarPasajero.setMnemonic('B');
 			btnBorrarPasajero.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			btnBorrarPasajero.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					int pasajero = tablaPasajeros.getSelectedRow();
 					if (pasajero == -1)
-						JOptionPane.showMessageDialog(null,
-								"Por favor seleccione un pasajero", "Error",
+						JOptionPane.showMessageDialog(null, "Por favor seleccione un pasajero", "Error",
 								JOptionPane.ERROR_MESSAGE);
 					else {
 						modeloTablaPasajeros.removeRow(pasajero);
@@ -365,8 +346,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnTituloPrecios() {
 		if (pnTituloPrecios == null) {
 			pnTituloPrecios = new JPanel();
-			FlowLayout fl_pnTituloPrecios = (FlowLayout) pnTituloPrecios
-					.getLayout();
+			FlowLayout fl_pnTituloPrecios = (FlowLayout) pnTituloPrecios.getLayout();
 			fl_pnTituloPrecios.setAlignment(FlowLayout.LEFT);
 			pnTituloPrecios.add(getLblPreciosDeCamarotes());
 		}
@@ -403,8 +383,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JTextArea getTxtAreaDescripcion() {
 		if (txtAreaDescripcion == null) {
 			txtAreaDescripcion = new JTextArea();
-			txtAreaDescripcion.setToolTipText(
-					"Muestra la descripci\u00F3n del crucero seleccionado");
+			txtAreaDescripcion.setToolTipText("Muestra la descripci\u00F3n del crucero seleccionado");
 			txtAreaDescripcion.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			txtAreaDescripcion.setEditable(false);
 			txtAreaDescripcion.setLineWrap(true);
@@ -424,8 +403,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnBotonesDetallesCrucero() {
 		if (pnBotonesDetallesCrucero == null) {
 			pnBotonesDetallesCrucero = new JPanel();
-			FlowLayout flowLayout = (FlowLayout) pnBotonesDetallesCrucero
-					.getLayout();
+			FlowLayout flowLayout = (FlowLayout) pnBotonesDetallesCrucero.getLayout();
 			flowLayout.setAlignment(FlowLayout.RIGHT);
 			pnBotonesDetallesCrucero.add(getBtnAtrasDetallesCrucero());
 			pnBotonesDetallesCrucero.add(getBtnSiguienteDetallesCrucero());
@@ -437,14 +415,12 @@ public class PanelDetallesCrucero extends JPanel {
 	private JButton getBtnAtrasDetallesCrucero() {
 		if (btnAtrasDetallesCrucero == null) {
 			btnAtrasDetallesCrucero = new JButton("Atras");
-			btnAtrasDetallesCrucero.setToolTipText(
-					"Vuelve a la pantalla de selecci\u00F3n de cruceros");
+			btnAtrasDetallesCrucero.setToolTipText("Vuelve a la pantalla de selecci\u00F3n de cruceros");
 			btnAtrasDetallesCrucero.setMnemonic('A');
 			btnAtrasDetallesCrucero.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			btnAtrasDetallesCrucero.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					((CardLayout) vp.getPnReservas().getLayout())
-							.previous(vp.getPnReservas());
+					((CardLayout) vp.getPnReservas().getLayout()).previous(vp.getPnReservas());
 				}
 			});
 		}
@@ -454,16 +430,13 @@ public class PanelDetallesCrucero extends JPanel {
 	private JButton getBtnSiguienteDetallesCrucero() {
 		if (btnSiguienteDetallesCrucero == null) {
 			btnSiguienteDetallesCrucero = new JButton("Siguiente");
-			btnSiguienteDetallesCrucero
-					.setToolTipText("Muestra la pantalla de pasajeros");
+			btnSiguienteDetallesCrucero.setToolTipText("Muestra la pantalla de pasajeros");
 			btnSiguienteDetallesCrucero.setMnemonic('S');
-			btnSiguienteDetallesCrucero
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			btnSiguienteDetallesCrucero.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			btnSiguienteDetallesCrucero.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					((CardLayout) vp.getPnReservas().getLayout())
-							.next(vp.getPnReservas());
-					// getBtnA�adirPasajero().grabFocus();
+					((CardLayout) vp.getPnReservas().getLayout()).next(vp.getPnReservas());
+					// getBtnAñadirPasajero().grabFocus();
 				}
 			});
 		}
@@ -474,10 +447,8 @@ public class PanelDetallesCrucero extends JPanel {
 		if (btnCancelarDetallesCrucero == null) {
 			btnCancelarDetallesCrucero = new JButton("Cancelar");
 			btnCancelarDetallesCrucero.setMnemonic('C');
-			btnCancelarDetallesCrucero.setToolTipText(
-					"Borra todos los datos vuelve a la pantalla de inicio");
-			btnCancelarDetallesCrucero
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			btnCancelarDetallesCrucero.setToolTipText("Borra todos los datos vuelve a la pantalla de inicio");
+			btnCancelarDetallesCrucero.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			btnCancelarDetallesCrucero.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					vp.inicializar();
@@ -528,8 +499,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnSeleccionSalida() {
 		if (pnSeleccionSalida == null) {
 			pnSeleccionSalida = new JPanel();
-			pnSeleccionSalida
-					.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+			pnSeleccionSalida.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			pnSeleccionSalida.add(getLblFechaDeSalida());
 			pnSeleccionSalida.add(getCbFechas());
 		}
@@ -539,18 +509,14 @@ public class PanelDetallesCrucero extends JPanel {
 	public JComboBox<String> getCbFechas() {
 		if (cbFechas == null) {
 			cbFechas = new JComboBox<String>();
-			cbFechas.setToolTipText(
-					"Selecciona la fecha de partida del crucero");
+			cbFechas.setToolTipText("Selecciona la fecha de partida del crucero");
 			cbFechas.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			cbFechas.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					if (txtPlazasDoblesExteriores.getText().equals("0 libres")
-							&& txtPlazasDoblesInteriores.getText()
-									.equals("0 libres")
-							&& txtPlazasFamiliaresExteriores.getText()
-									.equals("0 libres")
-							&& txtPlazasFamiliaresInteriores.getText()
-									.equals("0 libres"))
+							&& txtPlazasDoblesInteriores.getText().equals("0 libres")
+							&& txtPlazasFamiliaresExteriores.getText().equals("0 libres")
+							&& txtPlazasFamiliaresInteriores.getText().equals("0 libres"))
 						btnSiguienteDetallesCrucero.setEnabled(false);
 					else
 						btnSiguienteDetallesCrucero.setEnabled(true);
@@ -563,10 +529,9 @@ public class PanelDetallesCrucero extends JPanel {
 	private JTextField getTxtPlazasDoblesInteriores() {
 		if (txtPlazasDoblesInteriores == null) {
 			txtPlazasDoblesInteriores = new JTextField();
-			txtPlazasDoblesInteriores.setToolTipText(
-					"Muestra el n\u00FAmero de camarotes dobles interiores disponibles");
 			txtPlazasDoblesInteriores
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+					.setToolTipText("Muestra el n\u00FAmero de camarotes dobles interiores disponibles");
+			txtPlazasDoblesInteriores.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			txtPlazasDoblesInteriores.setEditable(false);
 			txtPlazasDoblesInteriores.setColumns(10);
 		}
@@ -576,10 +541,9 @@ public class PanelDetallesCrucero extends JPanel {
 	private JTextField getTxtPlazasDoblesExteriores() {
 		if (txtPlazasDoblesExteriores == null) {
 			txtPlazasDoblesExteriores = new JTextField();
-			txtPlazasDoblesExteriores.setToolTipText(
-					"Muestra el n\u00FAmero de camarotes dobles exteriores disponibles");
 			txtPlazasDoblesExteriores
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+					.setToolTipText("Muestra el n\u00FAmero de camarotes dobles exteriores disponibles");
+			txtPlazasDoblesExteriores.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			txtPlazasDoblesExteriores.setEditable(false);
 			txtPlazasDoblesExteriores.setColumns(10);
 		}
@@ -588,10 +552,8 @@ public class PanelDetallesCrucero extends JPanel {
 
 	private JLabel getLblCamarotesFamiliarInteriores() {
 		if (lblCamarotesFamiliarInteriores == null) {
-			lblCamarotesFamiliarInteriores = new JLabel(
-					"Camarotes familiar interiores disponibles:");
-			lblCamarotesFamiliarInteriores
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblCamarotesFamiliarInteriores = new JLabel("Camarotes familiar interiores disponibles:");
+			lblCamarotesFamiliarInteriores.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		}
 		return lblCamarotesFamiliarInteriores;
 	}
@@ -599,10 +561,9 @@ public class PanelDetallesCrucero extends JPanel {
 	private JTextField getTxtPlazasFamiliaresInteriores() {
 		if (txtPlazasFamiliaresInteriores == null) {
 			txtPlazasFamiliaresInteriores = new JTextField();
-			txtPlazasFamiliaresInteriores.setToolTipText(
-					"Muestra el n\u00FAmero de camarotes familiares interiores disponibles");
 			txtPlazasFamiliaresInteriores
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+					.setToolTipText("Muestra el n\u00FAmero de camarotes familiares interiores disponibles");
+			txtPlazasFamiliaresInteriores.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			txtPlazasFamiliaresInteriores.setEditable(false);
 			txtPlazasFamiliaresInteriores.setColumns(10);
 		}
@@ -611,10 +572,8 @@ public class PanelDetallesCrucero extends JPanel {
 
 	private JLabel getLblCamarotesFamiliarExterior() {
 		if (lblCamarotesFamiliarExterior == null) {
-			lblCamarotesFamiliarExterior = new JLabel(
-					"Camarotes familiar exteriores disponibles:");
-			lblCamarotesFamiliarExterior
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			lblCamarotesFamiliarExterior = new JLabel("Camarotes familiar exteriores disponibles:");
+			lblCamarotesFamiliarExterior.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		}
 		return lblCamarotesFamiliarExterior;
 	}
@@ -622,10 +581,9 @@ public class PanelDetallesCrucero extends JPanel {
 	private JTextField getTxtPlazasFamiliaresExteriores() {
 		if (txtPlazasFamiliaresExteriores == null) {
 			txtPlazasFamiliaresExteriores = new JTextField();
-			txtPlazasFamiliaresExteriores.setToolTipText(
-					"Muestra el n\u00FAmero de camarotes familiares exteriores disponibles");
 			txtPlazasFamiliaresExteriores
-					.setFont(new Font("Tahoma", Font.PLAIN, 12));
+					.setToolTipText("Muestra el n\u00FAmero de camarotes familiares exteriores disponibles");
+			txtPlazasFamiliaresExteriores.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			txtPlazasFamiliaresExteriores.setEditable(false);
 			txtPlazasFamiliaresExteriores.setColumns(10);
 		}
@@ -680,8 +638,7 @@ public class PanelDetallesCrucero extends JPanel {
 				}
 
 			});
-			btnMostrar.setToolTipText(
-					"Muestra todos los detalles del barco del crucero");
+			btnMostrar.setToolTipText("Muestra todos los detalles del barco del crucero");
 			btnMostrar.setMnemonic('M');
 			btnMostrar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		}
@@ -698,8 +655,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnPlazasDoblesInteriores() {
 		if (pnPlazasDoblesInteriores == null) {
 			pnPlazasDoblesInteriores = new JPanel();
-			FlowLayout fl_pnPlazasDoblesInteriores = (FlowLayout) pnPlazasDoblesInteriores
-					.getLayout();
+			FlowLayout fl_pnPlazasDoblesInteriores = (FlowLayout) pnPlazasDoblesInteriores.getLayout();
 			fl_pnPlazasDoblesInteriores.setAlignment(FlowLayout.RIGHT);
 			pnPlazasDoblesInteriores.add(getLblCamarotesDoblesInteriores());
 			pnPlazasDoblesInteriores.add(getTxtPlazasDoblesInteriores());
@@ -710,8 +666,7 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnPlazasDoblesExteriores() {
 		if (pnPlazasDoblesExteriores == null) {
 			pnPlazasDoblesExteriores = new JPanel();
-			FlowLayout fl_pnPlazasDoblesExteriores = (FlowLayout) pnPlazasDoblesExteriores
-					.getLayout();
+			FlowLayout fl_pnPlazasDoblesExteriores = (FlowLayout) pnPlazasDoblesExteriores.getLayout();
 			fl_pnPlazasDoblesExteriores.setAlignment(FlowLayout.RIGHT);
 			pnPlazasDoblesExteriores.add(getLblCamarotesDoblesExteriores());
 			pnPlazasDoblesExteriores.add(getTxtPlazasDoblesExteriores());
@@ -722,13 +677,10 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnPlazasFamiliaresInteriores() {
 		if (pnPlazasFamiliaresInteriores == null) {
 			pnPlazasFamiliaresInteriores = new JPanel();
-			FlowLayout fl_pnPlazasFamiliaresInteriores = (FlowLayout) pnPlazasFamiliaresInteriores
-					.getLayout();
+			FlowLayout fl_pnPlazasFamiliaresInteriores = (FlowLayout) pnPlazasFamiliaresInteriores.getLayout();
 			fl_pnPlazasFamiliaresInteriores.setAlignment(FlowLayout.RIGHT);
-			pnPlazasFamiliaresInteriores
-					.add(getLblCamarotesFamiliarInteriores());
-			pnPlazasFamiliaresInteriores
-					.add(getTxtPlazasFamiliaresInteriores());
+			pnPlazasFamiliaresInteriores.add(getLblCamarotesFamiliarInteriores());
+			pnPlazasFamiliaresInteriores.add(getTxtPlazasFamiliaresInteriores());
 		}
 		return pnPlazasFamiliaresInteriores;
 	}
@@ -736,12 +688,10 @@ public class PanelDetallesCrucero extends JPanel {
 	private JPanel getPnPlazasFamiliaresExteriores() {
 		if (pnPlazasFamiliaresExteriores == null) {
 			pnPlazasFamiliaresExteriores = new JPanel();
-			FlowLayout fl_pnPlazasFamiliaresExteriores = (FlowLayout) pnPlazasFamiliaresExteriores
-					.getLayout();
+			FlowLayout fl_pnPlazasFamiliaresExteriores = (FlowLayout) pnPlazasFamiliaresExteriores.getLayout();
 			fl_pnPlazasFamiliaresExteriores.setAlignment(FlowLayout.RIGHT);
 			pnPlazasFamiliaresExteriores.add(getLblCamarotesFamiliarExterior());
-			pnPlazasFamiliaresExteriores
-					.add(getTxtPlazasFamiliaresExteriores());
+			pnPlazasFamiliaresExteriores.add(getTxtPlazasFamiliaresExteriores());
 		}
 		return pnPlazasFamiliaresExteriores;
 	}
@@ -749,36 +699,20 @@ public class PanelDetallesCrucero extends JPanel {
 	void cargarCrucero() {
 		if (vp.getCrucero() != null) {
 			txtAreaDescripcion.setText(vp.getCrucero().getDescripcion());
-			cbFechas.setModel(new DefaultComboBoxModel<String>(
-					vp.getCrucero().getFechas()));
+			cbFechas.setModel(new DefaultComboBoxModel<String>(vp.getCrucero().getFechas()));
 			comprobarPlazasDisponibleCrucero();
-			txtPrecioDobleExterior
-					.setText(""
-							+ vp.getCrucero().getBarco()
-									.getPrecioCamarotesDoblesExteriores()
-							+ " €");
-			txtPrecioDobleInterior
-					.setText(""
-							+ vp.getCrucero().getBarco()
-									.getPrecioCamarotesDoblesInteriores()
-							+ " €");
+			txtPrecioDobleExterior.setText("" + vp.getCrucero().getBarco().getPrecioCamarotesDoblesExteriores() + " €");
+			txtPrecioDobleInterior.setText("" + vp.getCrucero().getBarco().getPrecioCamarotesDoblesInteriores() + " €");
 			txtPrecioFamiliarExterior
-					.setText(""
-							+ vp.getCrucero().getBarco()
-									.getPrecioCamarotesFamiliaresExteriores()
-							+ " €");
+					.setText("" + vp.getCrucero().getBarco().getPrecioCamarotesFamiliaresExteriores() + " €");
 			txtPrecioFamiliarInterior
-					.setText(""
-							+ vp.getCrucero().getBarco()
-									.getPrecioCamarotesFamiliaresInteriores()
-							+ " €");
+					.setText("" + vp.getCrucero().getBarco().getPrecioCamarotesFamiliaresInteriores() + " €");
 			cambiarImagen();
 		}
 	}
 
 	private void comprobarPlazasDisponibleCrucero() {
-		ArrayList<Camarote> camarotes = vp.getCrucero().getPasajerosFechas()
-				.get(cbFechas.getSelectedIndex());
+		ArrayList<Camarote> camarotes = vp.getCrucero().getPasajerosFechas().get(cbFechas.getSelectedIndex());
 		int dobleE = 0, dobleI = 0, familiarE = 0, familiarI = 0;
 		for (Camarote camarote : camarotes) {
 			if (!camarote.isReservada())

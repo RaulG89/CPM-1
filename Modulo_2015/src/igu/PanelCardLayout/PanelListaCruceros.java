@@ -376,10 +376,10 @@ public class PanelListaCruceros extends JPanel {
 		for (Crucero a : getVp().getCatalogo().getCruceros())
 			if (!filtros.contains(a.getZona()))
 				filtros.add(a.getZona());
-		añadirRadioBoton(filtros);
+		aÃ±adirRadioBoton(filtros);
 	}
 
-	private void añadirRadioBoton(ArrayList<String> filtros) {
+	private void aÃ±adirRadioBoton(ArrayList<String> filtros) {
 		for (String a : filtros) {
 			JRadioButton radio = new JRadioButton(a);
 			radio.addActionListener(new FiltrosCruceros(this));
@@ -471,7 +471,7 @@ public class PanelListaCruceros extends JPanel {
 		else {
 			for (Crucero crucero : getVp().getCatalogo().getCruceros()) {
 				if (crucero.getZona().equals(filtro)) {
-					añadirCruceroTabla(crucero);
+					aÃ±adirCruceroTabla(crucero);
 				}
 			}
 		}
@@ -491,7 +491,7 @@ public class PanelListaCruceros extends JPanel {
 		else {
 			for (Crucero crucero : getVp().getCatalogo().getCruceros()) {
 				if (crucero.getPuertoSalida().equals(filtro)) {
-					añadirCruceroTabla(crucero);
+					aÃ±adirCruceroTabla(crucero);
 				}
 			}
 		}
@@ -513,7 +513,7 @@ public class PanelListaCruceros extends JPanel {
 				String[] ciudades = crucero.getItinerario().split("-");
 				for (String ciudad : ciudades)
 					if (ciudad.equals(filtro)) {
-						añadirCruceroTabla(crucero);
+						aÃ±adirCruceroTabla(crucero);
 					}
 			}
 		}
@@ -533,7 +533,7 @@ public class PanelListaCruceros extends JPanel {
 			admisionMenores = true;
 		for (Crucero crucero : getVp().getCatalogo().getCruceros()) {
 			if (crucero.isMenores() == admisionMenores) {
-				añadirCruceroTabla(crucero);
+				aÃ±adirCruceroTabla(crucero);
 			}
 		}
 	}
@@ -543,7 +543,7 @@ public class PanelListaCruceros extends JPanel {
 		int dias = radio.getValue();
 		for (Crucero crucero : getVp().getCatalogo().getCruceros()) {
 			if (crucero.getDuracionDias() <= dias) {
-				añadirCruceroTabla(crucero);
+				aÃ±adirCruceroTabla(crucero);
 			}
 		}
 	}
@@ -572,7 +572,7 @@ public class PanelListaCruceros extends JPanel {
 		}
 
 		for (Crucero crucero : cruceros)
-			añadirCruceroTabla(crucero);
+			aÃ±adirCruceroTabla(crucero);
 
 	}
 
@@ -590,7 +590,7 @@ public class PanelListaCruceros extends JPanel {
 		else {
 			for (Crucero crucero : getVp().getCatalogo().getCruceros()) {
 				if (crucero.getBarco().getDenominacion().equals(filtro)) {
-					añadirCruceroTabla(crucero);
+					aÃ±adirCruceroTabla(crucero);
 				}
 			}
 		}
@@ -625,11 +625,11 @@ public class PanelListaCruceros extends JPanel {
 							.getPrecioCamarotesFamiliaresInteriores() >= precioDesde
 							&& crucero.getBarco()
 									.getPrecioCamarotesFamiliaresInteriores() <= precioHasta)
-				añadirCruceroTabla(crucero);
+				aÃ±adirCruceroTabla(crucero);
 		}
 	}
 
-	public void añadirCruceroTabla(Crucero crucero) {
+	public void aÃ±adirCruceroTabla(Crucero crucero) {
 		String aux = new String(), menores = "No";
 		for (String a : crucero.getFechas())
 			aux += a + " - ";
@@ -645,34 +645,34 @@ public class PanelListaCruceros extends JPanel {
 				crucero.getDuracionDias(), aux.substring(0, aux.length() - 3),
 				crucero.getBarco().getDenominacion(), descuento, radio });
 
-		int[] tamaño = new int[8];
+		int[] tamaÃ±o = new int[8];
 		for (int i = 0; i < tablaCruceros.getColumnCount() - 1; i++) {
 			for (int j = 0; j < tablaCruceros.getRowCount(); j++) {
-				if (tamaño[i] < tablaCruceros.getValueAt(j, i).toString()
+				if (tamaÃ±o[i] < tablaCruceros.getValueAt(j, i).toString()
 						.length()) {
-					tamaño[i] = tablaCruceros.getValueAt(j, i).toString()
+					tamaÃ±o[i] = tablaCruceros.getValueAt(j, i).toString()
 							.length();
 				}
 			}
 		}
 		tablaCruceros.getColumnModel().getColumn(0)
-				.setPreferredWidth(tamaño[0] * 10);
+				.setPreferredWidth(tamaÃ±o[0] * 10);
 		tablaCruceros.getColumnModel().getColumn(1).setPreferredWidth(125);
 		tablaCruceros.getColumnModel().getColumn(2)
-				.setPreferredWidth(tamaño[2] * 7);
+				.setPreferredWidth(tamaÃ±o[2] * 7);
 		tablaCruceros.getColumnModel().getColumn(3).setPreferredWidth(150);
 		tablaCruceros.getColumnModel().getColumn(4).setPreferredWidth(125);
 		tablaCruceros.getColumnModel().getColumn(5)
-				.setPreferredWidth(tamaño[5] * 7);
+				.setPreferredWidth(tamaÃ±o[5] * 7);
 		tablaCruceros.getColumnModel().getColumn(6)
-				.setPreferredWidth(tamaño[6] * 10);
+				.setPreferredWidth(tamaÃ±o[6] * 10);
 		tablaCruceros.getColumnModel().getColumn(7).setPreferredWidth(100);
 		tablaCruceros.getColumnModel().getColumn(8).setPreferredWidth(100);
 	}
 
 	public void agregarTodo() {
 		for (Crucero crucero : getVp().getCatalogo().getCruceros())
-			añadirCruceroTabla(crucero);
+			aÃ±adirCruceroTabla(crucero);
 	}
 
 	private void cargarFiltrosPuertoSalida() {
@@ -680,7 +680,7 @@ public class PanelListaCruceros extends JPanel {
 		for (Crucero a : getVp().getCatalogo().getCruceros())
 			if (!filtros.contains(a.getPuertoSalida()))
 				filtros.add(a.getPuertoSalida());
-		añadirRadioBoton(filtros);
+		aÃ±adirRadioBoton(filtros);
 	}
 
 	private void cargarFiltrosItinerario() {
@@ -695,7 +695,7 @@ public class PanelListaCruceros extends JPanel {
 				if (!ciudades.contains(c))
 					ciudades.add(c);
 		}
-		añadirRadioBoton(ciudades);
+		aÃ±adirRadioBoton(ciudades);
 	}
 
 	private void cargarFiltrosMenores() {
@@ -781,7 +781,7 @@ public class PanelListaCruceros extends JPanel {
 		for (Crucero a : getVp().getCatalogo().getCruceros())
 			if (!filtros.contains(a.getBarco().getDenominacion()))
 				filtros.add(a.getBarco().getDenominacion());
-		añadirRadioBoton(filtros);
+		aÃ±adirRadioBoton(filtros);
 	}
 
 	private void cargarFiltrosPrecio() {

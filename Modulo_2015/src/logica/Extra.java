@@ -10,7 +10,7 @@ public class Extra {
 	private String codigo;
 	private String descripcion;
 	private float precio;
-	private boolean añadido;
+	private boolean aÃ±adido;
 
 	/**
 	 * Constructor con parï¿½metros
@@ -26,7 +26,7 @@ public class Extra {
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.precio = precio;
-		añadido = false;
+		aÃ±adido = false;
 	}
 
 	/**
@@ -87,21 +87,21 @@ public class Extra {
 	}
 
 	/**
-	 * Mï¿½todo que devuelve el parï¿½metro aï¿½adido del extra
+	 * Mï¿½todo que devuelve el parï¿½metro aÃ±adido del extra
 	 * 
-	 * @return Parï¿½metro aï¿½adido del extra
+	 * @return Parï¿½metro aÃ±adido del extra
 	 */
-	public boolean isAñadido() {
-		return añadido;
+	public boolean isaÃ±adido() {
+		return aÃ±adido;
 	}
 
 	/**
-	 * Mï¿½todo que modifica el parï¿½metro aï¿½adido del extra
+	 * Mï¿½todo que modifica el parï¿½metro aÃ±adido del extra
 	 * 
-	 * @param aï¿½adido
-	 *            El nuevo parï¿½metro añadido del extra
+	 * @param aÃ±adido
+	 *            El nuevo parï¿½metro aÃ±adido del extra
 	 */
-	public void setAñadido(boolean añadido) {
-		this.añadido = añadido;
+	public void setaÃ±adido(boolean aÃ±adido) {
+		this.aÃ±adido = aÃ±adido;
 	}
 }

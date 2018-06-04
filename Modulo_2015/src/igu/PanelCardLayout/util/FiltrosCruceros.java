@@ -62,7 +62,7 @@ public class FiltrosCruceros implements ActionListener {
 		else {
 			for (Crucero crucero : panel.getVp().getCatalogo().getCruceros()) {
 				if (crucero.getZona().equals(filtro)) {
-					panel.añadirCruceroTabla(crucero);
+					panel.aÃ±adirCruceroTabla(crucero);
 				}
 			}
 		}

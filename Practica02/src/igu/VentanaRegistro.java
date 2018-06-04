@@ -30,7 +30,7 @@ public class VentanaRegistro extends JFrame {
 	private JTextField tfUsuario;
 	private JComboBox<String> cbDia;
 	private JComboBox<String> cbMes;
-	private JComboBox<String> cbAño;
+	private JComboBox<String> cbAÃ±o;
 	private JPasswordField pfPassword;
 	private JPasswordField pfRepassword;
 	private final ButtonGroup buttonGroupSexo = new ButtonGroup();
@@ -108,11 +108,11 @@ public class VentanaRegistro extends JFrame {
 					else if (String.valueOf(pfPassword.getPassword())
 							.equals(""))
 						JOptionPane.showMessageDialog(null,
-								"EL campo 'Contraseña' esta vacio");
+								"EL campo 'ContraseÃ±a' esta vacio");
 					else if (String.valueOf(pfPassword.getPassword())
 							.length() < 5)
 						JOptionPane.showMessageDialog(null,
-								"EL campo 'Password' contener mñs de 5 caracteres");
+								"EL campo 'Password' contener mÃ±s de 5 caracteres");
 					else if (String.valueOf(pfRepassword.getPassword())
 							.equals(""))
 						JOptionPane.showMessageDialog(null,
@@ -120,11 +120,11 @@ public class VentanaRegistro extends JFrame {
 					else if (String.valueOf(pfRepassword.getPassword())
 							.length() < 5)
 						JOptionPane.showMessageDialog(null,
-								"EL campo 'Reintroduzca Password' contener mñs de 5 caracteres");
+								"EL campo 'Reintroduzca Password' contener mÃ±s de 5 caracteres");
 					else if (!(String.valueOf(pfPassword.getPassword()).equals(
 							String.valueOf(pfRepassword.getPassword()))))
 						JOptionPane.showMessageDialog(null,
-								"Las contraseñas no coinciden");
+								"Las contraseÃ±as no coinciden");
 					else
 						System.exit(0);
 				}
@@ -180,7 +180,7 @@ public class VentanaRegistro extends JFrame {
 			pnEdad.setLayout(null);
 			pnEdad.add(getCbDia());
 			pnEdad.add(getCbMes());
-			pnEdad.add(getCbAño());
+			pnEdad.add(getCbAÃ±o());
 		}
 		return pnEdad;
 	}
@@ -294,16 +294,16 @@ public class VentanaRegistro extends JFrame {
 		return cbMes;
 	}
 
-	private JComboBox<String> getCbAño() {
-		if (cbAño == null) {
-			String[] años = new String[100];
+	private JComboBox<String> getCbAÃ±o() {
+		if (cbAÃ±o == null) {
+			String[] aÃ±os = new String[100];
 			for (int i = 0; i < 100; i++)
-				años[i] = "" + (i + 1915);
-			cbAño = new JComboBox<String>();
-			cbAño.setBounds(237, 29, 60, 20);
-			cbAño.setModel(new DefaultComboBoxModel<String>(años));
+				aÃ±os[i] = "" + (i + 1915);
+			cbAÃ±o = new JComboBox<String>();
+			cbAÃ±o.setBounds(237, 29, 60, 20);
+			cbAÃ±o.setModel(new DefaultComboBoxModel<String>(aÃ±os));
 		}
-		return cbAño;
+		return cbAÃ±o;
 	}
 
 	private JPasswordField getPfPassword() {

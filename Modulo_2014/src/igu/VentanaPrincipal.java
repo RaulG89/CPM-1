@@ -2,7 +2,7 @@ package igu;
 
 /**
  * TODO:
- *   ���Na siquiera!!!
+ *   ñññNa siquiera!!!
  */
 
 import java.awt.BorderLayout;
@@ -109,7 +109,7 @@ public class VentanaPrincipal extends JFrame {
 	private JPanel screen0;
 	private JPanel s0footer;
 	private Component s0fleadingseparator;
-	private JButton s0fbtnespa�ol;
+	private JButton s0fbtnespañol;
 	private Component s0fmiddleseparator;
 	private JButton s0fbtnenglish;
 	private Component s0ftrailingseparator;
@@ -119,7 +119,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel s0name;
 	private Component s0trailingseparator;
 	private Component s0footerseparator;
-	// Capa 1: Selecci�n de pel�cula
+	// Capa 1: Selecciñn de pelñcula
 	private JPanel screen1;
 	private JPanel s1head;
 	private JLabel s1htitle;
@@ -137,7 +137,7 @@ public class VentanaPrincipal extends JFrame {
 	private JTextArea s1bdbmoviesinopsis;
 	private JPanel s1bdbfootercontainer;
 	private JButton s1bdbfcontinuar;
-	// Capa 2: Selecci�n de fecha y hora
+	// Capa 2: Selecciñn de fecha y hora
 	private JPanel screen2;
 	private JPanel s2head;
 	private JPanel s2hbackcontainer;
@@ -152,7 +152,7 @@ public class VentanaPrincipal extends JFrame {
 	private JPanel s2bhbuttoncontainer;
 	private JPanel s2bdatecontainer;
 	private Component s2bdupperseparator;
-	// Capa 3: Selecci�n de asientos
+	// Capa 3: Selecciñn de asientos
 	private JPanel screen3;
 	private JPanel s3head;
 	private JPanel s3hbackcontainer;
@@ -174,7 +174,7 @@ public class VentanaPrincipal extends JFrame {
 	private Component s3bmleadingseparator;
 	private JPanel s3bmgrid;
 	private Component s3bmtrailingseparator;
-	// Capa 4: Revisi�n de la compra
+	// Capa 4: Revisiñn de la compra
 	private JPanel screen4;
 	private JPanel s4head;
 	private Component s4hseparator;
@@ -194,7 +194,7 @@ public class VentanaPrincipal extends JFrame {
 	private JTextArea tempmovie2;
 	private Component s4bleadingseparator;
 	private Component s4btrailingseparator;
-	// Capa 5: Informaci�n de pago
+	// Capa 5: Informaciñn de pago
 	private JPanel screen5;
 	private JPanel s5head;
 	private JPanel s5hbackcontainer;
@@ -212,7 +212,7 @@ public class VentanaPrincipal extends JFrame {
 	private Component s5bcdleadingseparator;
 	private JCheckBox ckJubilados;
 	private Component s5bcdmiddleseparator;
-	private JCheckBox ckCumplea�os;
+	private JCheckBox ckCumpleaños;
 	private Component s5bcdtrailingseparator;
 	private JLabel lbPrecioFinal;
 	private JLabel lbNumeroPrecio;
@@ -276,7 +276,7 @@ public class VentanaPrincipal extends JFrame {
 		// Evitar que se vean las InvalidHelpSetContextException.
 		// No muy ortodoxo, pero efectivo.
 		//
-		// Comentar esta l�nea para poder depurar excepciones.
+		// Comentar esta lñnea para poder depurar excepciones.
 		System.setErr(null);
 		override = true;
 		main = this;
@@ -289,9 +289,8 @@ public class VentanaPrincipal extends JFrame {
 			cimera = new Cinema();
 		} catch (IOException ee) {
 			new DialogoAviso(main, "Error grave",
-					new ImageIcon(VentanaPrincipal.class
-							.getResource("/img/Azur_triste.png")),
-					"Algo ha pasado, y no se ha podido iniciar la aplicaci�n correctamente. Comprueba que todos los archivos est�n en su lugar e int�ntalo de nuevo. Los archivos de cartelera y tarifas deben estar en 'scr/files' y en 'bin/files'.",
+					new ImageIcon(VentanaPrincipal.class.getResource("/img/Azur_triste.png")),
+					"Algo ha pasado, y no se ha podido iniciar la aplicaciñn correctamente. Comprueba que todos los archivos estñn en su lugar e intñntalo de nuevo. Los archivos de cartelera y tarifas deben estar en 'scr/files' y en 'bin/files'.",
 					"Salir").showDialog();
 			System.exit(ABORT);
 		}
@@ -299,8 +298,7 @@ public class VentanaPrincipal extends JFrame {
 			peliculas.addElement(m);
 
 		setTitle("TPV");
-		setIconImage(Toolkit.getDefaultToolkit()
-				.getImage(VentanaPrincipal.class.getResource("/img/Azur.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/img/Azur.png")));
 		locale = Locale.getDefault(Locale.Category.FORMAT);
 		txt = ResourceBundle.getBundle("files/locale", locale);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -317,20 +315,16 @@ public class VentanaPrincipal extends JFrame {
 		cardPanel.add(getScreen2(), "name_17759650846553");
 		cardPanel.add(getScreen3(), "name_21799621370465");
 		cardPanel.add(getScreen4(), "name_23092145130758");
-		((CardLayout) cardPanel.getLayout()).addLayoutComponent(getScreen1(),
-				"capa1");
+		((CardLayout) cardPanel.getLayout()).addLayoutComponent(getScreen1(), "capa1");
 		cardPanel.add(getScreen5(), "name_320809574972681");
 		cardPanel.add(getScreen6(), "name_18104668808046");
 		cardPanel.add(getScreen7(), "name_19551580290860");
-		// Crear la cuadr�cula de butacas para la capa 3
+		// Crear la cuadrñcula de butacas para la capa 3
 		for (int i = 0; i < 30; i++) {
 			JCheckBox seat = new JCheckBox();
-			seat.setIcon(new ImageIcon(
-					VentanaPrincipal.class.getResource("/img/seat_empty.png")));
-			seat.setSelectedIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/seat_selected.png")));
-			seat.setDisabledIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/seat_occupied.png")));
+			seat.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/seat_empty.png")));
+			seat.setSelectedIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/seat_selected.png")));
+			seat.setDisabledIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/seat_occupied.png")));
 			seat.setText(String.valueOf(i + 1));
 			// seat.setBorderPainted(false);
 			// seat.setBorder(new LineBorder(new Color(255, 255, 255), 2));
@@ -360,20 +354,14 @@ public class VentanaPrincipal extends JFrame {
 			if (override)
 				return;
 			if (ie.getStateChange() == ItemEvent.SELECTED) {
-				s3bfentradas.setText(String
-						.valueOf(Integer.valueOf(s3bfentradas.getText()) + 1));
-				System.out.println(
-						" ** A�adiendo la butaca " + pos + " al pedido");
-				pedido.a�adirButaca(
-						pedido.getPelicula().getSala().getButacas().get(pos));
+				s3bfentradas.setText(String.valueOf(Integer.valueOf(s3bfentradas.getText()) + 1));
+				System.out.println(" ** Añadiendo la butaca " + pos + " al pedido");
+				pedido.añadirButaca(pedido.getPelicula().getSala().getButacas().get(pos));
 				s3bfcontinuar.setEnabled(true);
 			} else if (ie.getStateChange() == ItemEvent.DESELECTED) {
-				s3bfentradas.setText(String
-						.valueOf(Integer.valueOf(s3bfentradas.getText()) - 1));
-				System.out.println(
-						" ** Eliminando la butaca " + pos + " del pedido");
-				pedido.eliminarButaca(
-						pedido.getPelicula().getSala().getButacas().get(pos));
+				s3bfentradas.setText(String.valueOf(Integer.valueOf(s3bfentradas.getText()) - 1));
+				System.out.println(" ** Eliminando la butaca " + pos + " del pedido");
+				pedido.eliminarButaca(pedido.getPelicula().getSala().getButacas().get(pos));
 				if (pedido.getButacas().size() == 0)
 					s3bfcontinuar.setEnabled(false);
 			}
@@ -417,8 +405,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s1hbuttoncontainer == null) {
 			s1hbuttoncontainer = new JPanel();
 			s1hbuttoncontainer.setBackground(new Color(40, 40, 40));
-			s1hbuttoncontainer
-					.setLayout(new FlowLayout(FlowLayout.TRAILING, 5, 5));
+			s1hbuttoncontainer.setLayout(new FlowLayout(FlowLayout.TRAILING, 5, 5));
 			s1hbuttoncontainer.add(getS1hbayuda());
 			s1hbuttoncontainer.add(getS1hbsalir());
 		}
@@ -428,9 +415,8 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getS1hbsalir() {
 		if (s1hbsalir == null) {
 			s1hbsalir = new JButton("");
-			s1hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_salir.png")));
-			// Este bot�n quiere ir a la primera capa
+			s1hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_salir.png")));
+			// Este botñn quiere ir a la primera capa
 			s1hbsalir.addActionListener(primero);
 			s1hbsalir.setBorderPainted(false);
 			s1hbsalir.setForeground(new Color(255, 255, 255));
@@ -443,8 +429,7 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getS1hbayuda() {
 		if (s1hbayuda == null) {
 			s1hbayuda = new JButton("");
-			s1hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_ayuda.png")));
+			s1hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_ayuda.png")));
 			s1hbayuda.setBorderPainted(false);
 			s1hbayuda.setForeground(Color.WHITE);
 			s1hbayuda.setBorder(new LineBorder(new Color(255, 255, 255), 2));
@@ -468,10 +453,8 @@ public class VentanaPrincipal extends JFrame {
 	private JScrollPane getScrollPane_1() {
 		if (s1bmoviescroll == null) {
 			s1bmoviescroll = new JScrollPane(getS1bmovielist());
-			s1bmoviescroll
-					.setBorder(new LineBorder(new Color(255, 255, 255), 2));
-			s1bmoviescroll.setHorizontalScrollBarPolicy(
-					ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			s1bmoviescroll.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+			s1bmoviescroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		}
 		return s1bmoviescroll;
 	}
@@ -484,14 +467,10 @@ public class VentanaPrincipal extends JFrame {
 					Movie sel = s1bmovielist.getSelectedValue();
 					if (sel == null)
 						return;
-					s1bdhmovieinfo.setText(
-							sel.getDetailsForScreen1(locale.toLanguageTag()));
-					s1bdbmoviesinopsis
-							.setText(sel.getSinopsis(locale.toLanguageTag()));
-					System.out.println("****** Cambiando icono a: " + "/img/"
-							+ sel.getCodigo() + ".png ******");
-					adaptarImagenLabel(s1bdhmovieposter,
-							"/img/" + sel.getCodigo() + ".png");
+					s1bdhmovieinfo.setText(sel.getDetailsForScreen1(locale.toLanguageTag()));
+					s1bdbmoviesinopsis.setText(sel.getSinopsis(locale.toLanguageTag()));
+					System.out.println("****** Cambiando icono a: " + "/img/" + sel.getCodigo() + ".png ******");
+					adaptarImagenLabel(s1bdhmovieposter, "/img/" + sel.getCodigo() + ".png");
 					s1bdbfcontinuar.setEnabled(true);
 					for (Purchase p : cimera.getCliente().getPedidos())
 						if (p.getPelicula() == sel)
@@ -513,8 +492,7 @@ public class VentanaPrincipal extends JFrame {
 	private JPanel getS1bdetailcontainer() {
 		if (s1bdetailcontainer == null) {
 			s1bdetailcontainer = new JPanel();
-			s1bdetailcontainer
-					.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+			s1bdetailcontainer.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s1bdetailcontainer.setBackground(new Color(40, 40, 40));
 			s1bdetailcontainer.setLayout(new GridLayout(2, 0, 0, 10));
 			s1bdetailcontainer.add(getPanel_1());
@@ -527,8 +505,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s1bdheadercontainer == null) {
 			s1bdheadercontainer = new JPanel();
 			s1bdheadercontainer.setBackground(new Color(40, 40, 40));
-			s1bdheadercontainer
-					.setBorder(new LineBorder(new Color(40, 40, 40), 10));
+			s1bdheadercontainer.setBorder(new LineBorder(new Color(40, 40, 40), 10));
 			s1bdheadercontainer.setLayout(new GridLayout(0, 2, 10, 0));
 			s1bdheadercontainer.add(getS1bdhmovieposter());
 			s1bdheadercontainer.add(getS1bdhmovieinfo());
@@ -545,9 +522,8 @@ public class VentanaPrincipal extends JFrame {
 				public void componentResized(ComponentEvent e) {
 					if (s1bmovielist.getSelectedValue() == null)
 						return;
-					adaptarImagenLabel(s1bdhmovieposter, "/img/"
-							+ s1bmovielist.getSelectedValue().getCodigo()
-							+ ".png");
+					adaptarImagenLabel(s1bdhmovieposter,
+							"/img/" + s1bmovielist.getSelectedValue().getCodigo() + ".png");
 				}
 			});
 		}
@@ -596,8 +572,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s1bdbfootercontainer == null) {
 			s1bdbfootercontainer = new JPanel();
 			s1bdbfootercontainer.setBackground(new Color(40, 40, 40));
-			FlowLayout flowLayout = (FlowLayout) s1bdbfootercontainer
-					.getLayout();
+			FlowLayout flowLayout = (FlowLayout) s1bdbfootercontainer.getLayout();
 			flowLayout.setAlignment(FlowLayout.TRAILING);
 			s1bdbfootercontainer.add(getS1bdbfcontinuar());
 		}
@@ -608,20 +583,17 @@ public class VentanaPrincipal extends JFrame {
 		if (s1bdbfcontinuar == null) {
 			s1bdbfcontinuar = new JButton("Elegir esta");
 			s1bdbfcontinuar.setEnabled(false);
-			// Este bot�n quiere ir a la siguiente capa
+			// Este botñn quiere ir a la siguiente capa
 			s1bdbfcontinuar.addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent arg0) {
-					System.out.println(
-							"****** Creando nuevo pedido para la pel�cula "
-									+ s1bmovielist.getSelectedValue()
-									+ " ******");
+					System.out.println("****** Creando nuevo pedido para la pelñcula " + s1bmovielist.getSelectedValue()
+							+ " ******");
 					pedido = new Purchase(s1bmovielist.getSelectedValue());
 
 					fechas.removeAllElements();
-					for (String f : s1bmovielist.getSelectedValue()
-							.getFechas(locale.toLanguageTag()))
+					for (String f : s1bmovielist.getSelectedValue().getFechas(locale.toLanguageTag()))
 						fechas.addElement(f);
 					s2bdatepicker.setModel(fechas);
 
@@ -630,17 +602,14 @@ public class VentanaPrincipal extends JFrame {
 					fecha = (String) s2bdatepicker.getSelectedItem();
 					for (Moment m : pedido.getPelicula().getMomentos()) {
 						if (m.getDate(locale.toLanguageTag()).equals(fecha)) {
-							JButton temp = new JButton(
-									m.getHour(locale.toLanguageTag()));
+							JButton temp = new JButton(m.getHour(locale.toLanguageTag()));
 							temp.setPreferredSize(new Dimension(100, 100));
 							temp.setBorderPainted(false);
-							temp.setBorder(new LineBorder(
-									new Color(255, 255, 255), 2));
+							temp.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 							temp.setForeground(new Color(255, 255, 255));
 							temp.setBackground(new Color(65, 105, 225));
 							temp.setFont(new Font("Segoe UI", Font.PLAIN, 15));
-							temp.addActionListener(new HourButtonActionListener(
-									m.getHour(locale.toLanguageTag())));
+							temp.addActionListener(new HourButtonActionListener(m.getHour(locale.toLanguageTag())));
 							s2bhbuttoncontainer.add(temp);
 						}
 					}
@@ -652,8 +621,7 @@ public class VentanaPrincipal extends JFrame {
 			s1bdbfcontinuar.setPreferredSize(new Dimension(100, 50));
 			s1bdbfcontinuar.setBorderPainted(false);
 			s1bdbfcontinuar.setAlignmentX(Component.CENTER_ALIGNMENT);
-			s1bdbfcontinuar
-					.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+			s1bdbfcontinuar.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s1bdbfcontinuar.setForeground(new Color(255, 255, 255));
 			s1bdbfcontinuar.setBackground(new Color(65, 105, 225));
 		}
@@ -687,8 +655,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s2hbackcontainer == null) {
 			s2hbackcontainer = new JPanel();
 			s2hbackcontainer.setBackground(new Color(40, 40, 40));
-			FlowLayout fl_s2hbackcontainer = (FlowLayout) s2hbackcontainer
-					.getLayout();
+			FlowLayout fl_s2hbackcontainer = (FlowLayout) s2hbackcontainer.getLayout();
 			fl_s2hbackcontainer.setAlignment(FlowLayout.LEADING);
 			s2hbackcontainer.add(getS2hback());
 		}
@@ -698,9 +665,8 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getS2hback() {
 		if (s2hback == null) {
 			s2hback = new JButton("");
-			s2hback.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_atras.png")));
-			// Este bot�n quiere ir a la capa anterior
+			s2hback.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_atras.png")));
+			// Este botñn quiere ir a la capa anterior
 			s2hback.addActionListener(anterior);
 			s2hback.setForeground(Color.WHITE);
 			s2hback.setBorderPainted(false);
@@ -736,9 +702,8 @@ public class VentanaPrincipal extends JFrame {
 		if (s2hbsalir == null) {
 			s2hbsalir = new JButton("");
 			s2hbsalir.setBackground(new Color(178, 34, 34));
-			s2hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_salir.png")));
-			// Este bot�n quiere ir a la primera capa
+			s2hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_salir.png")));
+			// Este botñn quiere ir a la primera capa
 			s2hbsalir.addActionListener(primero);
 			s2hbsalir.setBorderPainted(false);
 			s2hbsalir.setBorder(new LineBorder(new Color(255, 255, 255), 2));
@@ -749,8 +714,7 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getS2hbayuda() {
 		if (s2hbayuda == null) {
 			s2hbayuda = new JButton("");
-			s2hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_ayuda.png")));
+			s2hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_ayuda.png")));
 			s2hbayuda.setBackground(new Color(65, 105, 225));
 			s2hbayuda.setBorderPainted(false);
 			s2hbayuda.setBorder(new LineBorder(new Color(255, 255, 255), 2));
@@ -777,19 +741,14 @@ public class VentanaPrincipal extends JFrame {
 					fecha = (String) s2bdatepicker.getSelectedItem();
 					/**
 					 * for (Component c : s2bhbuttoncontainer.getComponents())
-					 * s2bhbuttoncontainer.remove(c);
-					 * s2bhbuttoncontainer.repaint(); for (Moment m :
+					 * s2bhbuttoncontainer.remove(c); s2bhbuttoncontainer.repaint(); for (Moment m :
 					 * pedido.getPelicula().getMomentos()) { if
-					 * (m.getDate(locale.toLanguageTag()).equals(fecha)) {
-					 * JButton temp = new
-					 * JButton(m.getHour(locale.toLanguageTag()));
-					 * temp.setPreferredSize(new Dimension(100, 100));
-					 * temp.setBorderPainted(false); temp.setBorder(new
-					 * LineBorder(new Color(255, 255, 255), 2));
-					 * temp.setForeground(new Color(255, 255, 255));
-					 * temp.setBackground(new Color(65, 105, 225));
-					 * temp.setFont(new Font("Segoe UI", Font.PLAIN, 15));
-					 * temp.addActionListener(new
+					 * (m.getDate(locale.toLanguageTag()).equals(fecha)) { JButton temp = new
+					 * JButton(m.getHour(locale.toLanguageTag())); temp.setPreferredSize(new
+					 * Dimension(100, 100)); temp.setBorderPainted(false); temp.setBorder(new
+					 * LineBorder(new Color(255, 255, 255), 2)); temp.setForeground(new Color(255,
+					 * 255, 255)); temp.setBackground(new Color(65, 105, 225)); temp.setFont(new
+					 * Font("Segoe UI", Font.PLAIN, 15)); temp.addActionListener(new
 					 * HourButtonActionListener(m.getHour(locale.toLanguageTag())));
 					 * s2bhbuttoncontainer.add(temp); } }
 					 */
@@ -806,11 +765,9 @@ public class VentanaPrincipal extends JFrame {
 	private JPanel getS2bhourcontainer() {
 		if (s2bhourcontainer == null) {
 			s2bhourcontainer = new JPanel();
-			s2bhourcontainer
-					.setBorder(new LineBorder(new Color(40, 40, 40), 20));
+			s2bhourcontainer.setBorder(new LineBorder(new Color(40, 40, 40), 20));
 			s2bhourcontainer.setBackground(new Color(40, 40, 40));
-			s2bhourcontainer.setLayout(
-					new BoxLayout(s2bhourcontainer, BoxLayout.PAGE_AXIS));
+			s2bhourcontainer.setLayout(new BoxLayout(s2bhourcontainer, BoxLayout.PAGE_AXIS));
 			s2bhourcontainer.add(getS2bhseparator());
 			s2bhourcontainer.add(getS2bhbuttoncontainer());
 		}
@@ -820,8 +777,7 @@ public class VentanaPrincipal extends JFrame {
 	private JPanel getS2bhbuttoncontainer() {
 		if (s2bhbuttoncontainer == null) {
 			s2bhbuttoncontainer = new JPanel();
-			FlowLayout flowLayout = (FlowLayout) s2bhbuttoncontainer
-					.getLayout();
+			FlowLayout flowLayout = (FlowLayout) s2bhbuttoncontainer.getLayout();
 			flowLayout.setVgap(10);
 			flowLayout.setHgap(10);
 			s2bhbuttoncontainer.setBackground(new Color(40, 40, 40));
@@ -887,9 +843,8 @@ public class VentanaPrincipal extends JFrame {
 			s3hback.setBorderPainted(false);
 			s3hback.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s3hback.setBackground(new Color(65, 105, 225));
-			s3hback.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_atras.png")));
-			// Este bot�n quiere ir a la capa anterior
+			s3hback.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_atras.png")));
+			// Este botñn quiere ir a la capa anterior
 			s3hback.addActionListener(anterior);
 		}
 		return s3hback;
@@ -921,8 +876,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s3hbayuda == null) {
 			s3hbayuda = new JButton("");
 			s3hbayuda.setBackground(new Color(65, 105, 225));
-			s3hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_ayuda.png")));
+			s3hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_ayuda.png")));
 			s3hbayuda.setBorderPainted(false);
 			s3hbayuda.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 		}
@@ -932,9 +886,8 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getS3hbsalir() {
 		if (s3hbsalir == null) {
 			s3hbsalir = new JButton("");
-			s3hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_salir.png")));
-			// Este bot�n quiere ir a la primera capa
+			s3hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_salir.png")));
+			// Este botñn quiere ir a la primera capa
 			s3hbsalir.addActionListener(primero);
 			s3hbsalir.setBorderPainted(false);
 			s3hbsalir.setBorder(new LineBorder(new Color(255, 255, 255), 2));
@@ -965,8 +918,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s3bmapcontainer == null) {
 			s3bmapcontainer = new JPanel();
 			s3bmapcontainer.setBackground(new Color(40, 40, 40));
-			s3bmapcontainer.setLayout(
-					new BoxLayout(s3bmapcontainer, BoxLayout.LINE_AXIS));
+			s3bmapcontainer.setLayout(new BoxLayout(s3bmapcontainer, BoxLayout.LINE_AXIS));
 			s3bmapcontainer.add(getS3bmleadingseparator());
 			s3bmapcontainer.add(getS3bmgrid());
 			s3bmapcontainer.add(getS3bmtrailingseparator());
@@ -989,8 +941,7 @@ public class VentanaPrincipal extends JFrame {
 
 	private JLabel getS3bfverbose() {
 		if (s3bfverbose == null) {
-			s3bfverbose = new JLabel(
-					"N\u00FAmero de entradas seleccionadas:  ");
+			s3bfverbose = new JLabel("N\u00FAmero de entradas seleccionadas:  ");
 			s3bfverbose.setForeground(new Color(255, 255, 255));
 			s3bfverbose.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		}
@@ -1020,11 +971,10 @@ public class VentanaPrincipal extends JFrame {
 			s3bfcontinuar.setForeground(new Color(255, 255, 255));
 			s3bfcontinuar.setPreferredSize(new Dimension(100, 50));
 			s3bfcontinuar.setBorderPainted(false);
-			s3bfcontinuar
-					.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+			s3bfcontinuar.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s3bfcontinuar.setBackground(new Color(65, 105, 225));
 			s3bfcontinuar.setFont(new Font("Segoe UI", Font.PLAIN, 15));
-			// Este bot�n quiere ir a la siguiente capa
+			// Este botñn quiere ir a la siguiente capa
 			s3bfcontinuar.addActionListener(new GotoScreen4ActionListener());
 		}
 		return s3bfcontinuar;
@@ -1034,8 +984,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s3bfbuttoncontainer == null) {
 			s3bfbuttoncontainer = new JPanel();
 			s3bfbuttoncontainer.setBackground(new Color(40, 40, 40));
-			FlowLayout flowLayout = (FlowLayout) s3bfbuttoncontainer
-					.getLayout();
+			FlowLayout flowLayout = (FlowLayout) s3bfbuttoncontainer.getLayout();
 			flowLayout.setAlignment(FlowLayout.TRAILING);
 			s3bfbuttoncontainer.add(getS3bfcontinuar());
 		}
@@ -1094,7 +1043,7 @@ public class VentanaPrincipal extends JFrame {
 			s0footer.setBackground(new Color(40, 40, 40));
 			s0footer.setLayout(new BoxLayout(s0footer, BoxLayout.LINE_AXIS));
 			s0footer.add(getS0fleadingseparator());
-			s0footer.add(getS0fbtnespa�ol());
+			s0footer.add(getS0fbtnespañol());
 			s0footer.add(getS0fmiddleseparator());
 			s0footer.add(getS0fbtnenglish());
 			s0footer.add(getS0ftrailingseparator());
@@ -1109,24 +1058,24 @@ public class VentanaPrincipal extends JFrame {
 		return s0fleadingseparator;
 	}
 
-	private JButton getS0fbtnespa�ol() {
-		if (s0fbtnespa�ol == null) {
-			s0fbtnespa�ol = new JButton("es");
-			s0fbtnespa�ol.setMnemonic('s');
-			s0fbtnespa�ol.setMinimumSize(new Dimension(100, 50));
-			s0fbtnespa�ol.setMaximumSize(new Dimension(100, 50));
-			s0fbtnespa�ol.setToolTipText("Espa\u00F1ol (Espa\u00F1a)");
-			s0fbtnespa�ol.addActionListener(
+	private JButton getS0fbtnespañol() {
+		if (s0fbtnespañol == null) {
+			s0fbtnespañol = new JButton("es");
+			s0fbtnespañol.setMnemonic('s');
+			s0fbtnespañol.setMinimumSize(new Dimension(100, 50));
+			s0fbtnespañol.setMaximumSize(new Dimension(100, 50));
+			s0fbtnespañol.setToolTipText("Espa\u00F1ol (Espa\u00F1a)");
+			s0fbtnespañol.addActionListener(
 					new LanguageSelection(LanguageSelection.ES));
-			s0fbtnespa�ol.setPreferredSize(new Dimension(100, 50));
-			s0fbtnespa�ol.setBorderPainted(false);
-			s0fbtnespa�ol
+			s0fbtnespañol.setPreferredSize(new Dimension(100, 50));
+			s0fbtnespañol.setBorderPainted(false);
+			s0fbtnespañol
 					.setBorder(new LineBorder(new Color(255, 255, 255), 2));
-			s0fbtnespa�ol.setForeground(new Color(255, 255, 255));
-			s0fbtnespa�ol.setFont(new Font("Segoe UI", Font.PLAIN, 15));
-			s0fbtnespa�ol.setBackground(new Color(65, 105, 225));
+			s0fbtnespañol.setForeground(new Color(255, 255, 255));
+			s0fbtnespañol.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+			s0fbtnespañol.setBackground(new Color(65, 105, 225));
 		}
-		return s0fbtnespa�ol;
+		return s0fbtnespañol;
 	}
 
 	private Component getS0fmiddleseparator() {
@@ -1143,14 +1092,12 @@ public class VentanaPrincipal extends JFrame {
 			s0fbtnenglish.setMinimumSize(new Dimension(100, 50));
 			s0fbtnenglish.setMaximumSize(new Dimension(100, 50));
 			s0fbtnenglish.setToolTipText("English (United Kingdom)");
-			s0fbtnenglish.addActionListener(
-					new LanguageSelection(LanguageSelection.EN));
+			s0fbtnenglish.addActionListener(new LanguageSelection(LanguageSelection.EN));
 			s0fbtnenglish.setForeground(new Color(255, 255, 255));
 			s0fbtnenglish.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 			s0fbtnenglish.setBackground(new Color(65, 105, 225));
 			s0fbtnenglish.setBorderPainted(false);
-			s0fbtnenglish
-					.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+			s0fbtnenglish.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s0fbtnenglish.setPreferredSize(new Dimension(100, 50));
 		}
 		return s0fbtnenglish;
@@ -1173,8 +1120,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getS0logo() {
 		if (s0logo == null) {
 			s0logo = new JLabel("");
-			s0logo.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/Logo\u00C9pico.png")));
+			s0logo.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Logo\u00C9pico.png")));
 			s0logo.setHorizontalAlignment(SwingConstants.CENTER);
 			s0logo.setAlignmentX(Component.CENTER_ALIGNMENT);
 		}
@@ -1268,8 +1214,7 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getS4hbayuda() {
 		if (s4hbayuda == null) {
 			s4hbayuda = new JButton("");
-			s4hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_ayuda.png")));
+			s4hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_ayuda.png")));
 			s4hbayuda.setBorderPainted(false);
 			s4hbayuda.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s4hbayuda.setBackground(new Color(65, 105, 225));
@@ -1282,21 +1227,17 @@ public class VentanaPrincipal extends JFrame {
 			s4hbsalir = new JButton("");
 			s4hbsalir.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					boolean result = new DialogoAviso(main,
-							txt.getString("d_s4_titulo"),
-							new ImageIcon(VentanaPrincipal.class
-									.getResource("/img/Azur_exclama.png")),
-							txt.getString("d_s4_mensaje"),
-							txt.getString("d_s4_boton1"),
-							txt.getString("d_s4_boton2")).showDialog();
+					boolean result = new DialogoAviso(main, txt.getString("d_s4_titulo"),
+							new ImageIcon(VentanaPrincipal.class.getResource("/img/Azur_exclama.png")),
+							txt.getString("d_s4_mensaje"), txt.getString("d_s4_boton1"), txt.getString("d_s4_boton2"))
+									.showDialog();
 					if (!result) {
 						cimera.getCliente().nuevoCliente();
 						((CardLayout) cardPanel.getLayout()).first(cardPanel);
 					}
 				}
 			});
-			s4hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_salir.png")));
+			s4hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_salir.png")));
 			s4hbsalir.setBorderPainted(false);
 			s4hbsalir.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s4hbsalir.setBackground(new Color(178, 34, 34));
@@ -1327,8 +1268,7 @@ public class VentanaPrincipal extends JFrame {
 			s4fcomprarmas.setMinimumSize(new Dimension(200, 50));
 			s4fcomprarmas.setPreferredSize(new Dimension(200, 50));
 			s4fcomprarmas.setBorderPainted(false);
-			s4fcomprarmas
-					.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+			s4fcomprarmas.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s4fcomprarmas.setForeground(new Color(255, 255, 255));
 			s4fcomprarmas.setBackground(new Color(65, 105, 225));
 			s4fcomprarmas.addActionListener(new S4LeftButtonActionListener());
@@ -1412,8 +1352,7 @@ public class VentanaPrincipal extends JFrame {
 					"\r\nEsta abuela es un peligro IV: La Venganza de Serafina\r\nMi\u00E9rcoles, 26 de Noviembre a las 16:00 h\r\nButacas: B3, B4\r\nPrecio total: 16.384 EUR");
 			tempmovie1.setBounds(new Rectangle(10, 10, 10, 10));
 			tempmovie1.setBorder(new LineBorder(new Color(255, 255, 255)));
-			tempmovie1.setCursor(
-					Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+			tempmovie1.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 			tempmovie1.setPreferredSize(new Dimension(600, 150));
 			tempmovie1.setWrapStyleWord(true);
 			tempmovie1.setLineWrap(true);
@@ -1498,8 +1437,7 @@ public class VentanaPrincipal extends JFrame {
 			s5hback.setBorderPainted(false);
 			s5hback.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s5hback.setBackground(new Color(65, 105, 225));
-			s5hback.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_atras.png")));
+			s5hback.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_atras.png")));
 			s5hback.addActionListener(anterior);
 		}
 		return s5hback;
@@ -1531,8 +1469,7 @@ public class VentanaPrincipal extends JFrame {
 			s5bayuda = new JButton("");
 			s5bayuda.setBorderPainted(false);
 			s5bayuda.setBorder(new LineBorder(new Color(255, 255, 255), 2));
-			s5bayuda.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_ayuda.png")));
+			s5bayuda.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_ayuda.png")));
 			s5bayuda.setBackground(new Color(65, 105, 225));
 		}
 		return s5bayuda;
@@ -1541,8 +1478,7 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getS5bsalir() {
 		if (s5bsalir == null) {
 			s5bsalir = new JButton("");
-			s5bsalir.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_salir.png")));
+			s5bsalir.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_salir.png")));
 			s5bsalir.setBorderPainted(false);
 			s5bsalir.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s5bsalir.setBackground(new Color(178, 34, 34));
@@ -1566,8 +1502,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s5bcontainer == null) {
 			s5bcontainer = new JPanel();
 			s5bcontainer.setBackground(new Color(40, 40, 40));
-			s5bcontainer.setLayout(
-					new BoxLayout(s5bcontainer, BoxLayout.LINE_AXIS));
+			s5bcontainer.setLayout(new BoxLayout(s5bcontainer, BoxLayout.LINE_AXIS));
 			s5bcontainer.add(getS5bcleadingseparator());
 			s5bcontainer.add(getS5bcdescuentos());
 			s5bcontainer.add(getS5bctrailingseparator());
@@ -1604,7 +1539,7 @@ public class VentanaPrincipal extends JFrame {
 			s5bcdescuentos.add(getS5bcdleadingseparator());
 			s5bcdescuentos.add(getCkJubilados());
 			s5bcdescuentos.add(getS5bcdmiddleseparator());
-			s5bcdescuentos.add(getCkCumplea�os());
+			s5bcdescuentos.add(getCkCumpleaños());
 			s5bcdescuentos.add(getS5bcdtrailingseparator());
 		}
 		return s5bcdescuentos;
@@ -1630,24 +1565,16 @@ public class VentanaPrincipal extends JFrame {
 			ckJubilados.addItemListener(new ItemListener() {
 				public void itemStateChanged(ItemEvent ie) {
 					if (ie.getStateChange() == ItemEvent.SELECTED) {
-						cimera.getCliente().applyDelta(
-								cimera.getTarifa().getDeltaJubilados());
-						lbNumeroPrecio.setText(
-								cimera.getCliente().getPrecioTotal(new String())
-										+ " �");
+						cimera.getCliente().applyDelta(cimera.getTarifa().getDeltaJubilados());
+						lbNumeroPrecio.setText(cimera.getCliente().getPrecioTotal(new String()) + " ñ");
 					} else if (ie.getStateChange() == ItemEvent.DESELECTED) {
-						cimera.getCliente().removeDelta(
-								cimera.getTarifa().getDeltaJubilados());
-						lbNumeroPrecio.setText(
-								cimera.getCliente().getPrecioTotal(new String())
-										+ " �");
+						cimera.getCliente().removeDelta(cimera.getTarifa().getDeltaJubilados());
+						lbNumeroPrecio.setText(cimera.getCliente().getPrecioTotal(new String()) + " ñ");
 					}
 				}
 			});
-			ckJubilados.setSelectedIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/check_selected.png")));
-			ckJubilados.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/check_unselected.png")));
+			ckJubilados.setSelectedIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/check_selected.png")));
+			ckJubilados.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/check_unselected.png")));
 			ckJubilados.setHorizontalAlignment(SwingConstants.CENTER);
 			ckJubilados.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 			ckJubilados.setForeground(new Color(255, 255, 255));
@@ -1663,36 +1590,36 @@ public class VentanaPrincipal extends JFrame {
 		return s5bcdmiddleseparator;
 	}
 
-	private JCheckBox getCkCumplea�os() {
-		if (ckCumplea�os == null) {
-			ckCumplea�os = new JCheckBox("Incluir paquete de cumplea\u00F1os");
-			ckCumplea�os.addItemListener(new ItemListener() {
+	private JCheckBox getCkCumpleaños() {
+		if (ckCumpleaños == null) {
+			ckCumpleaños = new JCheckBox("Incluir paquete de cumplea\u00F1os");
+			ckCumpleaños.addItemListener(new ItemListener() {
 				public void itemStateChanged(ItemEvent ie) {
 					if (ie.getStateChange() == ItemEvent.SELECTED) {
 						cimera.getCliente().applyDelta(
-								cimera.getTarifa().getDeltaCumplea�os());
+								cimera.getTarifa().getDeltaCumpleaños());
 						lbNumeroPrecio.setText(
 								cimera.getCliente().getPrecioTotal(new String())
-										+ " �");
+										+ " ñ");
 					} else if (ie.getStateChange() == ItemEvent.DESELECTED) {
 						cimera.getCliente().removeDelta(
-								cimera.getTarifa().getDeltaCumplea�os());
+								cimera.getTarifa().getDeltaCumpleaños());
 						lbNumeroPrecio.setText(
 								cimera.getCliente().getPrecioTotal(new String())
-										+ " �");
+										+ " ñ");
 					}
 				}
 			});
-			ckCumplea�os.setIcon(new ImageIcon(VentanaPrincipal.class
+			ckCumpleaños.setIcon(new ImageIcon(VentanaPrincipal.class
 					.getResource("/img/check_unselected.png")));
-			ckCumplea�os.setSelectedIcon(new ImageIcon(VentanaPrincipal.class
+			ckCumpleaños.setSelectedIcon(new ImageIcon(VentanaPrincipal.class
 					.getResource("/img/check_selected.png")));
-			ckCumplea�os.setHorizontalAlignment(SwingConstants.CENTER);
-			ckCumplea�os.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-			ckCumplea�os.setBackground(new Color(40, 40, 40));
-			ckCumplea�os.setForeground(new Color(255, 255, 255));
+			ckCumpleaños.setHorizontalAlignment(SwingConstants.CENTER);
+			ckCumpleaños.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+			ckCumpleaños.setBackground(new Color(40, 40, 40));
+			ckCumpleaños.setForeground(new Color(255, 255, 255));
 		}
-		return ckCumplea�os;
+		return ckCumpleaños;
 	}
 
 	private Component getS5bcdtrailingseparator() {
@@ -1771,8 +1698,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s6hbackcontainer == null) {
 			s6hbackcontainer = new JPanel();
 			s6hbackcontainer.setBackground(new Color(40, 40, 40));
-			FlowLayout fl_s6hbackcontainer = (FlowLayout) s6hbackcontainer
-					.getLayout();
+			FlowLayout fl_s6hbackcontainer = (FlowLayout) s6hbackcontainer.getLayout();
 			fl_s6hbackcontainer.setAlignment(FlowLayout.LEADING);
 			s6hbackcontainer.add(getS6hbatras());
 		}
@@ -1807,8 +1733,7 @@ public class VentanaPrincipal extends JFrame {
 			s6hbatras.setBorderPainted(false);
 			s6hbatras.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s6hbatras.setBackground(new Color(65, 105, 225));
-			s6hbatras.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_atras.png")));
+			s6hbatras.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_atras.png")));
 			s6hbatras.addActionListener(anterior);
 		}
 		return s6hbatras;
@@ -1819,8 +1744,7 @@ public class VentanaPrincipal extends JFrame {
 			s6hbayuda = new JButton("");
 			s6hbayuda.setBorderPainted(false);
 			s6hbayuda.setBorder(new LineBorder(new Color(255, 255, 255), 2));
-			s6hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_ayuda.png")));
+			s6hbayuda.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_ayuda.png")));
 			s6hbayuda.setBackground(new Color(65, 105, 225));
 		}
 		return s6hbayuda;
@@ -1832,8 +1756,7 @@ public class VentanaPrincipal extends JFrame {
 			s6hbsalir.setBorderPainted(false);
 			s6hbsalir.setBorder(new LineBorder(new Color(255, 255, 255), 2));
 			s6hbsalir.setBackground(new Color(178, 34, 34));
-			s6hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/icono_salir.png")));
+			s6hbsalir.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/icono_salir.png")));
 			s6hbsalir.addActionListener(primero);
 		}
 		return s6hbsalir;
@@ -1862,8 +1785,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s6bcontainer == null) {
 			s6bcontainer = new JPanel();
 			s6bcontainer.setBackground(new Color(40, 40, 40));
-			s6bcontainer.setLayout(
-					new BoxLayout(s6bcontainer, BoxLayout.LINE_AXIS));
+			s6bcontainer.setLayout(new BoxLayout(s6bcontainer, BoxLayout.LINE_AXIS));
 			s6bcontainer.add(getS6bcleadingseparator());
 			s6bcontainer.add(getLbIntroDNI());
 			s6bcontainer.add(getTfDNI());
@@ -1936,24 +1858,18 @@ public class VentanaPrincipal extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					if (comprobarDNI()) {
 						try {
-							PrintWriter bw = new PrintWriter(new FileWriter(
-									"files/" + tfDNI.getText() + ".txt",
-									false));
+							PrintWriter bw = new PrintWriter(
+									new FileWriter("files/" + tfDNI.getText() + ".txt", false));
 							bw.println("******** ******** ******** ********");
 							bw.println("********    Cines Cimera   ********");
 							bw.println("******** ******** ******** ********");
-							cimera.getCliente().printClient(bw,
-									locale.toLanguageTag());
+							cimera.getCliente().printClient(bw, locale.toLanguageTag());
 							if (locale.toLanguageTag().equals("es")) {
-								bw.println(
-										"****** Gracias por su visita ******");
-								bw.println(
-										"******** ******** ******** ********");
+								bw.println("****** Gracias por su visita ******");
+								bw.println("******** ******** ******** ********");
 							} else if (locale.toLanguageTag().equals("en")) {
-								bw.println(
-										"**** Thank you for visiting us ****");
-								bw.println(
-										"******** ******** ******** ********");
+								bw.println("**** Thank you for visiting us ****");
+								bw.println("******** ******** ******** ********");
 							}
 							bw.close();
 						} catch (IOException e) {
@@ -1964,20 +1880,16 @@ public class VentanaPrincipal extends JFrame {
 							for (Seat s : p.getButacas()) {
 								for (Seat t : sala.getButacas())
 									if (t == s)
-										t.setEstado(Seat.OCUPADA,
-												p.getMomento());
+										t.setEstado(Seat.OCUPADA, p.getMomento());
 							}
 						}
 						((CardLayout) cardPanel.getLayout()).next(cardPanel);
 					} else {
 						tfDNI.grabFocus();
 						new DialogoAviso(main, txt.getString("d_s6_titulo"),
-								new ImageIcon(
-										Toolkit.getDefaultToolkit().getImage(
-												DialogoAviso.class.getResource(
-														"/img/Azur_exclama.png"))),
-								txt.getString("d_s6_mensaje"),
-								txt.getString("d_s6_boton1")).showDialog();
+								new ImageIcon(Toolkit.getDefaultToolkit()
+										.getImage(DialogoAviso.class.getResource("/img/Azur_exclama.png"))),
+								txt.getString("d_s6_mensaje"), txt.getString("d_s6_boton1")).showDialog();
 					}
 				}
 			});
@@ -2045,8 +1957,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s7boutercontainer == null) {
 			s7boutercontainer = new JPanel();
 			s7boutercontainer.setBackground(new Color(40, 40, 40));
-			s7boutercontainer.setLayout(
-					new BoxLayout(s7boutercontainer, BoxLayout.LINE_AXIS));
+			s7boutercontainer.setLayout(new BoxLayout(s7boutercontainer, BoxLayout.LINE_AXIS));
 			s7boutercontainer.add(getS7bocleadingseparator());
 			s7boutercontainer.add(getS7binnercontainer());
 			s7boutercontainer.add(getS7boctrailingseparator());
@@ -2072,8 +1983,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s7binnercontainer == null) {
 			s7binnercontainer = new JPanel();
 			s7binnercontainer.setBackground(new Color(40, 40, 40));
-			s7binnercontainer.setLayout(
-					new BoxLayout(s7binnercontainer, BoxLayout.PAGE_AXIS));
+			s7binnercontainer.setLayout(new BoxLayout(s7binnercontainer, BoxLayout.PAGE_AXIS));
 			s7binnercontainer.add(getS7biverbosecontainer());
 			s7binnercontainer.add(getS7biterminar());
 		}
@@ -2091,8 +2001,7 @@ public class VentanaPrincipal extends JFrame {
 		if (s7biverbosecontainer == null) {
 			s7biverbosecontainer = new JPanel();
 			s7biverbosecontainer.setBackground(new Color(40, 40, 40));
-			s7biverbosecontainer.setLayout(
-					new BoxLayout(s7biverbosecontainer, BoxLayout.LINE_AXIS));
+			s7biverbosecontainer.setLayout(new BoxLayout(s7biverbosecontainer, BoxLayout.LINE_AXIS));
 			s7biverbosecontainer.add(getS7bivlogo());
 			s7biverbosecontainer.add(getS7bivtexto());
 		}
@@ -2102,8 +2011,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getS7bivlogo() {
 		if (s7bivlogo == null) {
 			s7bivlogo = new JLabel("");
-			s7bivlogo.setIcon(new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/Azur_feliz_sm.png")));
+			s7bivlogo.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Azur_feliz_sm.png")));
 		}
 		return s7bivlogo;
 	}
@@ -2136,31 +2044,31 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * TODO ---- M�todos no creados por WindowBuilder ----
+	 * TODO ---- Mñtodos no creados por WindowBuilder ----
 	 */
 
 	/**
-	 * M�todo que comprueba si el texto introducido en el campo DNI se
-	 * corresponde con un DNI v�lido
+	 * Mñtodo que comprueba si el texto introducido en el campo DNI se corresponde
+	 * con un DNI vñlido
 	 * 
-	 * @return Si la comprobaci�n ha sido o no exitosa
+	 * @return Si la comprobaciñn ha sido o no exitosa
 	 */
 	private boolean comprobarDNI() {
 		String text = tfDNI.getText();
 		// Asegurarse de que tiene longitud 9
 		if (text.toCharArray().length != 9)
 			return false;
-		// Asegurarse de que los ocho primeros caracteres son n�meros
+		// Asegurarse de que los ocho primeros caracteres son nñmeros
 		for (int i = 0; i < 8; i++) {
 			try {
 				Integer.valueOf(String.valueOf(text.charAt(i)));
 			}
-			// Si no, no est� bien
+			// Si no, no estñ bien
 			catch (NumberFormatException e) {
 				return false;
 			}
 		}
-		// Asegurarse de que el �ltimo caracter es una letra
+		// Asegurarse de que el ñltimo caracter es una letra
 		try {
 			Integer.valueOf(String.valueOf(text.charAt(8)));
 		}
@@ -2168,19 +2076,19 @@ public class VentanaPrincipal extends JFrame {
 		catch (NumberFormatException e) {
 			return true;
 		}
-		// Si no, no est� bien
+		// Si no, no estñ bien
 		return false;
 	}
 
 	/**
-	 * M�todo que deja la interfaz como nueva para otro usuario
+	 * Mñtodo que deja la interfaz como nueva para otro usuario
 	 */
 	private void reiniciarInterfaz() {
 		tfDNI.setText("");
 		s1bmovielist.clearSelection();
 		s1bdbfcontinuar.setEnabled(false);
 		// s2bdatepicker.setSelectedIndex(0);
-		ckCumplea�os.setSelected(false);
+		ckCumpleaños.setSelected(false);
 		ckJubilados.setSelected(false);
 		tfDNI.setText("");
 		s1bdhmovieinfo.setText("");
@@ -2190,12 +2098,11 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * M�todo que elimina los pedidos seleccionados por el cliente y reforma
-	 * la ventana de Revisi�n de Compra con los que quedan
+	 * Mñtodo que elimina los pedidos seleccionados por el cliente y reforma la
+	 * ventana de Revisiñn de Compra con los que quedan
 	 */
 	private void removeSelectedPurchases() {
-		Purchase[] pedidos = cimera.getCliente().getPedidos()
-				.toArray(new Purchase[0]);
+		Purchase[] pedidos = cimera.getCliente().getPedidos().toArray(new Purchase[0]);
 		cimera.getCliente().getPedidos().clear();
 		for (Purchase p : pedidos) {
 			if (!p.is()) {
@@ -2228,8 +2135,8 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * M�todo que modifica los componentes para cambiar de idioma, incluyendo:
-	 * - Textos - Tooltips - Mnem�nicos - Cambios de tama�o (donde fuera
+	 * Mñtodo que modifica los componentes para cambiar de idioma, incluyendo:
+	 * - Textos - Tooltips - Mnemñnicos - Cambios de tamaño (donde fuera
 	 * necesario)
 	 */
 	private void translate() {
@@ -2252,7 +2159,7 @@ public class VentanaPrincipal extends JFrame {
 		s3hbsalir.setToolTipText(txt.getString("btnsalir"));
 		// for (Component seat : s3bmgrid.getComponents()) Las butacas ya no son
 		// constantes,
-		// if (seat instanceof JButton) sino que cambian al elegir sesi�n
+		// if (seat instanceof JButton) sino que cambian al elegir sesiñn
 		// ((JButton) seat).setToolTipText(txt.getString("s3bgrid_libre"));
 		s3bfcontinuar.setText(txt.getString("s3bfcontinuar_texto"));
 		s3bfcontinuar.setMnemonic(s3bfcontinuar.getText().toCharArray()[0]);
@@ -2264,8 +2171,8 @@ public class VentanaPrincipal extends JFrame {
 		s5bfpagar.setMnemonic(s5bfpagar.getText().toCharArray()[0]);
 		ckJubilados.setText(txt.getString("ckJubilados"));
 		ckJubilados.setToolTipText(txt.getString("ckJubilados_tt"));
-		ckCumplea�os.setText(txt.getString("ckCumplea�os"));
-		ckCumplea�os.setToolTipText(txt.getString("ckCumplea�os_tt"));
+		ckCumpleaños.setText(txt.getString("ckCumpleaños"));
+		ckCumpleaños.setToolTipText(txt.getString("ckCumpleaños_tt"));
 		lbPrecioFinal.setText(txt.getString("lbPrecioFinal"));
 
 		s6htitle.setText(txt.getString("s6header"));
@@ -2294,7 +2201,7 @@ public class VentanaPrincipal extends JFrame {
 			s1bdbfcontinuar.setPreferredSize(new Dimension(100, 50));
 			s1hbsalir.setMnemonic('S'); // Salir
 			s2hbsalir.setMnemonic('S');
-			s2hback.setMnemonic('A'); // Atr�s
+			s2hback.setMnemonic('A'); // Atrñs
 			s3hbsalir.setMnemonic('S');
 			s3hback.setMnemonic('A');
 			s4hbsalir.setMnemonic('S');
@@ -2302,7 +2209,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * M�todo que traduce la capa 4
+	 * Mñtodo que traduce la capa 4
 	 */
 	private void translateScreen4() {
 
@@ -2331,8 +2238,8 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * M�todo que ajusta y coloca una imagen como icono de un componente
-	 * seg�n su tama�o
+	 * Mñtodo que ajusta y coloca una imagen como icono de un componente segñn su
+	 * tamaño
 	 * 
 	 * @param component
 	 *            Componente
@@ -2340,10 +2247,8 @@ public class VentanaPrincipal extends JFrame {
 	 *            Ruta de acceso a la imagen
 	 */
 	private void adaptarImagenLabel(JComponent component, String rutaImagen) {
-		Image imgOriginal = new ImageIcon(getClass().getResource(rutaImagen))
-				.getImage();
-		Image imgEscalada = imgOriginal.getScaledInstance(
-				(int) (component.getWidth()), (int) (component.getHeight()),
+		Image imgOriginal = new ImageIcon(getClass().getResource(rutaImagen)).getImage();
+		Image imgEscalada = imgOriginal.getScaledInstance((int) (component.getWidth()), (int) (component.getHeight()),
 				Image.SCALE_FAST);
 		if (component instanceof JLabel)
 			((JLabel) component).setIcon(new ImageIcon(imgEscalada));
@@ -2409,11 +2314,11 @@ public class VentanaPrincipal extends JFrame {
 
 	/**
 	 * Clase que gestiona los eventos ActionPerformed de los botones 'Adelante',
-	 * 'Atr�s' y 'Volver al principio'
+	 * 'Atrñs' y 'Volver al principio'
 	 */
 	class CardSwipe implements ActionListener {
 
-		// �En qu� direcci�n quiere ir el bot�n que lanza el evento?
+		// ñEn quñ direcciñn quiere ir el botñn que lanza el evento?
 		private int destino;
 		public final static int PRIMERO = 0;
 		public final static int ULTIMO = 1;
@@ -2424,14 +2329,14 @@ public class VentanaPrincipal extends JFrame {
 		 * Constructor de la clase CardSwipe
 		 * 
 		 * @param destino
-		 *            Direcci�n del movimiento
+		 *            Direcciñn del movimiento
 		 */
 		public CardSwipe(int destino) {
 			this.destino = destino;
 		}
 
 		/**
-		 * M�todo que cambia de capa
+		 * Mñtodo que cambia de capa
 		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -2445,7 +2350,7 @@ public class VentanaPrincipal extends JFrame {
 				break;
 			case ULTIMO:
 				((CardLayout) cardPanel.getLayout()).last(cardPanel);
-				// Ir a la �ltima capa del panel
+				// Ir a la ñltima capa del panel
 				break;
 			case SIGUIENTE:
 				((CardLayout) cardPanel.getLayout()).next(cardPanel);
@@ -2479,12 +2384,12 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * Clase que gestiona los eventos ActionPerformed de los botones de
-	 * selecci�n de idioma
+	 * Clase que gestiona los eventos ActionPerformed de los botones de selecciñn de
+	 * idioma
 	 */
 	class LanguageSelection implements ActionListener {
 
-		// �Qu� idioma corresponde al bot�n pulsado?
+		// ñQuñ idioma corresponde al botñn pulsado?
 		private String idioma;
 		public final static String ES = "es";
 		public final static String EN = "en";
@@ -2493,14 +2398,14 @@ public class VentanaPrincipal extends JFrame {
 		 * Constructor de la clase CardSwipe
 		 * 
 		 * @param destino
-		 *            Direcci�n del movimiento
+		 *            Direcciñn del movimiento
 		 */
 		public LanguageSelection(String idioma) {
 			this.idioma = idioma;
 		}
 
 		/**
-		 * M�todo que cambia de idioma y pasa a la capa siguiente
+		 * Mñtodo que cambia de idioma y pasa a la capa siguiente
 		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -2536,13 +2441,13 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * Clase que controla el bot�n central de la capa 4
+	 * Clase que controla el botñn central de la capa 4
 	 */
 	class S4MiddleButtonActionListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// Si estamos en modo Revisi�n, pasar a modo Eliminar
+			// Si estamos en modo Revisiñn, pasar a modo Eliminar
 			if (screen4mode == MODE_REVIEW) {
 				screen4mode = MODE_DELETE;
 				s4fcomprarmas.setVisible(false);
@@ -2564,14 +2469,14 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * Clase que controla el bot�n izquierdo de la capa 4
+	 * Clase que controla el botñn izquierdo de la capa 4
 	 */
 	class S4LeftButtonActionListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// Si estamos en modo Revisi�n, comprar entradas para otra
-			// pel�cula
+			// Si estamos en modo Revisiñn, comprar entradas para otra
+			// pelñcula
 			if (screen4mode == MODE_REVIEW) {
 				((CardLayout) cardPanel.getLayout()).show(cardPanel, "capa1");
 				s1bmovielist.clearSelection();
@@ -2590,20 +2495,19 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * Clase que controla el bot�n derecho de la capa 4
+	 * Clase que controla el botñn derecho de la capa 4
 	 */
 	class S4RightButtonActionListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// Si estamos en modo Revisi�n, pasar a la siguiente capa
+			// Si estamos en modo Revisiñn, pasar a la siguiente capa
 			if (screen4mode == MODE_REVIEW) {
 				cimera.getCliente().updatePrecioTotal();
-				lbNumeroPrecio
-						.setText(cimera.getCliente().getPrecioFinal() + " �");
+				lbNumeroPrecio.setText(cimera.getCliente().getPrecioFinal() + " ñ");
 				((CardLayout) cardPanel.getLayout()).next(cardPanel);
 			} else {
-				// Si estamos en modo Eliminar, pasar a modo Revisi�n
+				// Si estamos en modo Eliminar, pasar a modo Revisiñn
 				screen4mode = MODE_REVIEW;
 				s4fcomprarmas.setVisible(true);
 				if (cimera.getCliente().getPedidos().size() > 0)
@@ -2623,8 +2527,8 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * Clase que controla la selecci�n de pedidos en la ventana de Revisi�n
-	 * de Compra
+	 * Clase que controla la selecciñn de pedidos en la ventana de Revisiñn de
+	 * Compra
 	 */
 	class SelectPurchaseMouseAdapter extends MouseAdapter {
 		Purchase pch;
@@ -2640,22 +2544,17 @@ public class VentanaPrincipal extends JFrame {
 				return;
 			if (!is) {
 				is = true;
-				System.out.println("****** Seleccionando el pedido "
-						+ pch.getPelicula() + " ******");
-				System.out.println("****** Se ha pulsado sobre "
-						+ ((JTextArea) me.getComponent()).getText()
-						+ " ******");
+				System.out.println("****** Seleccionando el pedido " + pch.getPelicula() + " ******");
+				System.out
+						.println("****** Se ha pulsado sobre " + ((JTextArea) me.getComponent()).getText() + " ******");
 				pch.set(true);
-				me.getComponent()
-						.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
+				me.getComponent().setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 				me.getComponent().setForeground(new Color(178, 34, 34));
 			} else {
 				is = false;
-				System.out.println("****** Deseleccionando el pedido "
-						+ pch.getPelicula() + " ******");
-				System.out.println("****** Se ha pulsado sobre "
-						+ ((JTextArea) me.getComponent()).getText()
-						+ " ******");
+				System.out.println("****** Deseleccionando el pedido " + pch.getPelicula() + " ******");
+				System.out
+						.println("****** Se ha pulsado sobre " + ((JTextArea) me.getComponent()).getText() + " ******");
 				pch.set(false);
 				me.getComponent().setFont(new Font("Segoe UI", Font.PLAIN, 15));
 				me.getComponent().setForeground(new Color(255, 255, 255));
@@ -2679,12 +2578,12 @@ public class VentanaPrincipal extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 			override = true;
 			pedido.updatePrecio(cimera.getTarifa());
-			cimera.getCliente().a�adirPedido(pedido);
+			cimera.getCliente().añadirPedido(pedido);
 
 			for (Component p : s4body.getComponents())
 				s4body.remove(p);
 			s4body.add(Box.createVerticalGlue());
-			// Crear �reas de Texto para cada pedido
+			// Crear ñreas de Texto para cada pedido
 			for (Purchase p : cimera.getCliente().getPedidos()) {
 				JTextArea purch = new JTextArea();
 				purch.setMaximumSize(new Dimension(600, 150));
@@ -2710,7 +2609,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	/**
-	 * Clase que controla lo que pasa al pulsar un bot�n con horas
+	 * Clase que controla lo que pasa al pulsar un botñn con horas
 	 */
 	class HourButtonActionListener implements ActionListener {
 		private String hora;
@@ -2721,36 +2620,26 @@ public class VentanaPrincipal extends JFrame {
 
 		public void actionPerformed(ActionEvent arg0) {
 			Moment[] momentos = pedido.getPelicula().getMomentos();
-			System.out.println(
-					" Estableciendo " + fecha + " como fecha del pedido");
-			System.out.println(
-					" Estableciendo " + hora + " como hora del pedido");
+			System.out.println(" Estableciendo " + fecha + " como fecha del pedido");
+			System.out.println(" Estableciendo " + hora + " como hora del pedido");
 			for (Moment m : momentos)
-				if (m.getDate(locale.toLanguageTag()).equals(fecha)
-						&& m.getHour(locale.toLanguageTag()).equals(hora))
+				if (m.getDate(locale.toLanguageTag()).equals(fecha) && m.getHour(locale.toLanguageTag()).equals(hora))
 					pedido.setMomento(m);
 			/**
-			 * Como ya tenemos el momento, podemos conseguir la ocupaci�n de
-			 * las butacas apropiadas
+			 * Como ya tenemos el momento, podemos conseguir la ocupaciñn de las butacas
+			 * apropiadas
 			 */
-			ArrayList<Seat> butacas = s1bmovielist.getSelectedValue().getSala()
-					.getButacas();
+			ArrayList<Seat> butacas = s1bmovielist.getSelectedValue().getSala().getButacas();
 			for (int i = 0; i < 30; i++) {
-				if (butacas.get(i)
-						.getEstado(pedido.getMomento()) == Seat.LIBRE) {
+				if (butacas.get(i).getEstado(pedido.getMomento()) == Seat.LIBRE) {
 					((JCheckBox) s3bmgrid.getComponents()[i]).setEnabled(true);
-					((JCheckBox) s3bmgrid.getComponents()[i])
-							.setSelected(false);
-				} else if (butacas.get(i)
-						.getEstado(pedido.getMomento()) == Seat.OCUPADA) {
+					((JCheckBox) s3bmgrid.getComponents()[i]).setSelected(false);
+				} else if (butacas.get(i).getEstado(pedido.getMomento()) == Seat.OCUPADA) {
 					((JCheckBox) s3bmgrid.getComponents()[i]).setEnabled(false);
-					((JCheckBox) s3bmgrid.getComponents()[i])
-							.setSelected(false);
-				} else if (butacas.get(i)
-						.getEstado(pedido.getMomento()) == Seat.PARA_MI) {
+					((JCheckBox) s3bmgrid.getComponents()[i]).setSelected(false);
+				} else if (butacas.get(i).getEstado(pedido.getMomento()) == Seat.PARA_MI) {
 					((JCheckBox) s3bmgrid.getComponents()[i]).setEnabled(true);
-					((JCheckBox) s3bmgrid.getComponents()[i])
-							.setSelected(false);
+					((JCheckBox) s3bmgrid.getComponents()[i]).setSelected(false);
 				}
 				s3bfentradas.setText("0");
 				pedido.getButacas().clear();

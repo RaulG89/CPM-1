@@ -5,15 +5,15 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
- * Clase 'Cliente' para el m�dulo entregable de CPM. Esta clase representa
- * todas las compras individuales de una persona f�sica en el TPV
+ * Clase 'Cliente' para el mñdulo entregable de CPM. Esta clase representa
+ * todas las compras individuales de una persona fñsica en el TPV
  * 
  * @author UO236852
  *
  */
 public class Client {
 	/**
-	 * El DNI del cliente (s�lo se rellena en la �ltima pantalla) Nota:
+	 * El DNI del cliente (sñlo se rellena en la ñltima pantalla) Nota:
 	 * Puede que no se use nunca
 	 */
 	@SuppressWarnings("unused")
@@ -35,7 +35,7 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que reinicia al cliente y simula que una nueva persona va a usar
+	 * Mñtodo que reinicia al cliente y simula que una nueva persona va a usar
 	 * el TPV
 	 */
 	public void nuevoCliente() {
@@ -44,12 +44,12 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que a�ade un nuevo pedido a este cliente
+	 * Mñtodo que añade un nuevo pedido a este cliente
 	 * 
 	 * @param pedido
-	 *            Pedido a a�adir
+	 *            Pedido a añadir
 	 */
-	public void a�adirPedido(Purchase pedido) {
+	public void añadirPedido(Purchase pedido) {
 		if (pedido == null)
 			throw new IllegalArgumentException(
 					"Algo ha pasado: El pedido es incorrecto o no existe");
@@ -58,7 +58,7 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que elimina un pedido de este cliente
+	 * Mñtodo que elimina un pedido de este cliente
 	 * 
 	 * @param pedido
 	 *            Pedido a eliminar
@@ -72,7 +72,7 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que devuelve el precio final de todos los pedidos de este
+	 * Mñtodo que devuelve el precio final de todos los pedidos de este
 	 * cliente
 	 * 
 	 * @return Precio final
@@ -86,7 +86,7 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que devuelve una lista de pedidos de este cliente
+	 * Mñtodo que devuelve una lista de pedidos de este cliente
 	 * 
 	 * @return Pedidos del cliente
 	 */
@@ -95,7 +95,7 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que devuelve el precio total en varias formas
+	 * Mñtodo que devuelve el precio total en varias formas
 	 * 
 	 * @param type
 	 *            Tipo de retorno deseado
@@ -112,7 +112,7 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que actualiza el precio total a partir de los pedidos
+	 * Mñtodo que actualiza el precio total a partir de los pedidos
 	 */
 	public void updatePrecioTotal() {
 		this.precioTotal = 0;
@@ -122,7 +122,7 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que aplica un incremento a cada pedido del cliente
+	 * Mñtodo que aplica un incremento a cada pedido del cliente
 	 * 
 	 * @param delta
 	 *            Incremento
@@ -136,7 +136,7 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que elimina un incremento a cada pedido del cliente
+	 * Mñtodo que elimina un incremento a cada pedido del cliente
 	 * 
 	 * @param delta
 	 *            Incremento
@@ -151,7 +151,7 @@ public class Client {
 	}
 
 	/**
-	 * M�todo que imprime una l�nea de asteriscos muy mona
+	 * Mñtodo que imprime una lñnea de asteriscos muy mona
 	 * 
 	 * @param pw
 	 *            Flujo de salida

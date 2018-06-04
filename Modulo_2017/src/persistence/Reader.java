@@ -16,10 +16,10 @@ import model.types.AccomodationType;
 
 public class Reader {
 	public static BufferedReader b;
-	private static final String ACCOMODATION_FILE = "data/output/alojamientos.dat";
-	private static final String TICKET_FILE = "data/output/entradas.dat";
-	private static final String THEMEPARK_FILE = "data/output/tematicos.dat";
-	private static final String PACKAGE_FILE = "data/output/paquetes.dat";
+	private static final String ACCOMODATION_FILE = "data/input/alojamientos.dat";
+	private static final String TICKET_FILE = "data/input/entradas.dat";
+	private static final String THEMEPARK_FILE = "data/input/tematicos.dat";
+	private static final String PACKAGE_FILE = "data/input/paquetes.dat";
 
 	public static HashMap<String, ThemePark> loadPark() {
 		List<String> lines = readFile(THEMEPARK_FILE);

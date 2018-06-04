@@ -340,7 +340,7 @@ public class VentanaPrincipal extends JFrame {
 							modeloListaPlay.addElement(f);
 					} else {
 						JOptionPane.showMessageDialog(null,
-								"No hay canciones en la lista de la librerña",
+								"No hay canciones en la lista de la librerÃ±a",
 								"Error", JOptionPane.ERROR_MESSAGE);
 					}
 				}
@@ -430,7 +430,7 @@ public class VentanaPrincipal extends JFrame {
 						reproducirAnteriorCancion();
 					else
 						JOptionPane.showMessageDialog(null,
-								"No hay canciones añadidas a la lista de reproduccion",
+								"No hay canciones aÃ±adidas a la lista de reproduccion",
 								"Error", JOptionPane.ERROR_MESSAGE);
 				}
 			});
@@ -470,7 +470,7 @@ public class VentanaPrincipal extends JFrame {
 						lblCancion.setText("Reproduciendo: " + aux.getName());
 					} else
 						JOptionPane.showMessageDialog(null,
-								"No hay canciones añadidas a la lista de reproduccion",
+								"No hay canciones aÃ±adidas a la lista de reproduccion",
 								"Error", JOptionPane.ERROR_MESSAGE);
 					modificarVolumen();
 				}
@@ -509,7 +509,7 @@ public class VentanaPrincipal extends JFrame {
 						reproducirSiguienteCancion();
 					else
 						JOptionPane.showMessageDialog(null,
-								"No hay canciones añadidas a la lista de reproduccion",
+								"No hay canciones aÃ±adidas a la lista de reproduccion",
 								"Error", JOptionPane.ERROR_MESSAGE);
 
 				}
@@ -523,8 +523,8 @@ public class VentanaPrincipal extends JFrame {
 
 	private void reproducirSiguienteCancion() {
 		int index = listSongsPlaylist.getSelectedIndex();
-		int tamaño = listSongsLibrary.getSelectedIndices().length - 1;
-		if (index < tamaño)
+		int tamaÃ±o = listSongsLibrary.getSelectedIndices().length - 1;
+		if (index < tamaÃ±o)
 			listSongsPlaylist.setSelectedIndex(index + 1);
 		else
 			listSongsPlaylist.setSelectedIndex(0);

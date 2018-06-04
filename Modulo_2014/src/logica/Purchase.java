@@ -5,23 +5,23 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
- * Clase 'Pedido' para el m�dulo entregable de CPM. Esta clase representa cada
- * una de las compras individuales de una persona f�sica en el TPV
+ * Clase 'Pedido' para el mñdulo entregable de CPM. Esta clase representa cada
+ * una de las compras individuales de una persona fñsica en el TPV
  * 
  * @author UO236852
  *
  */
 public class Purchase {
 	/**
-	 * Pel�cula que el cliente quiere ir a ver
+	 * Pelñcula que el cliente quiere ir a ver
 	 */
 	private Movie pelicula;
 	/**
-	 * Momento de la pel�cula
+	 * Momento de la pelñcula
 	 */
 	private Moment momento;
 	/**
-	 * Lista de butacas que el cliente quiere comprar para esta pel�cula
+	 * Lista de butacas que el cliente quiere comprar para esta pelñcula
 	 */
 	private ArrayList<Seat> butacas;
 	/**
@@ -29,7 +29,7 @@ public class Purchase {
 	 */
 	private float precio;
 	/**
-	 * Si el pedido est� o no seleccionado
+	 * Si el pedido estñ o no seleccionado
 	 */
 	private boolean is;
 	/**
@@ -38,19 +38,19 @@ public class Purchase {
 	private DecimalFormat df;
 
 	/**
-	 * M�todo que devuelve si el pedido est� seleccionado
+	 * Mñtodo que devuelve si el pedido estñ seleccionado
 	 * 
-	 * @return Si el pedido est� seleccionado
+	 * @return Si el pedido estñ seleccionado
 	 */
 	public boolean is() {
 		return is;
 	}
 
 	/**
-	 * M�todo que establece si el pedido est� seleccionado
+	 * Mñtodo que establece si el pedido estñ seleccionado
 	 * 
 	 * @param is
-	 *            Si el pedido est� seleccionado
+	 *            Si el pedido estñ seleccionado
 	 */
 	public void set(boolean is) {
 		this.is = is;
@@ -60,7 +60,7 @@ public class Purchase {
 	 * Constructor para la clase 'Pedido'
 	 * 
 	 * @param pelicula
-	 *            Pel�cula que se est� comprando
+	 *            Pelñcula que se estñ comprando
 	 */
 	public Purchase(Movie pelicula) {
 		butacas = new ArrayList<Seat>();
@@ -69,25 +69,25 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que a�ade una butaca a este pedido
+	 * Mñtodo que añade una butaca a este pedido
 	 * 
 	 * @param butaca
-	 *            Butaca a a�adir
+	 *            Butaca a añadir
 	 */
-	public void a�adirButaca(Seat butaca) {
+	public void añadirButaca(Seat butaca) {
 		if (butaca.getEstado(momento) == Seat.OCUPADA)
 			throw new IllegalArgumentException(
 					"Algo ha pasado: Esta butaca parece estar ocupada");
 		if (butacas.contains(butaca))
 			throw new IllegalArgumentException(
-					"Algo ha pasado: Esta butaca ya est� seleccionada para su compra");
+					"Algo ha pasado: Esta butaca ya estñ seleccionada para su compra");
 
 		butaca.setEstado(Seat.OCUPADA, momento);
 		butacas.add(butaca);
 	}
 
 	/**
-	 * M�todo que elimina una butaca a este pedido
+	 * Mñtodo que elimina una butaca a este pedido
 	 * 
 	 * @param butaca
 	 *            Butaca a eliminar
@@ -99,7 +99,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que modifica el precio del pedido
+	 * Mñtodo que modifica el precio del pedido
 	 * 
 	 * @param precio
 	 *            Nuevo precio
@@ -109,7 +109,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que devuelve el precio de este pedido como cadena
+	 * Mñtodo que devuelve el precio de este pedido como cadena
 	 * 
 	 * @return Precio (String)
 	 */
@@ -118,7 +118,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que devuelve el precio de este pedido como float
+	 * Mñtodo que devuelve el precio de este pedido como float
 	 * 
 	 * @return Precio (float)
 	 */
@@ -127,26 +127,26 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que devuelve la pel�cula para la cual este pedido existe
+	 * Mñtodo que devuelve la pelñcula para la cual este pedido existe
 	 * 
-	 * @return Pel�cula
+	 * @return Pelñcula
 	 */
 	public Movie getPelicula() {
 		return pelicula;
 	}
 
 	/**
-	 * M�todo que le asigna una pel�cula al pedido
+	 * Mñtodo que le asigna una pelñcula al pedido
 	 * 
 	 * @param pelicula
-	 *            Pel�cula
+	 *            Pelñcula
 	 */
 	public void setPelicula(Movie pelicula) {
 		this.pelicula = pelicula;
 	}
 
 	/**
-	 * M�todo que devuelve la fecha de este pedido para el idioma seleccionado
+	 * Mñtodo que devuelve la fecha de este pedido para el idioma seleccionado
 	 * 
 	 * @param locale
 	 *            Idioma correspondiente
@@ -157,7 +157,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que devuelve la hora de este pedido para el idioma seleccionado
+	 * Mñtodo que devuelve la hora de este pedido para el idioma seleccionado
 	 * 
 	 * @param locale
 	 *            Idioma correspondiente
@@ -168,7 +168,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que devuelve el momento de este pedido
+	 * Mñtodo que devuelve el momento de este pedido
 	 * 
 	 * @return Momento de este pedido
 	 */
@@ -177,7 +177,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que le asigna un momento a este pedido
+	 * Mñtodo que le asigna un momento a este pedido
 	 * 
 	 * @param moment
 	 *            Momento de este pedido
@@ -187,7 +187,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que devuelve las butacas asignadas a este pedido
+	 * Mñtodo que devuelve las butacas asignadas a este pedido
 	 * 
 	 * @return Butacas de este pedido
 	 */
@@ -196,8 +196,8 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que actualiza el precio del pedido para todas las butacas
-	 * seg�n la tarifa correspondiente
+	 * Mñtodo que actualiza el precio del pedido para todas las butacas
+	 * segñn la tarifa correspondiente
 	 * 
 	 * @param tarifa
 	 *            Tarifa
@@ -213,7 +213,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que aplica un incremento a cada butaca de este pedido
+	 * Mñtodo que aplica un incremento a cada butaca de este pedido
 	 * 
 	 * @param delta
 	 *            Incremento
@@ -225,7 +225,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que elimina un incremento de cada butaca de este pedido
+	 * Mñtodo que elimina un incremento de cada butaca de este pedido
 	 * 
 	 * @param delta
 	 *            Incremento
@@ -237,7 +237,7 @@ public class Purchase {
 	}
 
 	/**
-	 * M�todo que imprime todas las butacas de este pedido seg�n el idioma
+	 * Mñtodo que imprime todas las butacas de este pedido segñn el idioma
 	 * correspondiente
 	 * 
 	 * @param pw
@@ -251,14 +251,14 @@ public class Purchase {
 		pw.println(this.getPelicula().getSala().toString());
 		for (Seat s : this.butacas) {
 			if (locale.equals("es"))
-				pw.println("    Butaca n� " + s.toString());
+				pw.println("    Butaca nñ " + s.toString());
 			else if (locale.equals("en"))
 				pw.println("    Seat " + s.toString());
 		}
 	}
 
 	/**
-	 * M�todo que devuelve los datos del pedido para el idioma seleciconado
+	 * Mñtodo que devuelve los datos del pedido para el idioma seleciconado
 	 * 
 	 * @param locale
 	 *            Idioma
@@ -267,14 +267,14 @@ public class Purchase {
 	public String toString(String locale) {
 		StringBuilder sb = new StringBuilder();
 		if (locale.equals("es")) {
-			// A�adir t�tulo
+			// Añadir tñtulo
 			sb.append(this.pelicula.getTitulo());
 			if (this.pelicula.is3d())
 				sb.append(" (3D)");
 			else
 				sb.append(" (2D)");
 			sb.append("\n");
-			// A�adir fecha y hora
+			// Añadir fecha y hora
 			sb.append(this.getFecha(locale));
 			sb.append(" a las ");
 			sb.append(this.getHora(locale));
@@ -284,24 +284,24 @@ public class Purchase {
 				sb.append("Butaca ");
 			else
 				sb.append("Butacas ");
-			// A�adir las butacas
+			// Añadir las butacas
 			for (Seat b : this.butacas)
 				sb.append(b + ", ");
-			// Eliminar el �ltimo ', ' que sobra
+			// Eliminar el ñltimo ', ' que sobra
 			sb.delete(sb.length() - 2, sb.length() - 1);
 			sb.append("\n");
-			// A�adir el precio
+			// Añadir el precio
 			sb.append("Precio total: ");
-			sb.append(df.format(precio) + " �");
+			sb.append(df.format(precio) + " ñ");
 		} else if (locale.equals("en")) {
-			// A�adir t�tulo
+			// Añadir tñtulo
 			sb.append(this.pelicula.getTitulo());
 			if (this.pelicula.is3d())
 				sb.append(" (3D)");
 			else
 				sb.append(" (2D)");
 			sb.append("\n");
-			// A�adir fecha y hora
+			// Añadir fecha y hora
 			sb.append(this.getFecha(locale));
 			sb.append(" at ");
 			sb.append(this.getHora(locale));
@@ -311,15 +311,15 @@ public class Purchase {
 				sb.append("Seat ");
 			else
 				sb.append("Seats ");
-			// A�adir las butacas
+			// Añadir las butacas
 			for (Seat b : this.butacas)
 				sb.append(b + ", ");
-			// Eliminar el �ltimo ', ' que sobra
+			// Eliminar el ñltimo ', ' que sobra
 			sb.delete(sb.length() - 2, sb.length() - 1);
 			sb.append("\n");
-			// A�adir el precio
+			// Añadir el precio
 			sb.append("Total price: ");
-			sb.append(df.format(precio) + " �");
+			sb.append(df.format(precio) + " ñ");
 		}
 
 		return sb.toString();

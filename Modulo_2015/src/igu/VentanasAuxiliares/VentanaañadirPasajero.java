@@ -37,7 +37,7 @@ import logica.Pasajero;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class VentanaAñadirPasajero extends JDialog {
+public class VentanaaÃ±adirPasajero extends JDialog {
 	private static final long serialVersionUID = 6108482249162521863L;
 	private VentanaPrincipal vp;
 	private JPanel pnPrincipal;
@@ -59,10 +59,10 @@ public class VentanaAñadirPasajero extends JDialog {
 	private JLabel lblDni;
 	private JTextField txtDniPasajero;
 	private JLabel lblFechaDeNacimiento;
-	private JPanel pnAñadirFecha;
+	private JPanel pnaÃ±adirFecha;
 	private JComboBox<String> cbDia;
 	private JComboBox<String> cbMes;
-	private JComboBox<String> cbAño;
+	private JComboBox<String> cbAÃ±o;
 	private JPanel pnObservaciones;
 	private JLabel lblObservaciones;
 	private JScrollPane scObservaciones;
@@ -70,7 +70,7 @@ public class VentanaAñadirPasajero extends JDialog {
 	private JPanel pnTitulo;
 	private JLabel lblTitulo;
 
-	public VentanaAñadirPasajero(VentanaPrincipal vp) {
+	public VentanaaÃ±adirPasajero(VentanaPrincipal vp) {
 		setTitle("A\u00F1adir pasajero");
 		this.vp = vp;
 		setBounds(100, 100, 615, 450);
@@ -142,9 +142,9 @@ public class VentanaAñadirPasajero extends JDialog {
 							txtDniPasajero.getText(),
 							cbDia.getSelectedItem() + "-"
 									+ (cbMes.getSelectedIndex() + 1) + "-"
-									+ cbAño.getSelectedItem(),
+									+ cbAÃ±o.getSelectedItem(),
 							txtObservaciones.getText());
-					boolean añadido = false;
+					boolean aÃ±adido = false;
 					for (Pasajero a : vp.getListaPasajeros()) {
 						if (a.getNombre().equals(pasajero.getNombre())
 								&& a.getApellidos()
@@ -152,11 +152,11 @@ public class VentanaAñadirPasajero extends JDialog {
 								&& a.getDni().equals(pasajero.getDni())
 								&& a.getFechaNacimiento().equals(
 										pasajero.getFechaNacimiento())) {
-							añadido = true;
+							aÃ±adido = true;
 							break;
 						}
 					}
-					if (!añadido) {
+					if (!aÃ±adido) {
 						vp.getListaPasajeros().add(pasajero);
 						vp.getModeloListaPasajeros()
 								.addRow(new Object[] { pasajero.getNombre(),
@@ -166,8 +166,8 @@ public class VentanaAñadirPasajero extends JDialog {
 						vp.activarBtnSiguientePasajeros();
 						String[] opciones = { "Si", "No" };
 						int seleccion = JOptionPane.showOptionDialog(null,
-								"Â¿Desea añadir mÃ¡s pasajeros?",
-								"Añadir mÃ¡s pasajeros",
+								"Â¿Desea aÃ±adir mÃ¡s pasajeros?",
+								"aÃ±adir mÃ¡s pasajeros",
 								JOptionPane.YES_NO_OPTION,
 								JOptionPane.QUESTION_MESSAGE, null, opciones,
 								opciones[0]);
@@ -178,7 +178,7 @@ public class VentanaAñadirPasajero extends JDialog {
 							txtDniPasajero.setText("");
 							cbDia.setSelectedIndex(0);
 							cbMes.setSelectedIndex(0);
-							cbAño.setSelectedIndex(0);
+							cbAÃ±o.setSelectedIndex(0);
 							btnAgregar.setEnabled(false);
 						} else {
 							dispose();
@@ -188,7 +188,7 @@ public class VentanaAñadirPasajero extends JDialog {
 						}
 					} else
 						JOptionPane.showMessageDialog(null,
-								"Pasajero ya añadido", "Error",
+								"Pasajero ya aÃ±adido", "Error",
 								JOptionPane.ERROR_MESSAGE);
 				}
 			});
@@ -242,7 +242,7 @@ public class VentanaAñadirPasajero extends JDialog {
 			pnFechaNacimiento = new JPanel();
 			pnFechaNacimiento.setLayout(new GridLayout(1, 0, 0, 0));
 			pnFechaNacimiento.add(getLblFechaDeNacimiento());
-			pnFechaNacimiento.add(getPnAñadirFecha());
+			pnFechaNacimiento.add(getPnaÃ±adirFecha());
 		}
 		return pnFechaNacimiento;
 	}
@@ -382,15 +382,15 @@ public class VentanaAñadirPasajero extends JDialog {
 		return lblFechaDeNacimiento;
 	}
 
-	private JPanel getPnAñadirFecha() {
-		if (pnAñadirFecha == null) {
-			pnAñadirFecha = new JPanel();
-			pnAñadirFecha.setLayout(new GridLayout(0, 3, 0, 0));
-			pnAñadirFecha.add(getCbDia());
-			pnAñadirFecha.add(getCbMes());
-			pnAñadirFecha.add(getCbAño());
+	private JPanel getPnaÃ±adirFecha() {
+		if (pnaÃ±adirFecha == null) {
+			pnaÃ±adirFecha = new JPanel();
+			pnaÃ±adirFecha.setLayout(new GridLayout(0, 3, 0, 0));
+			pnaÃ±adirFecha.add(getCbDia());
+			pnaÃ±adirFecha.add(getCbMes());
+			pnaÃ±adirFecha.add(getCbAÃ±o());
 		}
-		return pnAñadirFecha;
+		return pnaÃ±adirFecha;
 	}
 
 	private JComboBox<String> getCbDia() {
@@ -451,18 +451,18 @@ public class VentanaAñadirPasajero extends JDialog {
 		return dias;
 	}
 
-	private JComboBox<String> getCbAño() {
-		if (cbAño == null) {
-			cbAño = new JComboBox<String>();
-			cbAño.setToolTipText(
+	private JComboBox<String> getCbAÃ±o() {
+		if (cbAÃ±o == null) {
+			cbAÃ±o = new JComboBox<String>();
+			cbAÃ±o.setToolTipText(
 					"A\u00F1o de la fecha de nacimiento del pasajero");
-			cbAño.setFont(new Font("Tahoma", Font.PLAIN, 12));
-			String[] años = new String[90];
-			for (int i = 0; i < años.length; i++)
-				años[i] = "" + (2014 - i);
-			cbAño.setModel(new DefaultComboBoxModel<String>(años));
+			cbAÃ±o.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			String[] aÃ±os = new String[90];
+			for (int i = 0; i < aÃ±os.length; i++)
+				aÃ±os[i] = "" + (2014 - i);
+			cbAÃ±o.setModel(new DefaultComboBoxModel<String>(aÃ±os));
 		}
-		return cbAño;
+		return cbAÃ±o;
 	}
 
 	private JPanel getPnObservaciones() {
@@ -518,7 +518,7 @@ public class VentanaAñadirPasajero extends JDialog {
 
 	private JLabel getLblTitulo() {
 		if (lblTitulo == null) {
-			lblTitulo = new JLabel("Añadir pasajero");
+			lblTitulo = new JLabel("aÃ±adir pasajero");
 			lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 			lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		}
@@ -545,6 +545,6 @@ public class VentanaAñadirPasajero extends JDialog {
 		hb.initPresentation();
 
 		// Asocia un atajo de teclado a la ayuda, a F1
-		hb.enableHelpKey(pnPrincipal, "ventanaAñadirPasajero", hs);
+		hb.enableHelpKey(pnPrincipal, "ventanaaÃ±adirPasajero", hs);
 	}
 }

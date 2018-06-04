@@ -37,11 +37,11 @@ public class Catalogo {
 	private void colocarDescuentos() {
 		for (Crucero crucero : getCruceros())
 			crucero.setDescuento(false);
-		añadirDescuento();
-		añadirDescuento();
+		aÃ±adirDescuento();
+		aÃ±adirDescuento();
 	}
 
-	private void añadirDescuento() {
+	private void aÃ±adirDescuento() {
 		boolean descuento = false;
 		do {
 			int cruceroConDescuento = (int) (Math.random()

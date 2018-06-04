@@ -30,7 +30,7 @@ public class VentanaRegistro extends JDialog {
 	private JTextField tfUsuario;
 	private JComboBox<String> cbDia;
 	private JComboBox<String> cbMes;
-	private JComboBox<String> cbAño;
+	private JComboBox<String> cbAÃ±o;
 	private JPasswordField pfPassword;
 	private JPasswordField pfRepassword;
 	private final ButtonGroup btGSexo = new ButtonGroup(); // Para hacer que
@@ -128,7 +128,7 @@ public class VentanaRegistro extends JDialog {
 	private boolean isIncorrecta() {
 		if (!(String.valueOf(pfPassword.getPassword())
 				.equals(String.valueOf(pfRepassword.getPassword())))) {
-			JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
+			JOptionPane.showMessageDialog(null, "Las contraseÃ±as no coinciden");
 			return false;
 		}
 		return true;
@@ -179,7 +179,7 @@ public class VentanaRegistro extends JDialog {
 			pnEdad.setLayout(null);
 			pnEdad.add(getCbDia());
 			pnEdad.add(getCbMes());
-			pnEdad.add(getCbAño());
+			pnEdad.add(getCbAÃ±o());
 		}
 		return pnEdad;
 	}
@@ -293,16 +293,16 @@ public class VentanaRegistro extends JDialog {
 		return cbMes;
 	}
 
-	private JComboBox<String> getCbAño() {
-		if (cbAño == null) {
-			String[] años = new String[90];
+	private JComboBox<String> getCbAÃ±o() {
+		if (cbAÃ±o == null) {
+			String[] aÃ±os = new String[90];
 			for (int i = 0; i < 90; i++)
-				años[i] = "" + (i + 1915);
-			cbAño = new JComboBox<String>();
-			cbAño.setBounds(237, 29, 60, 20);
-			cbAño.setModel(new DefaultComboBoxModel<String>(años));
+				aÃ±os[i] = "" + (i + 1915);
+			cbAÃ±o = new JComboBox<String>();
+			cbAÃ±o.setBounds(237, 29, 60, 20);
+			cbAÃ±o.setModel(new DefaultComboBoxModel<String>(aÃ±os));
 		}
-		return cbAño;
+		return cbAÃ±o;
 	}
 
 	private JPasswordField getPfPassword() {

@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 
 import igu.VentanaPrincipal;
 import igu.VentanasAuxiliares.VentanaAsignarNombreReserva;
-import igu.VentanasAuxiliares.VentanaAÒadirCamarote;
+import igu.VentanasAuxiliares.Ventanaa√±adirCamarote;
 import logica.Camarote;
 import logica.Pasajero;
 
@@ -45,7 +45,7 @@ public class PanelCamarotes extends JPanel {
 	private JPanel pnModificarListaCamarotes;
 	private JScrollPane scCamarotes;
 	private JTable tablaCamarotes;
-	private JButton btnAÒadirReservaCamarotes;
+	private JButton btna√±adirReservaCamarotes;
 	private JPanel pnBotonesReservaCamarotes;
 	private JLabel lblPorFavorIntroduzca_1;
 	private JButton btnBorrarReservaCamarotes;
@@ -218,7 +218,7 @@ public class PanelCamarotes extends JPanel {
 	private JPanel getPnModificarListaCamarotes() {
 		if (pnModificarListaCamarotes == null) {
 			pnModificarListaCamarotes = new JPanel();
-			pnModificarListaCamarotes.add(getBtnAÒadirReservaCamarotes());
+			pnModificarListaCamarotes.add(getBtna√±adirReservaCamarotes());
 			pnModificarListaCamarotes.add(getBtnBorrarReservaCamarotes());
 		}
 		return pnModificarListaCamarotes;
@@ -258,7 +258,7 @@ public class PanelCamarotes extends JPanel {
 
 					if (!vp.listaClientes.isEmpty()) {
 						btnSiguienteReservaCamarotes.setEnabled(false);
-						btnAÒadirReservaCamarotes.setEnabled(true);
+						btna√±adirReservaCamarotes.setEnabled(true);
 					}
 				}
 			});
@@ -294,25 +294,25 @@ public class PanelCamarotes extends JPanel {
 		return tablaCamarotes;
 	}
 
-	public JButton getBtnAÒadirReservaCamarotes() {
-		if (btnAÒadirReservaCamarotes == null) {
-			btnAÒadirReservaCamarotes = new JButton("A\u00F1adir");
-			btnAÒadirReservaCamarotes.setToolTipText(
+	public JButton getBtna√±adirReservaCamarotes() {
+		if (btna√±adirReservaCamarotes == null) {
+			btna√±adirReservaCamarotes = new JButton("A\u00F1adir");
+			btna√±adirReservaCamarotes.setToolTipText(
 					"A\u00F1ade un camarote a la lista de camarotes de la reserva");
-			btnAÒadirReservaCamarotes.setMnemonic('Ò');
-			btnAÒadirReservaCamarotes
+			btna√±adirReservaCamarotes.setMnemonic('ÔøΩ');
+			btna√±adirReservaCamarotes
 					.setFont(new Font("Tahoma", Font.PLAIN, 12));
-			btnAÒadirReservaCamarotes.addActionListener(new ActionListener() {
+			btna√±adirReservaCamarotes.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					mostrarVentanaAÒadirCamarote();
+					mostrarVentanaa√±adirCamarote();
 				}
 			});
 		}
-		return btnAÒadirReservaCamarotes;
+		return btna√±adirReservaCamarotes;
 	}
 
-	private void mostrarVentanaAÒadirCamarote() {
-		VentanaAÒadirCamarote vap = new VentanaAÒadirCamarote(vp);
+	private void mostrarVentanaa√±adirCamarote() {
+		Ventanaa√±adirCamarote vap = new Ventanaa√±adirCamarote(vp);
 		vap.setLocationRelativeTo(null);
 		vap.setModal(true);
 		vap.setVisible(true);

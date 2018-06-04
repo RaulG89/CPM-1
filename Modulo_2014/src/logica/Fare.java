@@ -1,7 +1,7 @@
 package logica;
 
 /**
- * Clase 'Tarifa' para el m�dulo entregable de CPM. Esta clase representa a
+ * Clase 'Tarifa' para el mñdulo entregable de CPM. Esta clase representa a
  * los precios del cine.
  * 
  * @author UO236852
@@ -13,15 +13,15 @@ public class Fare {
 	 */
 	private float normal;
 	/**
-	 * Variaci�n del precio para pel�culas en 3D
+	 * Variaciñn del precio para pelñculas en 3D
 	 */
 	private float delta3d;
 	/**
-	 * Variaci�n del precio para packs de cumplea�os
+	 * Variaciñn del precio para packs de cumpleaños
 	 */
-	private float deltaCumplea�os;
+	private float deltaCumpleaños;
 	/**
-	 * Variaci�n del precio para tarifas 'Serafina'
+	 * Variaciñn del precio para tarifas 'Serafina'
 	 */
 	private float deltaJubilados;
 
@@ -31,17 +31,17 @@ public class Fare {
 	 * @param normal
 	 *            Precio normal
 	 * @param delta3d
-	 *            Variaci�n para pel�culas 3D
-	 * @param deltaCumplea�os
-	 *            Variaci�n par cumplea�os
+	 *            Variaciñn para pelñculas 3D
+	 * @param deltaCumpleaños
+	 *            Variaciñn par cumpleaños
 	 * @param deltaJubilados
-	 *            Variaci�n para Serafina
+	 *            Variaciñn para Serafina
 	 */
-	public Fare(float normal, float delta3d, float deltaCumplea�os,
+	public Fare(float normal, float delta3d, float deltaCumpleaños,
 			float deltaJubilados) {
 		this.normal = normal;
 		this.delta3d = delta3d;
-		this.deltaCumplea�os = deltaCumplea�os;
+		this.deltaCumpleaños = deltaCumpleaños;
 		this.deltaJubilados = deltaJubilados;
 	}
 
@@ -53,8 +53,8 @@ public class Fare {
 		return delta3d;
 	}
 
-	public float getDeltaCumplea�os() {
-		return deltaCumplea�os;
+	public float getDeltaCumpleaños() {
+		return deltaCumpleaños;
 	}
 
 	public float getDeltaJubilados() {

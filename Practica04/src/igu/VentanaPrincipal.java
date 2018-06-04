@@ -43,7 +43,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel lblAccesorios;
 	private JTextField txtCantidad;
 	private JLabel lblUnidades;
-	private JButton btnAñadir;
+	private JButton btnAÃ±adir;
 	private JTextField txtPrecio;
 	private JLabel lblPrecioPedido;
 	private JButton btnCancelar;
@@ -109,7 +109,7 @@ public class VentanaPrincipal extends JFrame {
 		pnPrincipal.add(getLblAccesorios());
 		pnPrincipal.add(getTxtCantidad());
 		pnPrincipal.add(getLblUnidades());
-		pnPrincipal.add(getBtnAñadir());
+		pnPrincipal.add(getBtnAÃ±adir());
 		pnPrincipal.add(getBtnRestar());
 		pnPrincipal.add(getTxtPrecio());
 		pnPrincipal.add(getLblPrecioPedido());
@@ -199,17 +199,17 @@ public class VentanaPrincipal extends JFrame {
 		return lblUnidades;
 	}
 
-	private JButton getBtnAñadir() {
-		if (btnAñadir == null) {
-			btnAñadir = new JButton("+");
-			btnAñadir.setMnemonic('+');
-			btnAñadir.setMnemonic(KeyEvent.VK_ADD);
-			btnAñadir.addActionListener(new ActionListener() {
+	private JButton getBtnAÃ±adir() {
+		if (btnAÃ±adir == null) {
+			btnAÃ±adir = new JButton("+");
+			btnAÃ±adir.setMnemonic('+');
+			btnAÃ±adir.setMnemonic(KeyEvent.VK_ADD);
+			btnAÃ±adir.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					if (!txtCantidad.getText().equals("")) {
 						cbArticulos.getSelectedItem();
 						Integer.parseInt(txtCantidad.getText());
-						// Añade el articulo al pedido
+						// AÃ±ade el articulo al pedido
 						float precioPedido = pedido.calcularTotalSinIva();
 						txtPrecio.setText(
 								String.valueOf(precioPedido) + " \u20AC");
@@ -222,11 +222,11 @@ public class VentanaPrincipal extends JFrame {
 					}
 				}
 			});
-			btnAñadir.setToolTipText(
+			btnAÃ±adir.setToolTipText(
 					"A\u00F1ade elementos a la cesta de compra");
-			btnAñadir.setBounds(504, 278, 46, 23);
+			btnAÃ±adir.setBounds(504, 278, 46, 23);
 		}
-		return btnAñadir;
+		return btnAÃ±adir;
 	}
 
 	private JButton getBtnRestar() {

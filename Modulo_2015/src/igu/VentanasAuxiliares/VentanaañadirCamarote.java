@@ -41,7 +41,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class VentanaAÒadirCamarote extends JDialog {
+public class Ventanaa√±adirCamarote extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	private VentanaPrincipal vp;
@@ -49,8 +49,8 @@ public class VentanaAÒadirCamarote extends JDialog {
 	private JPanel pnTitulo;
 	private JPanel pnDatosCrucero;
 	private JPanel pnBotones;
-	private JLabel lblAÒadirCamarote;
-	private JButton btnAÒadir;
+	private JLabel lbla√±adirCamarote;
+	private JButton btna√±adir;
 	private JButton btnCancelar;
 	private JPanel pnTipoSituacion;
 	private JPanel pnTipo;
@@ -82,7 +82,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 	private int ancho;
 	private int alto;
 
-	public VentanaAÒadirCamarote(VentanaPrincipal vp) {
+	public Ventanaa√±adirCamarote(VentanaPrincipal vp) {
 		setTitle("A\u00F1adir camarote");
 		this.vp = vp;
 		ancho = 0;
@@ -100,7 +100,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 		for (int i = 0; i < vp.getListaClientes().size(); i++)
 			modeloComboPasajeros.addElement(vp.getListaClientes().get(i));
 		cbPasajeros.setModel(modeloComboPasajeros);
-		aÒadirExtras();
+		a√±adirExtras();
 		comprobarModelos();
 		getCbTipo().grabFocus();
 		cargaAyuda();
@@ -109,7 +109,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 	private JPanel getPnTitulo() {
 		if (pnTitulo == null) {
 			pnTitulo = new JPanel();
-			pnTitulo.add(getLblAÒadirCamarote());
+			pnTitulo.add(getLbla√±adirCamarote());
 		}
 		return pnTitulo;
 	}
@@ -130,29 +130,29 @@ public class VentanaAÒadirCamarote extends JDialog {
 			pnBotones = new JPanel();
 			FlowLayout flowLayout = (FlowLayout) pnBotones.getLayout();
 			flowLayout.setAlignment(FlowLayout.RIGHT);
-			pnBotones.add(getBtnAÒadir());
+			pnBotones.add(getBtna√±adir());
 			pnBotones.add(getBtnCancelar());
 		}
 		return pnBotones;
 	}
 
-	private JLabel getLblAÒadirCamarote() {
-		if (lblAÒadirCamarote == null) {
-			lblAÒadirCamarote = new JLabel("A\u00F1adir camarote");
-			lblAÒadirCamarote.setFont(new Font("Tahoma", Font.PLAIN, 40));
+	private JLabel getLbla√±adirCamarote() {
+		if (lbla√±adirCamarote == null) {
+			lbla√±adirCamarote = new JLabel("A\u00F1adir camarote");
+			lbla√±adirCamarote.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		}
-		return lblAÒadirCamarote;
+		return lbla√±adirCamarote;
 	}
 
-	private JButton getBtnAÒadir() {
-		if (btnAÒadir == null) {
-			btnAÒadir = new JButton("A\u00F1adir");
-			btnAÒadir.setToolTipText(
-					"AÒade al camarote a la lista de camarote de la reserva");
-			btnAÒadir.setMnemonic('A');
-			btnAÒadir.setFont(new Font("Tahoma", Font.PLAIN, 12));
-			btnAÒadir.setEnabled(false);
-			btnAÒadir.addActionListener(new ActionListener() {
+	private JButton getBtna√±adir() {
+		if (btna√±adir == null) {
+			btna√±adir = new JButton("A\u00F1adir");
+			btna√±adir.setToolTipText(
+					"AÔøΩade al camarote a la lista de camarote de la reserva");
+			btna√±adir.setMnemonic('A');
+			btna√±adir.setFont(new Font("Tahoma", Font.PLAIN, 12));
+			btna√±adir.setEnabled(false);
+			btna√±adir.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					boolean tipo = false, posicion = false, valido = false;
 					String tipo2 = "";
@@ -267,7 +267,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 												.get(j).getDescripcion()
 												.equals(aux)) {
 											arrayCamarotes.get(i).getExtras()
-													.get(j).setAÒadido(true);
+													.get(j).seta√±adido(true);
 										}
 									}
 								}
@@ -322,7 +322,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 					} else if (modeloComboPasajeros.getSize() > 0) {
 						JOptionPane.showMessageDialog(null,
 								"Hay pasajeros sin camarote");
-						btnAÒadir.setEnabled(false);
+						btna√±adir.setEnabled(false);
 						btnBorrarPasajero.setEnabled(false);
 						for (int i = 0; i < pnRestoExtras
 								.getComponentCount(); i++) {
@@ -335,14 +335,14 @@ public class VentanaAÒadirCamarote extends JDialog {
 						vp.getBtnBorrarReservaCamarotes().setEnabled(true);
 						vp.getBtnSiguienteReservaCamarotes().grabFocus();
 						if (pasajerosCamarote.isEmpty())
-							vp.getBtnAÒadirReservaCamarotes().setEnabled(false);
+							vp.getBtnA√±adirReservaCamarotes().setEnabled(false);
 						redimensionarTablaCamarotes();
 						dispose();
 					}
 				}
 			});
 		}
-		return btnAÒadir;
+		return btna√±adir;
 	}
 
 	protected void redimensionarTablaCamarotes() {
@@ -697,7 +697,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 								}
 							}
 						}
-						boolean aÒadido = false;
+						boolean a√±adido = false;
 						for (int i = 0; i < modeloTablaPasajeros
 								.getRowCount(); i++)
 							if (modeloTablaPasajeros.getValueAt(i, 0)
@@ -706,10 +706,10 @@ public class VentanaAÒadirCamarote extends JDialog {
 											.equals(pasajero.getApellidos())
 									&& modeloTablaPasajeros.getValueAt(i, 2)
 											.equals(pasajero.getDni())) {
-								aÒadido = true;
+								a√±adido = true;
 								break;
 							}
-						if (!aÒadido) {
+						if (!a√±adido) {
 							pasajerosCamarote.add(pasajero);
 							modeloTablaPasajeros.addRow(new Object[] {
 									pasajero.getNombre(),
@@ -717,14 +717,14 @@ public class VentanaAÒadirCamarote extends JDialog {
 									pasajero.getFechaNacimiento() });
 						} else
 							JOptionPane.showMessageDialog(null,
-									"Pasajero ya aÒadido");
+									"Pasajero ya a√±adido");
 					}
 					pasajeroCamarote = tablaPasajeros.getRowCount();
 					if (plazas == pasajeroCamarote)
 						btnAgregarPasajero.setEnabled(false);
 					if (pasajeroCamarote > 0) {
 						btnBorrarPasajero.setEnabled(true);
-						btnAÒadir.setEnabled(true);
+						btna√±adir.setEnabled(true);
 					}
 
 				}
@@ -746,7 +746,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 					Pasajero pasajero = (Pasajero) cbPasajeros
 							.getSelectedItem();
 					if (pasajero.isMenor()) {
-						boolean aÒadido = false;
+						boolean a√±adido = false;
 						for (int i = 0; i < modeloComboPasajeros
 								.getSize(); i++) {
 							if (modeloComboPasajeros.getElementAt(i).getNombre()
@@ -760,11 +760,11 @@ public class VentanaAÒadirCamarote extends JDialog {
 											.getFechaNacimiento()
 											.equals(pasajero
 													.getFechaNacimiento())) {
-								aÒadido = true;
+								a√±adido = true;
 								break;
 							}
 						}
-						if (aÒadido)
+						if (a√±adido)
 							modeloComboMenores.addElement(pasajero);
 						if (!chckbxCamaSupletoria.isSelected()) {
 							chckbxCamaSupletoria.setEnabled(true);
@@ -793,7 +793,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 						btnAgregarPasajero.setEnabled(true);
 					if (pasajeroCamarote == 0) {
 						btnBorrarPasajero.setEnabled(false);
-						btnAÒadir.setEnabled(false);
+						btna√±adir.setEnabled(false);
 					}
 				}
 			});
@@ -801,7 +801,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 		return btnBorrarPasajero;
 	}
 
-	private void aÒadirExtras() {
+	private void a√±adirExtras() {
 		boolean menor = false, cama = false;
 		for (Pasajero pasajero : vp.getListaClientes()) {
 			if (pasajero.isMenor()) {
@@ -851,13 +851,13 @@ public class VentanaAÒadirCamarote extends JDialog {
 					}
 				} while (!correcto);
 				JCheckBox aux = new JCheckBox(
-						a.getDescripcion() + " (" + a.getPrecio() + " Ò)");
+						a.getDescripcion() + " (" + a.getPrecio() + " ÔøΩ)");
 				aux.setMnemonic(e);
 				pnRestoExtras.add(aux);
 			} else {
 				cama = true;
 				chckbxCamaSupletoria
-						.setText("Cama supletoria (" + a.getPrecio() + " Ò)");
+						.setText("Cama supletoria (" + a.getPrecio() + " ÔøΩ)");
 			}
 		}
 		if (menor && cama) {
@@ -883,7 +883,7 @@ public class VentanaAÒadirCamarote extends JDialog {
 		ArrayList<Camarote> camarotes = vp.getCrucero().getPasajerosFechas()
 				.get(vp.getCbFechas().getSelectedIndex());
 		int dobleE = 0, dobleI = 0, familiarE = 0, familiarI = 0;
-		boolean aÒadido = false;
+		boolean a√±adido = false;
 		for (Camarote camarote : camarotes) {
 			if (!camarote.isReservada())
 				if (camarote.isTipo() == Camarote.TIPO_DOBLE) {
@@ -908,11 +908,11 @@ public class VentanaAÒadirCamarote extends JDialog {
 		if (cbTipo.getSelectedItem().equals("Doble") && dobleE == 0)
 			modeloComboPosicion.removeElement("Exterior");
 		else if (!cbTipo.getSelectedItem().equals("Doble") && dobleE != 0) {
-			aÒadido = false;
+			a√±adido = false;
 			for (int i = 0; i < modeloComboTipo.getSize(); i++) {
 				if (modeloComboTipo.getElementAt(i).equals("Doble"))
-					aÒadido = true;
-				if (!aÒadido)
+					a√±adido = true;
+				if (!a√±adido)
 					modeloComboPosicion.addElement("Exterior");
 			}
 		}
@@ -920,11 +920,11 @@ public class VentanaAÒadirCamarote extends JDialog {
 		if (cbTipo.getSelectedItem().equals("Doble") && dobleI == 0)
 			modeloComboPosicion.removeElement("Interior");
 		else if (!cbTipo.getSelectedItem().equals("Doble") && dobleI != 0) {
-			aÒadido = false;
+			a√±adido = false;
 			for (int i = 0; i < modeloComboTipo.getSize(); i++) {
 				if (modeloComboTipo.getElementAt(i).equals("Doble"))
-					aÒadido = true;
-				if (!aÒadido)
+					a√±adido = true;
+				if (!a√±adido)
 					modeloComboPosicion.addElement("Interior");
 			}
 		}
@@ -933,11 +933,11 @@ public class VentanaAÒadirCamarote extends JDialog {
 			modeloComboPosicion.removeElement("Exterior");
 		else if (!cbTipo.getSelectedItem().equals("Familiar")
 				&& familiarE != 0) {
-			aÒadido = false;
+			a√±adido = false;
 			for (int i = 0; i < modeloComboTipo.getSize(); i++) {
 				if (modeloComboTipo.getElementAt(i).equals("Familiar"))
-					aÒadido = true;
-				if (!aÒadido)
+					a√±adido = true;
+				if (!a√±adido)
 					modeloComboPosicion.addElement("Exterior");
 			}
 		}
@@ -946,11 +946,11 @@ public class VentanaAÒadirCamarote extends JDialog {
 			modeloComboPosicion.removeElement("Interior");
 		else if (!cbTipo.getSelectedItem().equals("Familiar")
 				&& familiarI != 0) {
-			aÒadido = false;
+			a√±adido = false;
 			for (int i = 0; i < modeloComboTipo.getSize(); i++) {
 				if (modeloComboTipo.getElementAt(i).equals("Familiar"))
-					aÒadido = true;
-				if (!aÒadido)
+					a√±adido = true;
+				if (!a√±adido)
 					modeloComboPosicion.addElement("Interior");
 			}
 		}
@@ -976,6 +976,6 @@ public class VentanaAÒadirCamarote extends JDialog {
 		hb.initPresentation();
 
 		// Asocia un atajo de teclado a la ayuda, a F1
-		hb.enableHelpKey(pnPrincipal, "ventanaAÒadirCamarote", hs);
+		hb.enableHelpKey(pnPrincipal, "ventanaa√±adirCamarote", hs);
 	}
 }
