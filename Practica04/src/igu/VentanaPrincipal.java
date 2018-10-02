@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 
 import java.awt.Font;
@@ -25,6 +26,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 import logica.Articulo;
 import logica.Catalogo;
@@ -54,6 +56,7 @@ public class VentanaPrincipal extends JFrame {
 	// Crea los objetos de la parte de logica
 	private Catalogo catalogo;
 	private Pedido pedido;
+	private JTextField txtNumArticuloSeleccionado;
 
 	/**
 	 * Lanza la aplicacion
@@ -116,6 +119,11 @@ public class VentanaPrincipal extends JFrame {
 		pnPrincipal.add(getBtnCancelar());
 		pnPrincipal.add(getBtnSiguiente());
 		pnPrincipal.add(getBtnCarrito());
+
+		txtNumArticuloSeleccionado = new JTextField();
+		txtNumArticuloSeleccionado.setBounds(24, 347, 86, 20);
+		pnPrincipal.add(txtNumArticuloSeleccionado);
+		txtNumArticuloSeleccionado.setColumns(10);
 	}
 
 	private JLabel getLblLogo() {
@@ -141,12 +149,24 @@ public class VentanaPrincipal extends JFrame {
 	private JComboBox<Articulo> getCbArticulos() {
 		if (cbArticulos == null) {
 			cbArticulos = new JComboBox<Articulo>();
+			cbArticulos.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					Luison();
+				}
+			});
 			// Rellena el combo con el catalogo
 			cbArticulos.setModel(new DefaultComboBoxModel<Articulo>(
 					catalogo.getArticulos()));
 			cbArticulos.setBounds(24, 278, 325, 25);
 		}
 		return cbArticulos;
+	}
+	
+	private void Luison() {
+		Articulo[] list = catalogo.getArticulos();
+		int posicion = getCbArticulos().getSelectedIndex();
+		txtNumArticuloSeleccionado
+				.setText("" + list[posicion].getUnidades());
 	}
 
 	private JLabel getLblAccesorios() {
@@ -206,20 +226,28 @@ public class VentanaPrincipal extends JFrame {
 			btnAñadir.setMnemonic(KeyEvent.VK_ADD);
 			btnAñadir.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					
 					if (!txtCantidad.getText().equals("")) {
+						int unidades = Integer.parseInt(txtCantidad.getText());
+						Articulo[] list = catalogo.getArticulos();
+						int posicion = getCbArticulos().getSelectedIndex();
+						list[posicion].setUnidades(list[posicion].getUnidades() + unidades);
+////////////////////////////////////////////////////////////////////////////////////////////						
 						cbArticulos.getSelectedItem();
 						Integer.parseInt(txtCantidad.getText());
 						// Añade el articulo al pedido
 						float precioPedido = pedido.calcularTotalSinIva();
+						if(pedido.isDescuento())
+							JOptionPane.showMessageDialog(null, "EL campo 'Nombre' esta vacio");
 						txtPrecio.setText(
 								String.valueOf(precioPedido) + " \u20AC");
 						// Código ASCII del símbolo de euro
-
 						if (!btnSiguiente.isEnabled())
 							btnSiguiente.setEnabled(true);
 					} else {
 						txtCantidad.grabFocus();
 					}
+					Luison();
 				}
 			});
 			btnAñadir.setToolTipText(

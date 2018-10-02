@@ -1,26 +1,25 @@
 package igu.PanelesAuxiliares.CardLayout;
 
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 import model.ThemePark;
-
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
 
 public class PanelTematico extends JPanel {
 	/**
@@ -48,7 +47,7 @@ public class PanelTematico extends JPanel {
 	 * @param map
 	 */
 	public PanelTematico(JPanel pnCardlayout, Map<String, ThemePark> map) {
-		this.pnCardlayout = pnCardlayout;
+		this.setPnCardlayout(pnCardlayout);
 		this.map = map;
 		setLayout(new BorderLayout(0, 0));
 		add(getPnFiltros(), BorderLayout.NORTH);
@@ -93,7 +92,8 @@ public class PanelTematico extends JPanel {
 			btnFiltrar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					Map<String, ThemePark> filter = new HashMap<>();
-					for (Map.Entry<String, ThemePark> element : map.entrySet()) {
+					for (Map.Entry<String, ThemePark> element : map
+							.entrySet()) {
 						ThemePark park = element.getValue();
 						String value = (String) comboBox.getSelectedItem();
 						switch (value) {
@@ -144,8 +144,8 @@ public class PanelTematico extends JPanel {
 					textField.setText("");
 				}
 			});
-			comboBox.setModel(
-					new DefaultComboBoxModel<Object>(new String[] { "city", "country", "description", "namePark" }));
+			comboBox.setModel(new DefaultComboBoxModel<Object>(new String[] {
+					"city", "country", "description", "namePark" }));
 		}
 		return comboBox;
 	}
@@ -177,8 +177,8 @@ public class PanelTematico extends JPanel {
 	}
 
 	private JTable getTable() {
-		modeloTabla = new DefaultTableModel(new Object[] { "city", "country", "description", "namePark", "Ver datos" },
-				0);
+		modeloTabla = new DefaultTableModel(new Object[] { "city", "country",
+				"description", "namePark", "Ver datos" }, 0);
 		if (table == null) {
 			table = new JTable(modeloTabla);
 		}
@@ -194,9 +194,17 @@ public class PanelTematico extends JPanel {
 		borrarModelo();
 		for (Map.Entry<String, ThemePark> element : map.entrySet()) {
 			ThemePark park = element.getValue();
-			modeloTabla.addRow(new Object[] { park.getCity(), park.getCountry(), park.getDescription(),
-					park.getNamePark(), new JButton() });
+			modeloTabla.addRow(new Object[] { park.getCity(), park.getCountry(),
+					park.getDescription(), park.getNamePark(), new JButton() });
 		}
+	}
+
+	public JPanel getPnCardlayout() {
+		return pnCardlayout;
+	}
+
+	public void setPnCardlayout(JPanel pnCardlayout) {
+		this.pnCardlayout = pnCardlayout;
 	}
 
 }

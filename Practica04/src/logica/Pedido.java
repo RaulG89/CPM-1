@@ -13,9 +13,11 @@ import java.util.List;
 public class Pedido {
 
 	private List<Articulo> articulosPedido = null;
+	private boolean descuento;
 
 	public Pedido() {
 		articulosPedido = new ArrayList<Articulo>();
+		descuento = false;
 	}
 
 	/**
@@ -98,7 +100,23 @@ public class Pedido {
 				total += articulo.getPrecio() * articulo.getUnidades();
 			}
 		}
+		if (total >= 100) {
+			total *= 0.9;	
+			descuento = true;		
+		} else {
+			descuento = false;
+		}
 		return total;
+	}
+	
+	
+
+	public boolean isDescuento() {
+		return descuento;
+	}
+
+	public void setDescuento(boolean descuento) {
+		this.descuento = descuento;
 	}
 
 	/**
