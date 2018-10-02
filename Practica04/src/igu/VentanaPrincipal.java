@@ -1,39 +1,33 @@
 package igu;
 
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
 import java.awt.Color;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
-
+import java.awt.EventQueue;
 import java.awt.Font;
-
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-
-import org.jvnet.substance.SubstanceLookAndFeel;
-
-import java.awt.event.ActionListener;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+
+import org.jvnet.substance.SubstanceLookAndFeel;
 
 import logica.Articulo;
 import logica.Catalogo;
 import logica.Pedido;
-
-import java.awt.Toolkit;
-import javax.swing.border.LineBorder;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -124,6 +118,10 @@ public class VentanaPrincipal extends JFrame {
 		txtNumArticuloSeleccionado.setBounds(24, 347, 86, 20);
 		pnPrincipal.add(txtNumArticuloSeleccionado);
 		txtNumArticuloSeleccionado.setColumns(10);
+		
+		JLabel lblUnidadesSeleccionadas = new JLabel("Unidades seleccionadas");
+		lblUnidadesSeleccionadas.setBounds(24, 324, 150, 14);
+		pnPrincipal.add(lblUnidadesSeleccionadas);
 	}
 
 	private JLabel getLblLogo() {
@@ -151,7 +149,7 @@ public class VentanaPrincipal extends JFrame {
 			cbArticulos = new JComboBox<Articulo>();
 			cbArticulos.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					Luison();
+					actualizarUnidadesSeleccionadas();
 				}
 			});
 			// Rellena el combo con el catalogo
@@ -162,11 +160,14 @@ public class VentanaPrincipal extends JFrame {
 		return cbArticulos;
 	}
 	
-	private void Luison() {
+	private void actualizarUnidadesSeleccionadas() {
 		Articulo[] list = catalogo.getArticulos();
 		int posicion = getCbArticulos().getSelectedIndex();
 		txtNumArticuloSeleccionado
 				.setText("" + list[posicion].getUnidades());
+		cbArticulos.setModel(new DefaultComboBoxModel<Articulo>(
+				catalogo.getArticulos()));
+		cbArticulos.setSelectedIndex(posicion);
 	}
 
 	private JLabel getLblAccesorios() {
@@ -231,14 +232,14 @@ public class VentanaPrincipal extends JFrame {
 						int unidades = Integer.parseInt(txtCantidad.getText());
 						Articulo[] list = catalogo.getArticulos();
 						int posicion = getCbArticulos().getSelectedIndex();
-						list[posicion].setUnidades(list[posicion].getUnidades() + unidades);
-////////////////////////////////////////////////////////////////////////////////////////////						
+						pedido.add(list[posicion], unidades);
 						cbArticulos.getSelectedItem();
 						Integer.parseInt(txtCantidad.getText());
 						// Añade el articulo al pedido
 						float precioPedido = pedido.calcularTotalSinIva();
 						if(pedido.isDescuento())
-							JOptionPane.showMessageDialog(null, "EL campo 'Nombre' esta vacio");
+							JOptionPane.showMessageDialog(null, "Se le aplica un descuento de 10 %"
+									+ "al realizar una compra por valor mayor de 100 €");
 						txtPrecio.setText(
 								String.valueOf(precioPedido) + " \u20AC");
 						// Código ASCII del símbolo de euro
@@ -247,7 +248,7 @@ public class VentanaPrincipal extends JFrame {
 					} else {
 						txtCantidad.grabFocus();
 					}
-					Luison();
+					actualizarUnidadesSeleccionadas();
 				}
 			});
 			btnAñadir.setToolTipText(
