@@ -1,31 +1,29 @@
 package igu;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.Toolkit;
 import java.awt.Color;
 import java.awt.Component;
-
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import logica.Dado;
 import logica.Juego;
-
-import java.awt.GridLayout;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
-import java.awt.event.ActionEvent;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -36,21 +34,19 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel lblScore;
 	private JTextField txPuntosLiebre;
 	private JPanel panelTablero1;
-	// private JButton btn0;
-	// private JButton btn1;
-	// private JButton btn2;
-	// private JButton btn3;
-	// private JButton btn4;
-	// private JButton btn5;
-	// private JButton btn6;
-	// private JButton btn7;
-	// private JButton btn8;
-	// private JButton btn9;
-	// private JButton btn10;
 	private Juego juego;
 	private JPanel panelTablero2;
 	private ProcesaBoton pB;
-	private List<JButton> botones;
+
+	class ProcesaBoton implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// Obtiene el boton de la clase
+			JButton boton = (JButton) e.getSource();
+			// Cogemos el valor
+			jugar(Integer.parseInt(boton.getActionCommand()));
+		}
+	}
 
 	/**
 	 * Launch the application.
@@ -72,7 +68,6 @@ public class VentanaPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaPrincipal() {
-		this.botones = new ArrayList<JButton>();
 		this.juego = new Juego();
 		this.pB = new ProcesaBoton();
 		setResizable(false);
@@ -95,11 +90,43 @@ public class VentanaPrincipal extends JFrame {
 		setLocationRelativeTo(null);
 		deshabilitarPanel();
 		generarBotones();
+		pintarCalle();
 	}
 
 	private void pintarPuntos() {
 		txPuntosLiebre
 				.setText(String.valueOf(juego.getLiebre().getPuntuacion()));
+	}
+
+	private void generarBotones() {
+		String imagen = "/img/liebre.JPG";
+		crearPanelBotones(panelTablero1, 11, imagen, 0);
+		crearPanelBotones(panelTablero2, 11, imagen, 11);
+	}
+
+	private void crearPanelBotones(JPanel panel, int numBotones, String imagen,
+			int indice) {
+		for (int i = 0; i < numBotones; i++) {
+			JButton boton = nuevoBoton(i, imagen);
+			String nombreBoton = "btn" + (i + indice);
+			boton.setName(nombreBoton);
+			panel.add(boton);
+			boton.setActionCommand(String.valueOf(i + indice));
+			boton.addActionListener(pB);
+		}
+
+	}
+
+	private JButton nuevoBoton(int posicion, String imagen) {
+		JButton boton = new JButton();
+		boton.setBackground(Color.BLACK);
+		boton.setEnabled(true);
+		boton.setDisabledIcon(
+				new ImageIcon(VentanaPrincipal.class.getResource(imagen)));
+		boton.setBorder(new LineBorder(Color.BLUE));
+		boton.setBackground(Color.BLACK);
+		boton.setForeground(Color.BLACK);
+		return boton;
 	}
 
 	private void jugar(int n) {
@@ -226,33 +253,6 @@ public class VentanaPrincipal extends JFrame {
 		return panelTablero1;
 	}
 
-	private void generarBotones() {
-		for (int i = 0; i < 22; i++) {
-			String nombreBoton = "btn" + i;
-			JButton boton = new JButton();
-			boton.setName(nombreBoton);
-			boton.setBackground(Color.BLACK);
-			botones.add(boton);
-			boton.addActionListener(pB);
-			if (i >= 0 && i < 11) {
-				panelTablero1.add(boton);
-			} else if (i >= 11 && i < 22) {
-				panelTablero2.add(boton);
-			}
-			if (i == 21) {
-				boton.setIcon(new ImageIcon(VentanaPrincipal.class
-						.getResource("/img/zanahoria.JPG")));
-				boton.setDisabledIcon(new ImageIcon(VentanaPrincipal.class
-						.getResource("/img/zanahoria.JPG")));
-			} else if (i == 0) {
-				boton.setIcon(new ImageIcon(
-						VentanaPrincipal.class.getResource("/img/liebre.JPG")));
-				boton.setDisabledIcon(new ImageIcon(
-						VentanaPrincipal.class.getResource("/img/liebre.JPG")));
-			}
-		}
-	}
-
 	private void pintarCalle() {
 		ImageIcon imagen = new ImageIcon(
 				getClass().getResource("/img/" + juego.getLiebre().getFoto()));
@@ -260,7 +260,6 @@ public class VentanaPrincipal extends JFrame {
 		Component[] botones1 = panelTablero1.getComponents();
 		Component[] botones2 = panelTablero2.getComponents();
 
-		 System.out.println(juego.getLiebre().getPosicion());
 		for (int i = 0; i < botones1.length; i++) {
 			JButton boton = (JButton) botones1[i];
 			if (i == juego.getLiebre().getPosicion()) {
@@ -274,7 +273,7 @@ public class VentanaPrincipal extends JFrame {
 
 		for (int i = 0; i < botones2.length; i++) {
 			JButton boton = (JButton) botones2[i];
-			if (i + 10 == juego.getLiebre().getPosicion()) {
+			if (i + 11 == juego.getLiebre().getPosicion()) {
 				boton.setIcon(imagen);
 				boton.setDisabledIcon(imagen);
 			} else {
@@ -282,6 +281,12 @@ public class VentanaPrincipal extends JFrame {
 				boton.setDisabledIcon(null);
 			}
 		}
+
+		JButton boton = (JButton) botones2[botones2.length - 1];
+		boton.setIcon(new ImageIcon(
+				VentanaPrincipal.class.getResource("/img/zanahoria.JPG")));
+		boton.setDisabledIcon(new ImageIcon(
+				VentanaPrincipal.class.getResource("/img/zanahoria.JPG")));
 	}
 
 	private JPanel getPanelTablero2() {
@@ -292,15 +297,5 @@ public class VentanaPrincipal extends JFrame {
 			panelTablero2.setLayout(new GridLayout(1, 0, 0, 0));
 		}
 		return panelTablero2;
-	}
-
-	class ProcesaBoton implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			for (int i = 0; i < botones.size(); i++) {
-				jugar(i);
-			}
-		}
 	}
 }

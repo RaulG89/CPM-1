@@ -71,7 +71,7 @@ public class VentanaPrincipal extends JFrame {
 	 * Receptor de evento Creamos esta clase para no tener que rellenar todos
 	 * los botones manualmente
 	 * 
-	 * @author Iv�n Gonz�lez Mahagamage
+	 * @author Iván González Mahagamage
 	 *
 	 */
 	class ActionBoton implements ActionListener {
