@@ -34,17 +34,17 @@ public class VentanaPrincipal extends JFrame {
 	private JTextField txtScore;
 	private JPanel panelTablero;
 	private JPanel panel_Contador;
-	private JButton btn1;
-	private JButton btn3;
 	private JButton btn0;
+	private JButton btn1;
 	private JButton btn2;
+	private JButton btn3;
 	private JButton btn4;
-	private JButton btn9;
-	private JButton btn7;
-	private JButton btn10;
-	private JButton btn8;
-	private JButton btn6;
 	private JButton btn5;
+	private JButton btn6;
+	private JButton btn7;
+	private JButton btn8;
+	private JButton btn9;
+	private JButton btn10;
 	private Juego juego;
 	// private Dado dado;
 	private JTextField txtDado;
@@ -110,6 +110,7 @@ public class VentanaPrincipal extends JFrame {
 		btn9.setEnabled(false);
 		btn10.setEnabled(false);
 
+		// EY
 		pintarTablero();
 	}
 
@@ -207,6 +208,18 @@ public class VentanaPrincipal extends JFrame {
 		return panel_Contador;
 	}
 
+	private JButton getBtn0() {
+		if (btn0 == null) {
+			btn0 = new JButton("");
+			btn0.setBackground(Color.BLACK);
+			btn0.setIcon(new ImageIcon(
+					VentanaPrincipal.class.getResource("/img/liebre.JPG")));
+			btn0.setDisabledIcon(new ImageIcon(
+					VentanaPrincipal.class.getResource("/img/liebre.JPG")));
+		}
+		return btn0;
+	}
+
 	private JButton getBtn1() {
 		if (btn1 == null) {
 			btn1 = new JButton("");
@@ -218,31 +231,6 @@ public class VentanaPrincipal extends JFrame {
 			btn1.setBackground(Color.BLACK);
 		}
 		return btn1;
-	}
-
-	private JButton getBtn3() {
-		if (btn3 == null) {
-			btn3 = new JButton("");
-			btn3.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					jugar(3);
-				}
-			});
-			btn3.setBackground(Color.BLACK);
-		}
-		return btn3;
-	}
-
-	private JButton getBtn0() {
-		if (btn0 == null) {
-			btn0 = new JButton("");
-			btn0.setBackground(Color.BLACK);
-			btn0.setIcon(new ImageIcon(
-					VentanaPrincipal.class.getResource("/img/liebre.JPG")));
-			btn0.setDisabledIcon(new ImageIcon(
-					VentanaPrincipal.class.getResource("/img/liebre.JPG")));
-		}
-		return btn0;
 	}
 
 	private JButton getBtn2() {
@@ -258,6 +246,19 @@ public class VentanaPrincipal extends JFrame {
 		return btn2;
 	}
 
+	private JButton getBtn3() {
+		if (btn3 == null) {
+			btn3 = new JButton("");
+			btn3.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					jugar(3);
+				}
+			});
+			btn3.setBackground(Color.BLACK);
+		}
+		return btn3;
+	}
+
 	private JButton getBtn4() {
 		if (btn4 == null) {
 			btn4 = new JButton("");
@@ -271,17 +272,30 @@ public class VentanaPrincipal extends JFrame {
 		return btn4;
 	}
 
-	private JButton getBtn9() {
-		if (btn9 == null) {
-			btn9 = new JButton("");
-			btn9.addActionListener(new ActionListener() {
+	private JButton getBtn5() {
+		if (btn5 == null) {
+			btn5 = new JButton("");
+			btn5.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					jugar(9);
+					jugar(5);
 				}
 			});
-			btn9.setBackground(Color.BLACK);
+			btn5.setBackground(Color.BLACK);
 		}
-		return btn9;
+		return btn5;
+	}
+
+	private JButton getBtn6() {
+		if (btn6 == null) {
+			btn6 = new JButton("");
+			btn6.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					jugar(6);
+				}
+			});
+			btn6.setBackground(Color.BLACK);
+		}
+		return btn6;
 	}
 
 	private JButton getBtn7() {
@@ -295,6 +309,32 @@ public class VentanaPrincipal extends JFrame {
 			btn7.setBackground(Color.BLACK);
 		}
 		return btn7;
+	}
+
+	private JButton getBtn8() {
+		if (btn8 == null) {
+			btn8 = new JButton("");
+			btn8.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					jugar(8);
+				}
+			});
+			btn8.setBackground(Color.BLACK);
+		}
+		return btn8;
+	}
+
+	private JButton getBtn9() {
+		if (btn9 == null) {
+			btn9 = new JButton("");
+			btn9.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					jugar(9);
+				}
+			});
+			btn9.setBackground(Color.BLACK);
+		}
+		return btn9;
 	}
 
 	private JButton getBtn10() {
@@ -312,45 +352,6 @@ public class VentanaPrincipal extends JFrame {
 					VentanaPrincipal.class.getResource("/img/zanahoria.jpg")));
 		}
 		return btn10;
-	}
-
-	private JButton getBtn8() {
-		if (btn8 == null) {
-			btn8 = new JButton("");
-			btn8.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					jugar(8);
-				}
-			});
-			btn8.setBackground(Color.BLACK);
-		}
-		return btn8;
-	}
-
-	private JButton getBtn6() {
-		if (btn6 == null) {
-			btn6 = new JButton("");
-			btn6.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					jugar(6);
-				}
-			});
-			btn6.setBackground(Color.BLACK);
-		}
-		return btn6;
-	}
-
-	private JButton getBtn5() {
-		if (btn5 == null) {
-			btn5 = new JButton("");
-			btn5.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					jugar(5);
-				}
-			});
-			btn5.setBackground(Color.BLACK);
-		}
-		return btn5;
 	}
 
 	private void modificarPanel(JPanel panel, boolean habilitado) {
@@ -378,9 +379,12 @@ public class VentanaPrincipal extends JFrame {
 			// EY
 			if (i == juego.getPositionTrampa()) {
 				boton.setIcon(new ImageIcon(VentanaPrincipal.class
-						.getResource("/img/liebre-comiendo.JPG")));
+						.getResource("/img/agujero.png")));
 				boton.setDisabledIcon(new ImageIcon(VentanaPrincipal.class
-						.getResource("/img/liebre-comiendo.JPG")));
+						.getResource("/img/agujero.png")));
+			} else if (i == juego.getLiebre().getPosicion()) {
+				boton.setIcon(imagen);
+				boton.setDisabledIcon(imagen);
 			} else if (i == juego.getLiebre().getPosicion()) {
 				boton.setIcon(imagen);
 				boton.setDisabledIcon(imagen);

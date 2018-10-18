@@ -9,14 +9,19 @@ public class Juego {
 	private Liebre liebre;
 
 	// EY
-	int positionTrampa;
+	int posicionTrampa;
+	int superpoder;
 
 	public Juego() {
 		inicializarJuego();
 	}
 
 	public int getPositionTrampa() {
-		return positionTrampa;
+		return posicionTrampa;
+	}
+
+	public Liebre getLiebre() {
+		return liebre;
 	}
 
 	public void inicializarJuego() {
@@ -26,10 +31,20 @@ public class Juego {
 		tablero[DIM - 1] = 200;
 		liebre = new Liebre("/img/liebre.jpg");
 		colocarTrampa();
+		colocarSuperPoder();
 	}
 
 	private void colocarTrampa() {
-		positionTrampa = ((int) (Math.random() * DIM - 1) + 1);
+		do {
+			posicionTrampa = ((int) (Math.random() * DIM - 1) + 1);
+		} while (posicionTrampa == 0 || posicionTrampa == DIM - 1);
+	}
+
+	private void colocarSuperPoder() {
+		do {
+			superpoder = ((int) (Math.random() * DIM - 1) + 1);
+		} while (superpoder == 0 || superpoder == DIM - 1
+				|| superpoder == posicionTrampa);
 	}
 
 	public boolean lanzarDado() {
@@ -50,7 +65,7 @@ public class Juego {
 		if (isJugadaCorrecta(i)) {
 			liebre.setPosicion(liebre.getPosicion() + Dado.getValor());
 			// EY
-			if (liebre.getPosicion() == positionTrampa) {
+			if (liebre.getPosicion() == posicionTrampa) {
 				resuelta = false;
 			}
 			// Incrementamos la puntuacion del corredor
@@ -63,12 +78,8 @@ public class Juego {
 	public boolean isPartidaFinalizada() {
 		return (liebre.getPosicion() == POSICION_META);
 	}
-	
-	public boolean isGameOver() {
-		return (liebre.getPosicion() == positionTrampa);
-	}
 
-	public Liebre getLiebre() {
-		return liebre;
+	public boolean isGameOver() {
+		return (liebre.getPosicion() == posicionTrampa);
 	}
 }
