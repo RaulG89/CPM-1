@@ -371,35 +371,35 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	private void pintarTablero() {
-		ImageIcon imagen = new ImageIcon(
-				getClass().getResource(juego.getLiebre().getFoto()));
 		Component[] componentes = panelTablero.getComponents();
 		for (int i = 0; i < componentes.length - 1; i++) {
 			JButton boton = (JButton) componentes[i];
 			// EY
 			if (i == juego.getPositionTrampa()) {
-				boton.setIcon(new ImageIcon(VentanaPrincipal.class
-						.getResource("/img/agujero.png")));
-				boton.setDisabledIcon(new ImageIcon(VentanaPrincipal.class
-						.getResource("/img/agujero.png")));
+				setImagen(boton, "/img/agujero.png");
+			} else if (i == juego.getSuperpoder()) {
+				setImagen(boton, "/img/estrella.jpg");
 			} else if (i == juego.getLiebre().getPosicion()) {
-				boton.setIcon(imagen);
-				boton.setDisabledIcon(imagen);
-			} else if (i == juego.getLiebre().getPosicion()) {
-				boton.setIcon(imagen);
-				boton.setDisabledIcon(imagen);
+				setImagen(boton, juego.getLiebre().getFoto());
 			} else {
-				boton.setIcon(null);
-				boton.setDisabledIcon(null);
+				setImagen(boton, null);
 			}
 		}
 
 		if (juego.getLiebre().getPosicion() == componentes.length - 1) {
-			imagen = new ImageIcon(VentanaPrincipal.class
-					.getResource("/img/liebre-comiendo.JPG"));
 			JButton boton = (JButton) componentes[componentes.length - 1];
-			boton.setIcon(imagen);
-			boton.setDisabledIcon(imagen);
+			setImagen(boton, "/img/liebre-comiendo.JPG");
+		}
+	}
+
+	private void setImagen(JButton boton, String imagen) {
+		if (imagen != null) {
+			boton.setIcon(new ImageIcon(getClass().getResource(imagen)));
+			boton.setDisabledIcon(
+					new ImageIcon(getClass().getResource(imagen)));
+		} else {
+			boton.setIcon(null);
+			boton.setDisabledIcon(null);
 		}
 	}
 
@@ -408,15 +408,29 @@ public class VentanaPrincipal extends JFrame {
 		pintarTablero();
 		// EY
 		if (juego.isGameOver()) {
-			JOptionPane.showMessageDialog(this, "Game Over");
-			inicializar();
+			if (!juego.getLiebre().isSuperpoder()) {
+				JOptionPane.showMessageDialog(this, "Game Over");
+				inicializar();
+			} else {
+				JOptionPane.showMessageDialog(this, "Liebre afortunada");
+				juego.getLiebre().setSuperpoder(false);
+				juego.getLiebre().incrementaPuntuacion(1000);
+				juego.setPosicionTrampa(-1);
+			}
 		} else if (juego.isPartidaFinalizada()) {
-			JOptionPane.showMessageDialog(this, "partida finalizada");
+			JOptionPane.showMessageDialog(this, "Partida finalizada");
 			inicializar();
-		} else {
-			btnDado.setEnabled(true);
-			txtDado.setText("");
+		} else if (juego.isSuperPoder()) {
+			JOptionPane.showMessageDialog(this, "Power Up");
+			// Quita el superpoder
+			juego.getLiebre().setSuperpoder(true);
+			juego.getLiebre().incrementaPuntuacion(500);
+			juego.setPosicionSuperpoder(-1);
 		}
+		btnDado.setEnabled(true);
+		txtDado.setText("");
+		pintarTablero();
+		pintarPuntos();
 	}
 
 	// EY

@@ -9,6 +9,7 @@ public class Dado {
 	}
 
 	public static int getValor() {
+		valor = 1;
 		return valor;
 	}
 

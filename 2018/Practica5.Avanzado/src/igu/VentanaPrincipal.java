@@ -8,8 +8,6 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -114,7 +112,6 @@ public class VentanaPrincipal extends JFrame {
 			boton.setActionCommand(String.valueOf(i + indice));
 			boton.addActionListener(pB);
 		}
-
 	}
 
 	private JButton nuevoBoton(int posicion, String imagen) {
@@ -124,7 +121,6 @@ public class VentanaPrincipal extends JFrame {
 		boton.setDisabledIcon(
 				new ImageIcon(VentanaPrincipal.class.getResource(imagen)));
 		boton.setBorder(new LineBorder(Color.BLUE));
-		boton.setBackground(Color.BLACK);
 		boton.setForeground(Color.BLACK);
 		return boton;
 	}
@@ -144,8 +140,7 @@ public class VentanaPrincipal extends JFrame {
 		deshabilitarPanel();
 		if (juego.isPartidaFinalizada()) {
 			juego.getLiebre().incrementaPuntuacion(200);
-			txPuntosLiebre
-					.setText(String.valueOf(juego.getLiebre().getPuntuacion()));
+			pintarPuntos();
 			JOptionPane.showMessageDialog(this, "Has finalizado el juego.");
 			deshabilitarPanel();
 			btnDado.setEnabled(false);

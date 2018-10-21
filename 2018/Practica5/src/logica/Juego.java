@@ -9,8 +9,8 @@ public class Juego {
 	private Liebre liebre;
 
 	// EY
-	int posicionTrampa;
-	int superpoder;
+	private int posicionTrampa = 0;
+	private int posicionSuperpoder = 0;
 
 	public Juego() {
 		inicializarJuego();
@@ -18,6 +18,26 @@ public class Juego {
 
 	public int getPositionTrampa() {
 		return posicionTrampa;
+	}
+
+	public int getPosicionTrampa() {
+		return posicionTrampa;
+	}
+
+	public void setPosicionTrampa(int posicionTrampa) {
+		this.posicionTrampa = posicionTrampa;
+	}
+
+	public int getSuperpoder() {
+		return posicionSuperpoder;
+	}
+
+	public int getPosicionSuperpoder() {
+		return posicionSuperpoder;
+	}
+
+	public void setPosicionSuperpoder(int posicionSuperpoder) {
+		this.posicionSuperpoder = posicionSuperpoder;
 	}
 
 	public Liebre getLiebre() {
@@ -37,14 +57,15 @@ public class Juego {
 	private void colocarTrampa() {
 		do {
 			posicionTrampa = ((int) (Math.random() * DIM - 1) + 1);
-		} while (posicionTrampa == 0 || posicionTrampa == DIM - 1);
+		} while (posicionTrampa == 0 || posicionTrampa == DIM - 1
+				|| posicionSuperpoder == posicionTrampa);
 	}
 
 	private void colocarSuperPoder() {
 		do {
-			superpoder = ((int) (Math.random() * DIM - 1) + 1);
-		} while (superpoder == 0 || superpoder == DIM - 1
-				|| superpoder == posicionTrampa);
+			posicionSuperpoder = ((int) (Math.random() * DIM - 1) + 1);
+		} while (posicionSuperpoder == 0 || posicionSuperpoder == DIM - 1
+				|| posicionSuperpoder == posicionTrampa);
 	}
 
 	public boolean lanzarDado() {
@@ -81,5 +102,9 @@ public class Juego {
 
 	public boolean isGameOver() {
 		return (liebre.getPosicion() == posicionTrampa);
+	}
+
+	public boolean isSuperPoder() {
+		return (liebre.getPosicion() == posicionSuperpoder);
 	}
 }
