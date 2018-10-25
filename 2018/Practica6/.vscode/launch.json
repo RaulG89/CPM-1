@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - VentanaPrincipal",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "igu.VentanaPrincipal",
+            "args": "",
+            "projectName": "Practica5"
+        }
+    ]
+}

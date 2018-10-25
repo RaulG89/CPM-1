@@ -35,15 +35,14 @@ public class Juego {
 	}
 
 	private boolean isJugadaCorrecta(int i) {
-		System.out.println(liebre.getPosicion() + Dado.getValor() >= i);
-		return (liebre.getPosicion() + Dado.getValor() >= i);
+		return (!(i <= liebre.getPosicion()) && liebre.getPosicion() + Dado.getValor() >= i);
 	}
 
 	public boolean resolverJugada(int i) {
 		boolean resuelta = false;
 		// Comprobamos que se trata de ir a la casilla correcta
 		if (isJugadaCorrecta(i)) {
-			liebre.setPosicion(liebre.getPosicion() + i);
+			liebre.setPosicion(i);
 			// Incrementamos la puntuacion del corredor
 			liebre.incrementaPuntuacion(tablero[i]);
 			resuelta = true;
@@ -58,8 +57,7 @@ public class Juego {
 	private void colocarSuperPoder() {
 		do {
 			superpoder = ((int) (Math.random() * DIM - 1) + 1);
-		} while (superpoder == 0 || superpoder == DIM - 1
-				|| tableroTrampas[superpoder]);
+		} while (superpoder == 0 || superpoder == DIM - 1 || tableroTrampas[superpoder]);
 		tablero[superpoder] = 550;
 		System.out.println("Superpoder en " + superpoder);
 	}
@@ -78,10 +76,8 @@ public class Juego {
 		do {
 			posicionTrampa = ((int) (Math.random() * DIM - 1) + 1);
 			System.out.println("Trampa en " + posicionTrampa);
-		} while (posicionTrampa == 0 || posicionTrampa == DIM - 1
-				|| tableroTrampas[posicionTrampa]);
+		} while (posicionTrampa == 0 || posicionTrampa == DIM - 1 || tableroTrampas[posicionTrampa]);
 		tableroTrampas[posicionTrampa] = true;
-
 	}
 
 	public int getSuperpoder() {
