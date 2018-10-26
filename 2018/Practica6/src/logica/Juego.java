@@ -10,6 +10,10 @@ public class Juego {
 	private Liebre liebre;
 	int superpoder;
 
+	public Juego() {
+		this(2);
+	}
+
 	public Juego(int numTrampas) {
 		inicializarJuego(numTrampas);
 	}
@@ -29,14 +33,14 @@ public class Juego {
 	public boolean lanzarDado() {
 		boolean isPosible = false;
 		Dado.lanzar();
-		//if (liebre.getPosicion() + Dado.getValor() < DIM)
-			isPosible = true;
+		// if (liebre.getPosicion() + Dado.getValor() < DIM)
+		isPosible = true;
 		return isPosible;
 	}
 
 	private boolean isJugadaCorrecta(int i) {
-		return (!(i <= liebre.getPosicion())
-				&& liebre.getPosicion() + Dado.getValor() >= i);
+		return (!(i <= liebre.getPosicion()) 
+		&& liebre.getPosicion() + Dado.getValor() >= i);
 	}
 
 	public boolean resolverJugada(int i) {
@@ -57,8 +61,7 @@ public class Juego {
 	private void colocarSuperPoder() {
 		do {
 			superpoder = ((int) (Math.random() * DIM - 1) + 1);
-		} while (superpoder == 0 || superpoder == DIM - 1
-				|| tableroTrampas[superpoder]);
+		} while (superpoder == 0 || superpoder == DIM - 1 || tableroTrampas[superpoder]);
 		tablero[superpoder] = 550;
 	}
 
@@ -75,8 +78,7 @@ public class Juego {
 		int posicionTrampa;
 		do {
 			posicionTrampa = ((int) (Math.random() * DIM - 1) + 1);
-		} while (posicionTrampa == 0 || posicionTrampa == DIM - 1
-				|| tableroTrampas[posicionTrampa]);
+		} while (posicionTrampa == 0 || posicionTrampa == DIM - 1 || tableroTrampas[posicionTrampa]);
 		tableroTrampas[posicionTrampa] = true;
 	}
 
@@ -90,6 +92,11 @@ public class Juego {
 
 	public boolean isPartidaFinalizada() {
 		return (liebre.getPosicion() == POSICION_META);
+	}
+
+	public void luison(){
+		liebre.incrementaPuntuacion(1000);
+		liebre.setSuperpoder(false);
 	}
 
 	public boolean isPartidaFinalizadaTrampa() {

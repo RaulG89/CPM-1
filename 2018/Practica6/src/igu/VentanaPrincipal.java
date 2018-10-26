@@ -42,6 +42,7 @@ public class VentanaPrincipal extends JFrame {
 	class AccionBoton implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			System.out.println("asdsad");
 			JButton bt = (JButton) e.getSource();
 			jugar(Integer.parseInt(bt.getActionCommand()));
 		}
@@ -149,7 +150,6 @@ public class VentanaPrincipal extends JFrame {
 		} else {
 			controlJugar = false;
 		}
-
 	}
 
 	private JButton getBotonDado() {
@@ -190,8 +190,7 @@ public class VentanaPrincipal extends JFrame {
 				JOptionPane.showMessageDialog(this, "Partida finalizada");
 				inicializar();
 			} else {
-				juego.getLiebre().incrementaPuntuacion(1000);
-				juego.getLiebre().setSuperpoder(false);
+				juego.luison();
 				botonDado.setEnabled(true);
 				txtDado.setText("");
 			}
