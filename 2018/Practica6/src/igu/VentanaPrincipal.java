@@ -70,7 +70,8 @@ public class VentanaPrincipal extends JFrame {
 		juego = new Juego(preguntarTrampas());
 		aB = new AccionBoton();
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/img/liebre.JPG")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				VentanaPrincipal.class.getResource("/img/liebre.JPG")));
 		setTitle("El juego de la Liebre y la Zanahoria");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 911, 398);
@@ -107,8 +108,10 @@ public class VentanaPrincipal extends JFrame {
 		txtDado.setText("");
 		Component[] botones = panelTablero.getComponents();
 		JButton btnMeta = (JButton) botones[juego.DIM - 1];
-		btnMeta.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/zanahoria.jpg")));
-		btnMeta.setDisabledIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/zanahoria.jpg")));
+		btnMeta.setIcon(new ImageIcon(
+				VentanaPrincipal.class.getResource("/img/zanahoria.jpg")));
+		btnMeta.setDisabledIcon(new ImageIcon(
+				VentanaPrincipal.class.getResource("/img/zanahoria.jpg")));
 
 	}
 
@@ -128,15 +131,23 @@ public class VentanaPrincipal extends JFrame {
 
 	private int preguntarTrampas() {
 		String[] numTrampas = { "0", "1", "2", "3", "4" };
-		String resp = (String) JOptionPane.showInputDialog(null, "Seleccione el n�mero de trampas", "Trampas",
+		String resp = (String) JOptionPane.showInputDialog(null,
+				"Seleccione el número de trampas", "Trampas",
 				JOptionPane.DEFAULT_OPTION, null, numTrampas, numTrampas[0]);
 		return Integer.parseInt(resp);
 	}
 
+	private boolean controlJugar = false;
+
 	private void jugar(int posicion) {
-		if (juego.resolverJugada(posicion)) {
-			representarEstadoJuego();
-			deshabilitarPanel();
+		if (!controlJugar) {
+			controlJugar = true;
+			if (juego.resolverJugada(posicion)) {
+				representarEstadoJuego();
+				deshabilitarPanel();
+			}
+		} else {
+			controlJugar = false;
 		}
 
 	}
@@ -150,11 +161,12 @@ public class VentanaPrincipal extends JFrame {
 					lanzarDado();
 				}
 			});
-			botonDado.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/dado.JPG")));
-			botonDado.setDisabledIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/dado.JPG")));
+			botonDado.setIcon(new ImageIcon(
+					VentanaPrincipal.class.getResource("/img/dado.JPG")));
+			botonDado.setDisabledIcon(new ImageIcon(
+					VentanaPrincipal.class.getResource("/img/dado.JPG")));
 			botonDado.setBounds(51, 46, 61, 86);
 			botonDado.setBorderPainted(false);
-
 		}
 		return botonDado;
 	}
@@ -170,6 +182,28 @@ public class VentanaPrincipal extends JFrame {
 			txtDado.setText("");
 		}
 
+	}
+
+	private void representarEstadoJuego() {
+		if (juego.isPartidaFinalizadaTrampa()) {
+			if (!juego.getLiebre().isSuperpoder()) {
+				JOptionPane.showMessageDialog(this, "Partida finalizada");
+				inicializar();
+			} else {
+				juego.getLiebre().incrementaPuntuacion(1000);
+				juego.getLiebre().setSuperpoder(false);
+				botonDado.setEnabled(true);
+				txtDado.setText("");
+			}
+		} else if (juego.isPartidaFinalizada()) {
+			JOptionPane.showMessageDialog(this, "Partida finalizada");
+			inicializar();
+		} else {
+			botonDado.setEnabled(true);
+			txtDado.setText("");
+		}
+		pintarPuntos();
+		pintarTablero();
 	}
 
 	private JTextField getTxtScore() {
@@ -238,7 +272,8 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	private void pintarTablero() {
-		ImageIcon imagen = new ImageIcon(getClass().getResource(juego.getLiebre().getFoto()));
+		ImageIcon imagen = new ImageIcon(
+				getClass().getResource(juego.getLiebre().getFoto()));
 		Component[] componentes = panelTablero.getComponents();
 		for (int i = 0; i < componentes.length - 1; i++) {
 			JButton boton = (JButton) componentes[i];
@@ -246,11 +281,15 @@ public class VentanaPrincipal extends JFrame {
 				boton.setIcon(imagen);
 				boton.setDisabledIcon(imagen);
 			} else if (i == juego.getSuperpoder()) {
-				boton.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/estrella.JPEG")));
-				boton.setDisabledIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/estrella.JPEG")));
+				boton.setIcon(new ImageIcon(VentanaPrincipal.class
+						.getResource("/img/estrella.JPEG")));
+				boton.setDisabledIcon(new ImageIcon(VentanaPrincipal.class
+						.getResource("/img/estrella.JPEG")));
 			} else if (juego.getPosicionTrampa(i)) {
-				boton.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/agujero.JPEG")));
-				boton.setDisabledIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/agujero.JPEG")));
+				boton.setIcon(new ImageIcon(VentanaPrincipal.class
+						.getResource("/img/agujero.JPEG")));
+				boton.setDisabledIcon(new ImageIcon(VentanaPrincipal.class
+						.getResource("/img/agujero.JPEG")));
 			} else {
 				boton.setIcon(null);
 				boton.setDisabledIcon(null);
@@ -258,7 +297,14 @@ public class VentanaPrincipal extends JFrame {
 		}
 
 		if (juego.getLiebre().getPosicion() == componentes.length - 1) {
-			imagen = new ImageIcon(VentanaPrincipal.class.getResource("/img/liebre-comiendo.jpg"));
+			imagen = new ImageIcon(VentanaPrincipal.class
+					.getResource("/img/liebre-comiendo.jpg"));
+			JButton boton = (JButton) componentes[componentes.length - 1];
+			boton.setIcon(imagen);
+			boton.setDisabledIcon(imagen);
+		} else {
+			imagen = new ImageIcon(VentanaPrincipal.class
+					.getResource("/img/zanahoria.jpg"));
 			JButton boton = (JButton) componentes[componentes.length - 1];
 			boton.setIcon(imagen);
 			boton.setDisabledIcon(imagen);
@@ -266,31 +312,9 @@ public class VentanaPrincipal extends JFrame {
 
 	}
 
-	private void representarEstadoJuego() {
-		if (juego.isPartidaFinalizadaTrampa()) {
-			if (!juego.getLiebre().isSuperpoder()) {
-				inicializar();
-				txtPuntuacion.setText("0");
-				JOptionPane.showMessageDialog(this, "Partida finalizada");
-			} else {
-				juego.getLiebre().incrementaPuntuacion(1000);
-				juego.getLiebre().setSuperpoder(false);
-				botonDado.setEnabled(true);
-				txtDado.setText("");
-			}
-		} else if (juego.isPartidaFinalizada()) {
-			JOptionPane.showMessageDialog(this, "Partida finalizada");
-			inicializar();
-		} else {
-			botonDado.setEnabled(true);
-			txtDado.setText("");
-		}
-		pintarPuntos();
-		pintarTablero();
-	}
-
 	private void pintarPuntos() {
-		txtPuntuacion.setText(String.valueOf(juego.getLiebre().getPuntuacion()));
+		txtPuntuacion
+				.setText(String.valueOf(juego.getLiebre().getPuntuacion()));
 	}
 
 	private JTextField getTxtPuntuacion() {
