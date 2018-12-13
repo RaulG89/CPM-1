@@ -1288,6 +1288,8 @@ public class VentanaPrincipal extends JFrame {
 		return pnOpcionesFiltros;
 	}
 
+	
+	// VERY IMPORTAAAAAAANNTTT
 	private JTable getTablaCruceros() {
 		if (tablaCruceros == null) {
 			modeloTablaCruceros = new DefaultTableModel(new Object[] { "Zona", "Puerto de salida", "Itinerario",
