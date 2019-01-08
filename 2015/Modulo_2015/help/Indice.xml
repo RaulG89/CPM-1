@@ -5,24 +5,24 @@
 <index version="1.0">
 	<indexitem text="Asignar nombre a la reserva" target="ventanaAsignar" />
 	<indexitem text="Camarotes">
+		<indexitem text="Aï¿½adir camarote" target="ventanaAï¿½adirCamarote" />
 		<indexitem text="Lista de camarotes" target="pnCamarotes" />
-		<indexitem text="Añadir camarote" target="ventanaAñadirCamarote" />
 	</indexitem>
 	<indexitem text="Detalles">
-		<indexitem text="Detalles Crucero" target="pnDetallesCrucero" />
 		<indexitem text="Detalles Barco" target="ventanaDetalleBarco" />
+		<indexitem text="Detalles Crucero" target="pnDetallesCrucero" />
 	</indexitem>
 	<indexitem text="Descuento Camarotes" target="descuentoCamarotes" />
 	<indexitem text="Fin" target="pnFin" />
 	<indexitem text="Inicio" target="pnInicio" />
 	<indexitem text="Lista Cruceros" target="pnListaCruceros" />
-	<indexitem text="Manejo de la aplicación">
+	<indexitem text="Manejo de la aplicaciï¿½n">
 		<indexitem text="Opciones" target="opciones" />
 		<indexitem text="Navegabilidad" target="navegabilidad" />
 	</indexitem>
 	<indexitem text="Pasajeros">
+		<indexitem text="Aï¿½adir pasajero" target="ventanaAï¿½adirPasajero" />
 		<indexitem text="Lista de pasajero" target="pnPasajeros" />
-		<indexitem text="Añadir pasajero" target="ventanaAñadirPasajero" />
 	</indexitem>
 	<indexitem text="Reserva de crucero" target="introduccion" />
 	<indexitem text="Resumen" target="pnResumen" />
