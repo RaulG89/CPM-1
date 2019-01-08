@@ -89,8 +89,7 @@ public class VentanaPrincipal extends JFrame {
 	/**
 	 * Introduce la accion en todos los botones del panel
 	 * 
-	 * @param panel
-	 *            Panel a rellenar
+	 * @param panel Panel a rellenar
 	 */
 	private void asociarEventosBotones(JPanel panel) {
 		for (int i = 0; i < panel.getComponents().length; i++) {
@@ -459,10 +458,8 @@ public class VentanaPrincipal extends JFrame {
 	/**
 	 * Modifica el numero de botones del panel
 	 * 
-	 * @param panel
-	 *            Panel que queremos modificar
-	 * @param imagen
-	 *            Imagen del corredor
+	 * @param panel  Panel que queremos modificar
+	 * @param imagen Imagen del corredor
 	 */
 	private void modificarPanel(JPanel panel, String imagen) {
 		panel.setBounds(panel.getX(), panel.getY(), (70 * vo.getNumCasillas()),
