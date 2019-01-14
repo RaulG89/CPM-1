@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 
 import igu.VentanaPrincipal;
 import igu.VentanasAuxiliares.VentanaAsignarNombreReserva;
-import igu.VentanasAuxiliares.VentanaañadirCamarote;
+import igu.VentanasAuxiliares.VentanaAñadirCamarote;
 import logica.Camarote;
 import logica.Pasajero;
 
@@ -312,7 +312,7 @@ public class PanelCamarotes extends JPanel {
 	}
 
 	private void mostrarVentanaañadirCamarote() {
-		VentanaañadirCamarote vap = new VentanaañadirCamarote(vp);
+		VentanaAñadirCamarote vap = new VentanaAñadirCamarote(vp);
 		vap.setLocationRelativeTo(null);
 		vap.setModal(true);
 		vap.setVisible(true);

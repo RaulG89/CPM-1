@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import igu.VentanaPrincipal;
-import igu.VentanasAuxiliares.VentanaañadirPasajero;
+import igu.VentanasAuxiliares.VentanaAñadirPasajero;
 import logica.Pasajero;
 
 public class PanelPasajeros extends JPanel {
@@ -180,7 +180,7 @@ public class PanelPasajeros extends JPanel {
 	}
 
 	private void mostrarVentanaAñadirPasajero() {
-		VentanaañadirPasajero vap = new VentanaañadirPasajero(vp);
+		VentanaAñadirPasajero vap = new VentanaAñadirPasajero(vp);
 		vap.setLocationRelativeTo(null);
 		vap.setModal(true);
 		vap.setVisible(true);

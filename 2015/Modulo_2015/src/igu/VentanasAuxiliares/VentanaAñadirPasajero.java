@@ -37,7 +37,7 @@ import logica.Pasajero;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-public class VentanaañadirPasajero extends JDialog {
+public class VentanaAñadirPasajero extends JDialog {
 	private static final long serialVersionUID = 6108482249162521863L;
 	private VentanaPrincipal vp;
 	private JPanel pnPrincipal;
@@ -70,7 +70,7 @@ public class VentanaañadirPasajero extends JDialog {
 	private JPanel pnTitulo;
 	private JLabel lblTitulo;
 
-	public VentanaañadirPasajero(VentanaPrincipal vp) {
+	public VentanaAñadirPasajero(VentanaPrincipal vp) {
 		setTitle("A\u00F1adir pasajero");
 		this.vp = vp;
 		setBounds(100, 100, 615, 450);

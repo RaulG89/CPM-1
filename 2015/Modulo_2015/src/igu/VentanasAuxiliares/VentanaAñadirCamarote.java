@@ -41,7 +41,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class VentanaañadirCamarote extends JDialog {
+public class VentanaAñadirCamarote extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	private VentanaPrincipal vp;
@@ -82,7 +82,7 @@ public class VentanaañadirCamarote extends JDialog {
 	private int ancho;
 	private int alto;
 
-	public VentanaañadirCamarote(VentanaPrincipal vp) {
+	public VentanaAñadirCamarote(VentanaPrincipal vp) {
 		setTitle("A\u00F1adir camarote");
 		this.vp = vp;
 		ancho = 0;
