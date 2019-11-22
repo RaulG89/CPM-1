@@ -1,8 +1,5 @@
 package logic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Client {
 	private String dni;
 	private String name;
@@ -11,5 +8,9 @@ public class Client {
 	private String password;
 	private double money;
 	private String creditCardNumber;
-	private List<Chip> chips = new ArrayList<Chip>();
+	private int fiveChips;
+	private int tenChips;
+	private int twentyChips;
+	private int fiftyChips;
+	private int hundredChips;
 }
