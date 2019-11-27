@@ -1,9 +1,7 @@
 package logic.cells;
 
-import logic.Bet;
-
 public interface Cell {
-	Bet bet(int chip);
+	void addBet(int chip);
 
-	void isWinner(int result);
+	boolean isWinner(int result);
 }
